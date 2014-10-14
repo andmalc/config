@@ -1,0 +1,137 @@
+NameVirtualHost *
+<VirtualHost *>
+	#ErrorLog /var/log/apache2/svnsite.log
+	CustomLog /var/log/apache2/access.log combined
+	ServerSignature On
+
+	##Main
+	ServerName playgnd.bangthedrum.net
+	ServerAlias play *.playgnd.bangthedrum.net
+	ServerAdmin andzy@imap-mail.com
+
+	DocumentRoot /var/www/
+
+	<Directory />
+		Options FollowSymLinks
+		AllowOverride None
+		Order deny,allow
+		deny from all
+	</Directory>
+
+	<Directory /var/www/>
+		Dav On
+		Options Indexes FollowSymLinks MultiViews
+		AllowOverride None
+		Order allow,deny
+		allow from all
+	</Directory>
+
+	ScriptAlias /cgi-bin/ /usr/lib/cgi-bin/
+	<Directory "/usr/lib/cgi-bin">
+		AllowOverride None
+		Options ExecCGI -MultiViews +SymLinksIfOwnerMatch
+		Order allow,deny
+		Allow from all
+	</Directory>
+
+	#Redirection to cgi-bin/trac.cgi 
+	<Location "/mattress">
+		Order allow,deny
+		Allow from all
+	</Location>
+
+	Alias /trac/ "/usr/share/trac/htdocs/" 
+	<Directory "/usr/share/trac/htdocs">
+		Options Indexes MultiViews
+		AllowOverride None
+		Order allow,deny
+		Allow from all
+	</Directory>
+
+
+	# Trac need to know where the database is located
+	<Location "/cgi-bin/trac.cgi">
+		SetEnv TRAC_ENV "/var/trac/mattress"
+	</Location>
+
+	<Location "/cgi-bin/trac.cgi/login">
+		AuthUserFile /var/trac/trac-auth
+		Require valid-user
+	</Location>
+
+	#<Directory /home/andmalc/testrepo>
+
+	<Location /calendars>
+		Dav On
+		#AuthType Basic
+		#SVNPath /var/www/apache2-default/testrepo
+		#AuthName "A Test Dav Share"
+		#AuthUserFile /home/andmalc/dav-auth
+		#Require valid-user
+	</Location>
+
+	<FilesMatch "/_darcs/">
+	order allow,deny
+	deny from all
+	</FilesMatch>
+
+	### Home Dirs
+
+	# UserDir is now a module
+	UserDir public_html
+	UserDir disabled root
+
+	<Directory /home/*/public_html>
+		Order allow,deny
+		allow from all
+		AllowOverride FileInfo AuthConfig Limit
+		Options Indexes SymLinksIfOwnerMatch IncludesNoExec
+	</Directory>
+
+
+	## Andrew svn
+
+	<Directory /home/andmalc/public_html/notes>
+		Dav on
+		AuthType Basic
+		AuthName "Andrew Test Dav Share"
+		AuthUserFile /home/andmalc/dav-auth
+		Require valid-user
+	</Directory>
+
+	<Directory /home/andmalc/public_html/testdav>
+		Dav on
+		AuthType Basic
+		AuthName "Andrew Test Dav Share"
+		AuthUserFile /home/andmalc/dav-auth
+		Require valid-user
+	</Directory>
+
+	<Directory /home/andmalc/wc/myproj>
+		Dav on
+		AuthType Basic
+		#SVNPath /home/andmalc/testrepo
+		AuthName "Andrew Test Dav Share"
+		AuthUserFile /home/andmalc/dav-auth
+		Require valid-user
+	</Directory>
+
+
+	Alias /icons/ "/usr/share/apache2/icons/"
+	<Directory "/usr/share/apache2/icons">
+		Options Indexes MultiViews
+		AllowOverride None
+		Order allow,deny
+		Allow from all
+	</Directory>
+
+	Alias /doc/ "/usr/share/doc/"
+	<Directory "/usr/share/doc/">
+	Options Indexes MultiViews FollowSymLinks
+	AllowOverride None
+	Order allow,deny
+	#Deny from all
+	#Allow from 127.0.0.0/255.0.0.0 ::1/128 dela.dnsalias.net
+	</Directory>
+
+</VirtualHost>

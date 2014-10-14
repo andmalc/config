@@ -1,0 +1,20 @@
+### BEGIN /etc/grub.d/00_header ###
+serial
+terminal_input serial
+terminal_output serial
+set timeout=5
+### END /etc/grub.d/00_header ###
+
+### BEGIN /etc/grub.d/10_linux ###
+menuentry 'voyage' --class gnu-linux --class gnu --class os {
+        insmod part_msdos
+        insmod ext2
+        set root='(/dev/sda,msdos1)'
+        search --no-floppy --fs-uuid --set 7649b51e-3ede-49df-86fc-ec1b7dfe1792
+        echo    'Loading Linux 2.6.32-voyage ...'
+      linux   /boot/vmlinuz-2.6.32-voyage root=UUID=7649b51e-3ede-49df-86fc-ec1b7dfe1792 ro single 
+        echo    'Loading initial ramdisk ...'
+        initrd  /boot/initrd.img-2.6.32-voyage
+}
+
+

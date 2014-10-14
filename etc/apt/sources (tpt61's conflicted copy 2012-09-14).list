@@ -1,0 +1,17 @@
+# 
+#deb http://www.debian-multimedia.org squeeze main
+deb http://www.deb-multimedia.org testing main
+deb http://mozilla.debian.net/ squeeze-backports iceweasel-release
+deb http://backports.debian.org/debian-backports squeeze-backports main
+
+
+#deb http://debian.yorku.ca/debian/ testing main non-free contrib
+deb http://debian.mirror.rafal.ca/debian/ testing main non-free contrib
+deb http://debian.mirror.rafal.ca/debian/ stable main non-free contrib
+deb http://debian.mirror.rafal.ca/debian/ unstable main non-free contrib
+#deb http://ftp3.nrc.ca/debian/ testing main non-free contrib
+#deb http://ftp3.nrc.ca/debian/ stable main non-free contrib
+#deb-src http://ftp3.nrc.ca/debian/ squeeze main
+
+deb http://security.debian.org/ squeeze/updates main
+#deb-src http://security.debian.org/ squeeze/updates main
