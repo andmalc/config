@@ -1,0 +1,4 @@
+# For Coreos
+
+TOOLBOX_DOCKER_IMAGE=andmalc/debiansid
+TOOLBOX_USER=andmalc

@@ -16,7 +16,9 @@
 setopt ALL_EXPORT #all options subsequently defined are exported
 
 #source /usr/local/bin/virtualenvwrapper.sh
-#source /etc/bash_completion.d/virtualenvwrapper
+
+#Disable Ctrl+S/Ctrl+Q freeze/resume
+stty stop undef 
 
 #--------------------------------------
 #SHELL PARAMETERS {{{1
@@ -37,7 +39,6 @@ export LESS=-cex3M
 ##PROMPT parameter
 ## %~ is short (/home > ~) form of current dir
 # %m short hostname, %M full host name, %n is $USERNAME
-# %! history #
 #PROMPT='%/> '
 RPROMPT="[%T]"
 # Set the prompt to "[bold{user@host}]relative_working_directory$ "
@@ -52,10 +53,9 @@ bindkey -e
 # gathering multiple args with completion.  End each with 'Esc-CR'
 bindkey '\e^M' accept-and-menu-complete
 
-zstyle ':completion:*' menu select=1
 
 # Set up the file creation mask
-umask 027
+umask 002
 
 # Read .dircolors file 
 # eval `dircolors .dircolors`
@@ -80,13 +80,12 @@ setopt NOTIFY
 HISTFILE=$HOME/.zsh_history
 SAVEHIST=1000
 HISTSIZE=1000
-#setopt SHARE_HISTORY INC_APPEND_HISTORY
+setopt SHARE_HISTORY INC_APPEND_HISTORY
 #setopt HIST_IGNORE_SPACE
 #setopt HIST_IGNORE_ALL_DUPS
 
 #ZSH CONFIG COMMANDS {{{1
 #autoload -U compinit
-#zstyle ':completion:*' menu select=10
 #compinit -C #don't perform security check
 
 autoload -U promptinit
@@ -96,9 +95,14 @@ prompt oliver
 #autoload -U predict-on
 #predict-on
 
-autoload -U incrementaL-complete-word
-zle -N incrementaL-complete-word
-bindkey "^Xi" incrementaL-complete-word
+setopt MENU_COMPLETE COMPLETE_IN_WORD LIST_PACKED
+#zstyle ':completion:*' menu select=1
+#autoload -U incrementaL-complete-word
+#zle -N incrementaL-complete-word
+#bindkey "^Xi" incrementaL-complete-word
+
+# Git completion - http://felipec.wordpress.com/2013/07/31/how-i-fixed-git-zsh-completion/
+fpath=(~/.zsh $fpath)
 
 autoload -U insert-files
 zle -N insert-files
@@ -110,10 +114,6 @@ zle -N edit-command-line
 bindkey '^x^e' edit-command-line
 
 autoload zmv
-
-#custom completions
-#compctl -k "(andmalc@malcolmson.net m_admin@malcolmson.net)" ssh scp sftp
-# compctl -k "(imap://amalcolmson@fastmail.fm/inbox.lists.tlug imap://amalcolmson@fastmail.fm/inbox)" mutt
 
 # The following lines were added by compinstall
 
@@ -128,15 +128,15 @@ compinit
 
 # Aliases {{{1
 alias s='sudo'
-alias aup='sudo aptitude update; sudo aptitude full-upgrade; sudo aptitude clean
-'
+alias aup='sudo aptitude update; sudo aptitude full-upgrade; sudo aptitude clean'
+alias mkidr='mkdir -p'
 
 ## aptitude {{{2
 alias	ap='sudo aptitude'
 alias	apu='sudo aptitude update'
 alias	aps='aptitude search'
 alias	apss='aptitude show'
-alias	api='sudo aptitude install'
+alias	api='sudo aptitude -R install'
 
 #apps {{{2
 alias gg='links google.ca'
@@ -204,8 +204,10 @@ alias l='ls -lha'
 alias ll='ls -aoh'
 alias llg='ls -alh'
 alias du='du -h'
+alias dus='du -ms .* | sort -n'
 alias df='df -h'
 alias ducks='du -kc * --max-depth=3 | sort -nr | head -10'
+alias dmesg='dmesg --ctime'
 alias tree='tree -AC'
 
 alias ac='apt-cache'
@@ -218,27 +220,6 @@ alias free='free -m' #size in Megabytes
 # import history from another running zsh instance
 #alias histimport='fc -RI'
 
-
-# Unused {{{1
-#Set Xterm title
-#precmd ()   a function which is executed just before each prompt
-
-#chpwd ()    a function which is executed whenever the directory is changed.
-#Don't use until figure out why it overrides other settings.
-#precmd () { print -Pn "\e]0;%n@%m: %~\a" }
-
-#Print user@host: command (?)
-#preexec () { print -Pn "\e]0;%n@%m: $1\a" }
-#precmd () { print -Pn "\e]0;%~\a" }
-
-#causing prompt error?
-#preexec () { print -Pn "\e]0;%n@%m: $1\a" }
-
-
-#case $TERM in (xterm*|rxvt|screen)
-#    precmd () { print -Pn "\e]0;%n@%m: %~\a" }
-#    preexec () { print -Pn "\e]0;%n@%m: $1\a" }
-#    ;;
-#esac
-
-
+#Docker {{{2
+alias drm="docker rm"
+alias dps="docker ps"
