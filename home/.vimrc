@@ -3,9 +3,6 @@
 set nocompatible
 set hidden
 set foldmethod=marker
-set sw=4
-set ts=4
-set smarttab
 
 
 "" Plugins & FILETYPE HANDLING {{{1
@@ -14,25 +11,25 @@ filetype plugin indent on
 
 filetype off
 set rtp+=~/.vim/bundle/vundle/
-set rtp+=~/.vim/bundle/
 call vundle#rc()
-
-" let Vundle manage Vundle
-" required!
 Bundle 'gmarik/vundle'
+Bundle 'chase/vim-ansible-yaml'
 
+" try next:
+" klen/python-mode
+
+"Bundle 'saltstack/salt-vim'
 " Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 "Bundle 'scrooloose/nerdtree'
 "Bundle 'klen/python-mode'
-Bundle 'davidhalter/jedi-vim'
+" Bundle 'davidhalter/jedi-vim'
 "Bundle 'Valloric/YouCompleteMe'
 
 
 filetype plugin indent on
-
 " Jedi (with PyFlakes)
-let g:jedi#popup_on_dot = 0
-highlight SpellBad term=underline gui=undercurl guisp=Orange 
+" let g:jedi#popup_on_dot = 0
+" highlight SpellBad term=underline gui=undercurl guisp=Orange 
 
 "  Python-mode
 " Activate rope
