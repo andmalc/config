@@ -1,3 +1,4 @@
+
 ## This file is sourced only for interactive shells. It
 # should contain commands to set up aliases, functions,
 # options, key bindings, etc.
@@ -223,3 +224,4 @@ alias free='free -m' #size in Megabytes
 #Docker {{{2
 alias drm="docker rm"
 alias dps="docker ps"
+
