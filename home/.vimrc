@@ -3,7 +3,11 @@
 set nocompatible
 set hidden
 set foldmethod=marker
+set paste
+set ai
 
+set ts=3
+set sw=3
 
 "" Plugins & FILETYPE HANDLING {{{1
 filetype plugin indent on
