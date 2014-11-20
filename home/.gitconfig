@@ -1,8 +1,8 @@
 [user]
 	email = andmalc@gmail.com
 	name = Andrew Malcolmson
-[push]
-	default = simple
+#[push]
+#	default = simple
 [core]
 	editor = nano
 	whitespace = off

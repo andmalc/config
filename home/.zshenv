@@ -15,6 +15,8 @@ export PIP_RESPECT_VIRTUALENV=true
 
 #source /usr/local/bin/virtualenvwrapper.sh
 #source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
+VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+source ~/.local/bin/virtualenvwrapper.sh
 
 # vim: ft=zsh
 

@@ -1,3 +1,4 @@
 home/.vim/bundle
+home/.vim/ftplugin
 home/.ssh/known_hosts
 **/*.pyc

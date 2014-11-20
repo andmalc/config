@@ -131,6 +131,7 @@ compinit
 alias s='sudo'
 alias aup='sudo aptitude update; sudo aptitude full-upgrade; sudo aptitude clean'
 alias mkidr='mkdir -p'
+alias hash="hash -r" #Clear cache of  executables - for newly installed programs
 
 ## aptitude {{{2
 alias	ap='sudo aptitude'
