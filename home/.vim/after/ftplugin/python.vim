@@ -1,10 +1,9 @@
-
+setlocal autoindent
 setlocal tabstop=4
-setlocal softtabstop=4
 setlocal shiftwidth=4
-setlocal textwidth=80
 setlocal smarttab
 setlocal expandtab
+setlocal formatoptions=croql " c:auto-wrap comments, r:auto insert comment leader after Enter, o:insert comment leader after o/O in Normal mode, q:format comments with gq, l: long lines not broken with textwidth
 
 
 "let g:pymode = 1

@@ -46,13 +46,7 @@ RPROMPT="[%T]"
 PS1="[%B%n@%m%b]%~$ "
 
 #----------------------------------------
-#SHELL CONFIG COMMANDS {{{1
-bindkey -e 
-# No more messy core dumps!
-#ulimit -c 
-#bindkey -M menuselect '^o' accept-and-infer-next-history  # ^o completes dir in menu
-# gathering multiple args with completion.  End each with 'Esc-CR'
-bindkey '\e^M' accept-and-menu-complete
+# SHELL CONFIG COMMANDS {{{1
 
 
 # Set up the file creation mask
@@ -60,6 +54,17 @@ umask 002
 
 # Read .dircolors file 
 # eval `dircolors .dircolors`
+
+# Key Bindings {{{1
+
+# Emacs mode, overrides EDITOR=vi
+bindkey -e 
+bindkey '\ea' beginning-of-line
+
+#bindkey -M menuselect '^o' accept-and-infer-next-history  # ^o completes dir in menu
+# gathering multiple args with completion.  End each with 'Esc-CR'
+#bindkey '\e^M' accept-and-menu-complete
+
 
 #ZSH OPTIONS {{{1
 # http://zsh.sunsite.dk/Doc/Release/zsh_15.html
@@ -141,46 +146,24 @@ alias	apss='aptitude show'
 alias	api='sudo aptitude -R install'
 
 #apps {{{2
-alias gg='links google.ca'
-alias ggg='links groups.google.ca'
-alias ggl='links google.ca/linux'
-alias '*'='less'
 alias less='less -ir' # case insensivite searches, display raw control characters
 alias -g L="| less"
-alias grep='grep --exclude="*.svn"'
 alias -g G="| grep"
-alias greps="grep -irl" #print files with matches but not match text
 alias pgrep="pgrep -KILL -lf" #match against any part of command or process owner, list name also
 alias pkill="pkill -KILL" #match against any part of command or process owner, list name also
 alias pstree="pstree -hlGup"
-alias kg="konsole --profile andmalc -e screen &"	
-alias im="screen -r imsession" 
-alias services="netstat -at"
-
-#xterms
-alias smallxt="xterm -sl 300 -bg red -geometry 64x10-0-57"
 alias -g xc='| xclip -selection clip-board'
-
-# sl-save lines in scrollback (def 64)
-#alias xterm='xterm  -sl 300'
-
-#mail
-alias ml='mutt -F ~/.muttrc-local'
-
-#network
-alias myconnect='netstat -alnp --protocol=inet | grep -v TIME_WAIT | cut -c-6,21-94'
-
-#Iproute2
-alias ipll='ip link list'
-alias ipas='ip address show'
-alias iprs='ip route show'
-#ARP
-alias ipns='ip neigh show'
+alias dmesg='dmesg --ctime'
+alias tree='tree -AC'
+alias free='free -m' #size in Megabytes
 
 #alias locations {{{2
-alias -g dc='/usr/share/doc'
-alias -g dl='~/Desktop/Downloads/'
 alias -g nt='~/notes'    
+alias du='du -h'
+alias dus='du -ms .* | sort -n'
+alias df='df -h'
+alias ducks='du -kc * --max-depth=3 | sort -nr | head -10'
+
 
 #list files {{{2
 # List only directories and symbolic
@@ -188,16 +171,13 @@ alias -g nt='~/notes'
 alias lsd='ls -ld *(-/DN)'
 # # List only file beginning with "."
 alias lsa='ls -ld .*'
-
+## Nice view of directory tree
+alias lsds='ls -AR' 
 #moving around
 alias -g '...'='../..'
 alias -g '....'='../../..'
 alias dirs='dirs -v'
-alias 0="cd -"
-alias 1="cd +1"
-alias 2="cd +2"
 
-#filesystem
 alias ld='ls -l | grep "^d"' 
 #or maybe ld='ls -ld */'
 alias lm='ls -tl |  head -20'
@@ -205,22 +185,6 @@ alias ls='ls --color'
 alias l='ls -lha'
 alias ll='ls -aoh'
 alias llg='ls -alh'
-alias du='du -h'
-alias dus='du -ms .* | sort -n'
-alias df='df -h'
-alias ducks='du -kc * --max-depth=3 | sort -nr | head -10'
-alias dmesg='dmesg --ctime'
-alias tree='tree -AC'
-
-alias ac='apt-cache'
-alias pgrep="pgrep -l"
-
-alias free='free -m' #size in Megabytes
-
-#Zsh specific {{{2
-
-# import history from another running zsh instance
-#alias histimport='fc -RI'
 
 #Docker {{{2
 alias drm="docker rm"
