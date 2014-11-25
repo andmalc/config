@@ -95,8 +95,8 @@ bindkey '\ea' beginning-of-line
 
 # Git prompt
 # https://github.com/olivierverdier/zsh-git-prompt
-source ~/tmp/zsh-git-prompt/zshrc.sh
-PROMPT='%B%m%~%b$(git_super_status) %#'
+source ~/config/remote/olivierverdier/zsh-git-prompt/zshrc.sh
+PROMPT='%B%m%~%b$(git_super_status) %# '
 
 setopt MENU_COMPLETE COMPLETE_IN_WORD LIST_PACKED
 #zstyle ':completion:*' menu select=1
