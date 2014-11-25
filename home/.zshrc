@@ -85,17 +85,17 @@ bindkey '\ea' beginning-of-line
 # RPROMPT="[%T]"
 # Set the prompt to "[bold{user@host}]relative_working_directory$ "
 # PS1="[%B%n@%m%b]%~$ "
-#autoload -U compinit
-#compinit -C #don't perform security check
 
-#autoload -U promptinit
+autoload -U promptinit
+promptinit
+
 #autoload -U predict-on
 #predict-on
 #prompt oliver
 
 # Git prompt
 # https://github.com/olivierverdier/zsh-git-prompt
-source ~/config/remote/olivierverdier/zsh-git-prompt/zshrc.sh
+source ~/config/home/zsh/olivierverdier/zsh-git-prompt/zshrc.sh
 PROMPT='%B%m%~%b$(git_super_status) %# '
 
 setopt MENU_COMPLETE COMPLETE_IN_WORD LIST_PACKED
@@ -115,6 +115,10 @@ bindkey '^x^e' edit-command-line
 
 autoload zmv
 
+#Completion {{{1
+
+autoload -U compinit
+compinit
 # The following lines were added by compinstall
 
 #zstyle ':completion:*' completer _expand _complete
