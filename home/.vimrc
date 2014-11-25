@@ -1,23 +1,43 @@
-
 "" GENERAL SETTINGS {{{1
 set nocompatible
 set hidden
 set foldmethod=marker
-set paste
-set ai
 
+syntax enable
+
+" Use 256 color mode
+" If can't find do cp ~/.vim/bundle/vim-colors-solarized/colors/solarized.vim
+" ~/.vim/colors/
+set t_Co=256
+let g:solarized_termcolors=256  
+set background=dark
+colorscheme solarized
+
+set ai
 set ts=3
 set sw=3
+set sts=3
 
-"" Plugins & FILETYPE HANDLING {{{1
-filetype plugin indent on
-
-
+" Plugins & FILETYPE HANDLING {{{1
+"
+set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#rc()
-Bundle 'gmarik/vundle'
-Bundle 'chase/vim-ansible-yaml'
+call vundle#begin()
+
+Plugin 'gmarik/vundle'
+Plugin 'chase/vim-ansible-yaml'
+Plugin 'dart-lang/dart-vim-plugin'
+
+" Outliner
+Plugin 'VOom'
+
+" Folding for MD files
+Plugin 'nelstrom/vim-markdown-folding'
+" Default fold syle is 'stacked' (shows all headings). 'nested' is shows h1 only
+" let g:markdown_fold_style = 'nested'
+
+Plugin 'altercation/vim-colors-solarized'
 
 " try next:
 " klen/python-mode
@@ -29,10 +49,12 @@ Bundle 'chase/vim-ansible-yaml'
 " Bundle 'davidhalter/jedi-vim'
 "Bundle 'Valloric/YouCompleteMe'
 
+" End of Vundle Bundles
+call vundle#end()
 
 filetype plugin indent on
 " Jedi (with PyFlakes)
-" let g:jedi#popup_on_dot = 0
+"PyFlakes let g:jedi#popup_on_dot = 0
 " highlight SpellBad term=underline gui=undercurl guisp=Orange 
 
 "  Python-mode
@@ -60,36 +82,32 @@ filetype plugin indent on
 
 " Candidate leaders: - H L space ctrl cr
 let mapleader = ","
-
+map ,f	<PageDown>
+map <leader>w :wincmd 
 map <leader>~ :NERDTreeToggle<CR>
 map <leader>s :w<CR>
-"map <leader>s :w<CR>
-noremap ; :
 imap <leader>s <ESC>:w<CR>
-map ss :w<CR> \| :!python %<CR>
+noremap ; :
 
 map ,H	:e $HOME/
 map ,N	:e $HOME/notes/
 map ,T	:set titlestring=
 
-map <F2> :w<CR>
-imap <F2> :w<CR>
-imap <S-F2> :wall<CR>
-map <F3> :b #<CR>
-map <F4> :bn<CR>
-map <S-F4> :bp<CR>
-map <F5> :bw<CR>
+map <leader>x :suspend<CR>
+map <leader>bn :bn<CR>
+map <leader>bp :bp<CR>
+map <leader>bw :bw<CR>
 " copy/paste selection/line to X CLIPBOARD
 "ap <F6> "+y
 "ap <S-F6> "+p  
 "requires xclip:
-vmap <F6> :!xclip -f -sel clip<CR>
+" vmap <F6> :!xclip -f -sel clip<CR>
 
 " copy/paste selection/line to X Primary
 "map <F7> "*y
 "map <S-F7> "*p
 "requires xclip:
-map <F7> :-1r !xclip -o -sel clip<CR>
+" map <F7> :-1r !xclip -o -sel clip<CR>
 
 " map ## :e ~/.screen/screen_exchange<CR>
 
