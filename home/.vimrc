@@ -10,13 +10,13 @@ syntax enable
 " ~/.vim/colors/
 set t_Co=256
 let g:solarized_termcolors=256  
-set background=dark
+set background=light
 colorscheme solarized
 
 set ai
-set ts=3
-set sw=3
-set sts=3
+set ts=4
+set sw=4
+set sts=4
 
 " Plugins & FILETYPE HANDLING {{{1
 "
@@ -38,6 +38,14 @@ Plugin 'nelstrom/vim-markdown-folding'
 " let g:markdown_fold_style = 'nested'
 
 Plugin 'altercation/vim-colors-solarized'
+
+" Gundo - undo graph http://sjl.bitbucket.org/gundo.vim/ 
+Plugin 'file:///home/andmalc/.vim/bundle/gundo'
+
+" Fugitive - Git tools
+" https://github.com/tpope/vim-fugitive
+Plugin 'tpope/vim-fugitive.git'
+
 
 " try next:
 " klen/python-mode

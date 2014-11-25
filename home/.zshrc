@@ -37,13 +37,6 @@ EDITOR=vim
 #PYTHONPATH='.'
 export LESS=-cex3M
 
-##PROMPT parameter
-## %~ is short (/home > ~) form of current dir
-# %m short hostname, %M full host name, %n is $USERNAME
-#PROMPT='%/> '
-RPROMPT="[%T]"
-# Set the prompt to "[bold{user@host}]relative_working_directory$ "
-PS1="[%B%n@%m%b]%~$ "
 
 #----------------------------------------
 # SHELL CONFIG COMMANDS {{{1
@@ -90,16 +83,26 @@ setopt SHARE_HISTORY INC_APPEND_HISTORY
 #setopt HIST_IGNORE_SPACE
 #setopt HIST_IGNORE_ALL_DUPS
 
-#ZSH CONFIG COMMANDS {{{1
+#Prompt {{{1
+## %~ is short (/home > ~) form of current dir
+# %m short hostname, %M full host name, %n is $USERNAME
+#PROMPT='%/> '
+# RPROMPT="[%T]"
+# Set the prompt to "[bold{user@host}]relative_working_directory$ "
+# PS1="[%B%n@%m%b]%~$ "
 #autoload -U compinit
 #compinit -C #don't perform security check
 
 autoload -U promptinit
 promptinit
-prompt oliver
-
 #autoload -U predict-on
 #predict-on
+#prompt oliver
+
+# Git prompt
+# https://github.com/olivierverdier/zsh-git-prompt
+source ~/tmp/zsh-git-prompt/zshrc.sh
+PROMPT='%B%m%~%b$(git_super_status) %# '
 
 setopt MENU_COMPLETE COMPLETE_IN_WORD LIST_PACKED
 #zstyle ':completion:*' menu select=1
