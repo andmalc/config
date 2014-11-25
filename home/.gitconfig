@@ -1,9 +1,13 @@
 [user]
 	email = andmalc@gmail.com
 	name = Andrew Malcolmson
-#[push]
-#	default = simple
-[core]
-	pager = less -r
 [push]
 	default = simple
+[core]
+	editor = vim
+	whitespace = off
+	pager = less -r
+[advice]
+	statusuoption = false
+[color]
+	ui = true
