@@ -21,6 +21,10 @@ setopt ALL_EXPORT #all options subsequently defined are exported
 #Disable Ctrl+S/Ctrl+Q freeze/resume
 stty stop undef 
 
+# Set up the file creation mask
+umask 002
+
+
 #--------------------------------------
 #SHELL PARAMETERS {{{1
 # Parameters (i.e. variables)
@@ -39,26 +43,6 @@ export LESS=-cex3M
 
 
 #----------------------------------------
-# SHELL CONFIG COMMANDS {{{1
-
-
-# Set up the file creation mask
-umask 002
-
-# Read .dircolors file 
-# eval `dircolors .dircolors`
-
-# Key Bindings {{{1
-
-# Emacs mode, overrides EDITOR=vi
-bindkey -e 
-bindkey '\ea' beginning-of-line
-
-#bindkey -M menuselect '^o' accept-and-infer-next-history  # ^o completes dir in menu
-# gathering multiple args with completion.  End each with 'Esc-CR'
-#bindkey '\e^M' accept-and-menu-complete
-
-
 #ZSH OPTIONS {{{1
 # http://zsh.sunsite.dk/Doc/Release/zsh_15.html
 
@@ -83,6 +67,17 @@ setopt SHARE_HISTORY INC_APPEND_HISTORY
 #setopt HIST_IGNORE_SPACE
 #setopt HIST_IGNORE_ALL_DUPS
 
+# Key Bindings {{{1
+
+# Emacs mode, overrides EDITOR=vi
+bindkey -e 
+bindkey '\ea' beginning-of-line
+
+#bindkey -M menuselect '^o' accept-and-infer-next-history  # ^o completes dir in menu
+# gathering multiple args with completion.  End each with 'Esc-CR'
+#bindkey '\e^M' accept-and-menu-complete
+
+
 #Prompt {{{1
 ## %~ is short (/home > ~) form of current dir
 # %m short hostname, %M full host name, %n is $USERNAME
@@ -93,8 +88,7 @@ setopt SHARE_HISTORY INC_APPEND_HISTORY
 #autoload -U compinit
 #compinit -C #don't perform security check
 
-autoload -U promptinit
-promptinit
+#autoload -U promptinit
 #autoload -U predict-on
 #predict-on
 #prompt oliver
@@ -102,16 +96,13 @@ promptinit
 # Git prompt
 # https://github.com/olivierverdier/zsh-git-prompt
 source ~/tmp/zsh-git-prompt/zshrc.sh
-PROMPT='%B%m%~%b$(git_super_status) %# '
+PROMPT='%B%m%~%b$(git_super_status) %#'
 
 setopt MENU_COMPLETE COMPLETE_IN_WORD LIST_PACKED
 #zstyle ':completion:*' menu select=1
 #autoload -U incrementaL-complete-word
 #zle -N incrementaL-complete-word
 #bindkey "^Xi" incrementaL-complete-word
-
-# Git completion - http://felipec.wordpress.com/2013/07/31/how-i-fixed-git-zsh-completion/
-fpath=(~/.zsh $fpath)
 
 autoload -U insert-files
 zle -N insert-files
@@ -126,13 +117,12 @@ autoload zmv
 
 # The following lines were added by compinstall
 
-zstyle ':completion:*' completer _expand _complete
+#zstyle ':completion:*' completer _expand _complete
 #zstyle ':completion:*' format 'Completing %d'
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
-zstyle :compinstall filename '/home/andmalc/.zshrc'
-
-autoload -U compinit
-compinit
+#zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+#zstyle :compinstall filename '/home/andmalc/.zshrc'
+#autoload -U compinit
+#compinit
 # End of lines added by compinstall
 
 # Aliases {{{1
