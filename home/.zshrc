@@ -46,32 +46,24 @@ ZSH_THEME="mortalscumbag"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+#plugins=(git )
 plugins=(git git-prompt)
 
 source $ZSH/oh-my-zsh.sh
 
 
+#Shell Parameters {{{1
 
-## This file is sourced only for interactive shells. It
-# should contain commands to set up aliases, functions,
-# options, key bindings, etc.
-#
-# Global Order: .zshenv, .zprofile, .zshrc, .zlogin
-
-# Most of the complex bits are taken straight from the zsh documentation.
-# Most of this from: http://ieee.uow.edu.au/documents/Unix_Guide/Unix_Guide/node70.html
-
-#SHELL VARIABLES
-#LANGUAGE=
-#LC_ALL='en_IE.UTF-8'
-#LANG='en_IE.UTF-8'
-#LC_CTYPE=C
-
-limit core 0
+# Parameters (i.e. variables)
+# No space before or after '='
+#see zshparam for more
 
 setopt ALL_EXPORT #all options subsequently defined are exported
 
-#source /usr/local/bin/virtualenvwrapper.sh
+PAGER='less -M'
+export LESS=-cex3M
+
+limit core 0
 
 #Disable Ctrl+S/Ctrl+Q freeze/resume
 stty stop undef 
@@ -79,33 +71,17 @@ stty stop undef
 # Set up the file creation mask
 umask 002
 
+#SHELL VARIABLES
+#LANGUAGE=
+#LC_ALL='en_IE.UTF-8'
+#LANG='en_IE.UTF-8'
+#LC_CTYPE=C
 
-#--------------------------------------
-#SHELL PARAMETERS {{{1
-# Parameters (i.e. variables)
-# No space before or after '='
-#see zshparam for more
-
-
-#
-## mailpath array (don't need uppercase MAILPATH - see ZSH User Guide)
-# If this doesn't work, set the $MAIL parameter to /var/mail/andmalc
-
-PAGER='less -M'
-EDITOR=vim
-#PYTHONPATH='.'
-export LESS=-cex3M
-
-
-#----------------------------------------
-#ZSH OPTIONS {{{1
+#Zsh Options {{{1
 # http://zsh.sunsite.dk/Doc/Release/zsh_15.html
 
 #Defaults
-#setopt AUTO_LIST AUTO_MENU AUTO_PARAM_SLASH
-
 setopt CORRECT
-setopt MENU_COMPLETE COMPLETE_IN_WORD LIST_PACKED
 setopt EXTENDED_GLOB
 setopt GLOB_DOTS
 setopt NOCLOBBER
@@ -124,6 +100,7 @@ setopt SHARE_HISTORY INC_APPEND_HISTORY
 
 # Key Bindings {{{1
 
+EDITOR=vim
 # Emacs mode, overrides EDITOR=vi
 bindkey -e 
 bindkey '\ea' beginning-of-line
@@ -153,29 +130,20 @@ bindkey '\ea' beginning-of-line
 #source ~/config/home/zsh/olivierverdier/zsh-git-prompt/zshrc.sh
 #PROMPT='%B%m%~%b$(git_super_status) %# '
 
+
+
+#Completion {{{1
+
 setopt MENU_COMPLETE COMPLETE_IN_WORD LIST_PACKED
+
+#autoload -U compinit
+#compinit
+# The following lines were added by compinstall
+
 #zstyle ':completion:*' menu select=1
 #autoload -U incrementaL-complete-word
 #zle -N incrementaL-complete-word
 #bindkey "^Xi" incrementaL-complete-word
-
-autoload -U insert-files
-zle -N insert-files
-bindkey "^Xf" insert-files
-
-# Edit command line.  Bound to Ctrl X Ctrl E
-autoload -U edit-command-line
-zle -N edit-command-line
-bindkey '^x^e' edit-command-line
-
-autoload zmv
-
-#Completion {{{1
-
-autoload -U compinit
-compinit
-# The following lines were added by compinstall
-
 #zstyle ':completion:*' completer _expand _complete
 #zstyle ':completion:*' format 'Completing %d'
 #zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
