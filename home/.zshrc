@@ -177,6 +177,9 @@ alias dmesg='dmesg --ctime'
 alias tree='tree -AC'
 alias free='free -m' #size in Megabytes
 
+# Tmux UTF-8 support
+alias tmux='tmux -u'
+
 #alias locations {{{2
 alias -g nt='~/notes'    
 alias du='du -h'
