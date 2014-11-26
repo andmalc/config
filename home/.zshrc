@@ -6,7 +6,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
+ZSH_THEME="mortalscumbag"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -46,39 +46,12 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git git-prompt)
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
 
-export PATH=$HOME/bin:/usr/local/bin:$PATH
-# export MANPATH="/usr/local/man:$MANPATH"
 
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 ## This file is sourced only for interactive shells. It
 # should contain commands to set up aliases, functions,
 # options, key bindings, etc.
@@ -93,6 +66,8 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 #LC_ALL='en_IE.UTF-8'
 #LANG='en_IE.UTF-8'
 #LC_CTYPE=C
+
+limit core 0
 
 setopt ALL_EXPORT #all options subsequently defined are exported
 
@@ -159,34 +134,46 @@ bindkey '\ea' beginning-of-line
 
 
 #Prompt {{{1
+## %~ is short (/home > ~) form of current dir
+# %m short hostname, %M full host name, %n is $USERNAME
+#PROMPT='%/> '
+# RPROMPT="[%T]"
+# Set the prompt to "[bold{user@host}]relative_working_directory$ "
+# PS1="[%B%n@%m%b]%~$ "
 
 #autoload -U promptinit
 #promptinit
+
+#autoload -U predict-on
+#predict-on
+#prompt oliver
 
 # Git prompt
 # https://github.com/olivierverdier/zsh-git-prompt
 #source ~/config/home/zsh/olivierverdier/zsh-git-prompt/zshrc.sh
 #PROMPT='%B%m%~%b$(git_super_status) %# '
 
-
-# Edit command line.  Bound to Ctrl X Ctrl E
-#autoload -U edit-command-line
-#zle -N edit-command-line
-#bindkey '^x^e' edit-command-line
-
-#autoload zmv
-
-#Completion {{{1
-
-#autoload -U compinit
-#compinit
-
-#setopt MENU_COMPLETE COMPLETE_IN_WORD LIST_PACKED
+setopt MENU_COMPLETE COMPLETE_IN_WORD LIST_PACKED
 #zstyle ':completion:*' menu select=1
 #autoload -U incrementaL-complete-word
 #zle -N incrementaL-complete-word
 #bindkey "^Xi" incrementaL-complete-word
 
+autoload -U insert-files
+zle -N insert-files
+bindkey "^Xf" insert-files
+
+# Edit command line.  Bound to Ctrl X Ctrl E
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey '^x^e' edit-command-line
+
+autoload zmv
+
+#Completion {{{1
+
+autoload -U compinit
+compinit
 # The following lines were added by compinstall
 
 #zstyle ':completion:*' completer _expand _complete
