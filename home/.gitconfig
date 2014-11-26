@@ -11,3 +11,5 @@
 	statusuoption = false
 [color]
 	ui = true
+[alias]
+	graph = log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an>%Creset'
