@@ -16,9 +16,7 @@ syntax enable
 
 " Use 256 color mode
 " If can't find do cp ~/.vim/bundle/vim-colors-solarized/colors/solarized.vim  ~/.vim/colors/
-" set t_Co=256
-set background=dark
-let g:solarized_termtrans=1
+set background=light
 let g:solarized_termcolors=256  
 colorscheme solarized
 

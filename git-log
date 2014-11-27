@@ -1,0 +1,10 @@
+Thurs 11/27
+
+gcedebian
+
+tmux.conf		
+		removed UTF-8
+.vimrc
+		removed g:solarized_termcolors=256 and t_CO=256
+
+
