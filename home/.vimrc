@@ -1,4 +1,13 @@
 "" GENERAL SETTINGS {{{1
+
+"let &t_ti.="\e[1 q"
+"let &t_SI.="\e[5 q"
+"let &t_EI.="\e[1 q"
+"let &t_te.="\e[0 q"
+
+"let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+"let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+
 set nocompatible
 set hidden
 set foldmethod=marker
@@ -6,17 +15,26 @@ set foldmethod=marker
 syntax enable
 
 " Use 256 color mode
-" If can't find do cp ~/.vim/bundle/vim-colors-solarized/colors/solarized.vim
-" ~/.vim/colors/
-set t_Co=256
+" If can't find do cp ~/.vim/bundle/vim-colors-solarized/colors/solarized.vim  ~/.vim/colors/
+" set t_Co=256
+set background=dark
+let g:solarized_termtrans=1
 let g:solarized_termcolors=256  
-set background=light
 colorscheme solarized
 
+" Cursor line off in Insert mode
+set cursorline
+autocmd InsertEnter,InsertLeave * set cul!
+
+"au InsertLeave * hi Cursor guibg=red
+"au InsertEnter * hi Cursor guibg=green
+
+set noet
 set ai
 set ts=4
 set sw=4
 set sts=4
+
 
 " Plugins & FILETYPE HANDLING {{{1
 "
@@ -40,12 +58,14 @@ Plugin 'nelstrom/vim-markdown-folding'
 Plugin 'altercation/vim-colors-solarized'
 
 " Gundo - undo graph http://sjl.bitbucket.org/gundo.vim/ 
-Plugin 'file:///home/andmalc/.vim/bundle/gundo'
+Plugin 'https://github.com/sjl/gundo.vim.git'
 
 " Fugitive - Git tools
 " https://github.com/tpope/vim-fugitive
 Plugin 'tpope/vim-fugitive.git'
 
+" Distinguished Colorscheme
+Plugin 'Lokaltog/vim-distinguished'
 
 " try next:
 " klen/python-mode
@@ -79,6 +99,12 @@ filetype plugin indent on
 " [M            Jump on previous class or method (normal, visual, operator modes)
 " ]M            Jump on next class or method (normal, visual, operator modes)
 
+
+"Read local config {{{1
+
+if filereadable(glob("~/.vimrc.chromeshell")) 
+	source ~/.vimrc.chromeshell
+endif
 
 """ MAPPING {{{1
 " To run normal or command mode commands from Insert Mode, enter: ctrl+v[Escape key]:command

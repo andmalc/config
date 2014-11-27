@@ -1,4 +1,4 @@
-export TERM=screen-256color
+export TERM=xterm-256color
 export PAGER='less -M'
 export EDITOR=vi
 export LESS=-cex3M
