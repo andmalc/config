@@ -18,6 +18,10 @@ syntax enable
 " If can't find do cp ~/.vim/bundle/vim-colors-solarized/colors/solarized.vim  ~/.vim/colors/
 set background=light
 let g:solarized_termcolors=256  
+
+" Prevents 'selected' appearance
+let g:solarized_termtrans=1
+
 colorscheme solarized
 
 " Cursor line off in Insert mode
