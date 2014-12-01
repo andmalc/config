@@ -1,12 +1,17 @@
-source ~/config/home/zsh/zsh-users/antigen/antigen.zsh
+~/config/term/solarized-termcolor-osc4/solarized.sh
+
+source /home/andmalc/config/term/antigen/antigen.zsh
 antigen use oh-my-zsh
 
 antigen bundles <<EOBUNDLES
 	git
 	virtualenv
+#	zsh-users/zsh-syntax-highlighting
+	~/config/term/zsh-git-prompt
 EOBUNDLES
 
-antigen-theme /home/andmalc/config/home/zsh/oh-my-zsh/ themes/af-magic.zsh-theme
+#antigen theme fox
+#antigen-theme /home/andmalc/config/term/ af-magic
 antigen apply
 
 

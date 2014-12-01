@@ -1,12 +1,5 @@
 "" GENERAL SETTINGS {{{1
 
-"let &t_ti.="\e[1 q"
-"let &t_SI.="\e[5 q"
-"let &t_EI.="\e[1 q"
-"let &t_te.="\e[0 q"
-
-"let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-"let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
 set nocompatible
 set hidden
@@ -14,19 +7,19 @@ set foldmethod=marker
 
 syntax enable
 
+"set background=light
 " Use 256 color mode
 " If can't find do cp ~/.vim/bundle/vim-colors-solarized/colors/solarized.vim  ~/.vim/colors/
-set background=light
-let g:solarized_termcolors=256  
+"let g:solarized_termcolors=256  
 
-" Prevents 'selected' appearance
-let g:solarized_termtrans=1
+" Prevents 'selected' appearance on transparent backgrounds
+"let g:solarized_termtrans=0
 
-colorscheme solarized
+"colorscheme solarized
 
 " Cursor line off in Insert mode
-set cursorline
-autocmd InsertEnter,InsertLeave * set cul!
+"set cursorline
+" autocmd InsertEnter,InsertLeave * set cul!
 
 "au InsertLeave * hi Cursor guibg=red
 "au InsertEnter * hi Cursor guibg=green
@@ -68,6 +61,9 @@ Plugin 'tpope/vim-fugitive.git'
 
 " Distinguished Colorscheme
 Plugin 'Lokaltog/vim-distinguished'
+
+" Colorschemes
+Plugin 'jonathanfilip/vim-lucius'
 
 " try next:
 " klen/python-mode
