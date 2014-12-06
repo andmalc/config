@@ -4,6 +4,7 @@ source /home/andmalc/config/term/antigen/antigen.zsh
 antigen use oh-my-zsh
 
 antigen bundles <<EOBUNDLES
+	ssh-agent
 	git
 	virtualenv
 #	zsh-users/zsh-syntax-highlighting
