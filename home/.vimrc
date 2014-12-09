@@ -38,7 +38,7 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Plugin 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 Plugin 'chase/vim-ansible-yaml'
 Plugin 'dart-lang/dart-vim-plugin'
 

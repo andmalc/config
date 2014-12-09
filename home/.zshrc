@@ -133,7 +133,7 @@ alias	api='sudo aptitude -R install'
 #apps {{{2
 alias less='less -ir' # case insensivite searches, display raw control characters
 alias -g L="| less"
-alias -g G="| grep"
+alias -g G="| grep -i"
 alias pgrep="pgrep -KILL -lf" #match against any part of command or process owner, list name also
 alias pkill="pkill -KILL" #match against any part of command or process owner, list name also
 alias pstree="pstree -hlGup"
