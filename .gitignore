@@ -2,3 +2,11 @@ home/.vim/bundle
 home/.vim/ftplugin
 home/.ssh/known_hosts
 **/*.pyc
+
+home/.ipython
+!home/.ipython/extentions
+!home/.ipython/nbextentions
+!home/.ipython/profile_andmalc
+home/.ipython/profile_andmalc/security
+
+

@@ -30,15 +30,20 @@ set ts=4
 set sw=4
 set sts=4
 
+"Read local config {{{1
 
-" Plugins & FILETYPE HANDLING {{{1
+if filereadable(glob("~/.vimrc.chromeshell")) 
+	source ~/.vimrc.chromeshell
+endif
+
+" Load Plugins {{{1
 "
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Plugin 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 Plugin 'chase/vim-ansible-yaml'
 Plugin 'dart-lang/dart-vim-plugin'
 
@@ -65,6 +70,9 @@ Plugin 'Lokaltog/vim-distinguished'
 " Colorschemes
 Plugin 'jonathanfilip/vim-lucius'
 
+" PyFlakes
+Plugin 'vim-scripts/pyflakes.vim'
+
 " try next:
 " klen/python-mode
 
@@ -78,11 +86,16 @@ Plugin 'jonathanfilip/vim-lucius'
 " End of Vundle Bundles
 call vundle#end()
 
+" Configure Plugins {{{1
+"
 filetype plugin indent on
+
+" PyFlakes  {{{2
 " Jedi (with PyFlakes)
 "PyFlakes let g:jedi#popup_on_dot = 0
-" highlight SpellBad term=underline gui=undercurl guisp=Orange 
+highlight SpellBad term=underline gui=undercurl guisp=Yellow 
 
+" Py Other {{{2
 "  Python-mode
 " Activate rope
 " Keys:
@@ -97,12 +110,15 @@ filetype plugin indent on
 " [M            Jump on previous class or method (normal, visual, operator modes)
 " ]M            Jump on next class or method (normal, visual, operator modes)
 
+" Colors {{{1
 
-"Read local config {{{1
+" Lucius
+let g:lucius_no_term_bg = 1
+colorscheme lucius
+" For dark background terminals
+" Elflord is also good
+LuciusBlack
 
-if filereadable(glob("~/.vimrc.chromeshell")) 
-	source ~/.vimrc.chromeshell
-endif
 
 """ MAPPING {{{1
 " To run normal or command mode commands from Insert Mode, enter: ctrl+v[Escape key]:command

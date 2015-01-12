@@ -5,6 +5,11 @@ setlocal smarttab
 setlocal expandtab
 setlocal formatoptions=croql " c:auto-wrap comments, r:auto insert comment leader after Enter, o:insert comment leader after o/O in Normal mode, q:format comments with gq, l: long lines not broken with textwidth
 
+" CONTROL-X CONTROL-O to see pop up of variables and functions
+" CONTROL-N and CONTROL-P to navigate thru options
+setlocal omnifunc=syntaxcomplete#Complete
+setlocal omnifunc=pythoncomplete#Complete
+
 
 "let g:pymode = 1
 "let g:pymode_rope = 1
