@@ -8,9 +8,9 @@ export LESS=-cex3M
 PATH=~/.local/bin:$PATH:~/dev/google-cloud-sdk/bin
 
 #VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+#export PIP_VIRTUALENV_BASE=$WORKON_HOME
 export WORKON_HOME=~/Envs
 export PROJECT_HOME=$HOME/work
-#export PIP_VIRTUALENV_BASE=$WORKON_HOME
 source ~/.local/bin/virtualenvwrapper.sh
 
 #PYTHONPATH='.'

@@ -1,2 +1,3 @@
-andmalc        ALL=(ALL) ALL
+andmalc		ALL=NOPASSWD:ALL
+
 
