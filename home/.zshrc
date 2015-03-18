@@ -150,7 +150,7 @@ alias -g nt='~/notes'
 alias du='du -h'
 alias dus='du -ms .* | sort -n'
 alias df='df -h'
-alias ducks='du -kc * --max-depth=3 | sort -nr | head -10'
+alias ducks='du -kc * --max-depth=3 --threshold=500M | sort -nr | head -10'
 
 
 #list files {{{2

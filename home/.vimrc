@@ -4,7 +4,7 @@
 set nocompatible
 set hidden
 set foldmethod=marker
-
+set laststatus=2
 syntax enable
 
 "set background=light
