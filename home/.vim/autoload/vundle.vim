@@ -1,0 +1,1 @@
+/home/andmalc/config/term/vundle/autoload/vundle.vim
