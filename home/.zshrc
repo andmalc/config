@@ -4,9 +4,9 @@ source /home/andmalc/config/term/antigen/antigen.zsh
 antigen use oh-my-zsh
 
 antigen bundles <<EOBUNDLES
-#	ssh-agent
+	ssh-agent
 	git
-	virtualenv
+#	virtualenv
 #	zsh-users/zsh-syntax-highlighting
 	~/config/term/zsh-git-prompt
 EOBUNDLES
