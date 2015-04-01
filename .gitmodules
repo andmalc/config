@@ -8,7 +8,7 @@
 	path = term/antigen
 	url = https://github.com/zsh-users/antigen
 [submodule "term/vundle"]
-	path = term/vundle
+	path = term/Vundle.vim
 	url = https://github.com/gmarik/Vundle.vim
 [submodule "prog/ipython_extensions"]
 	path = prog/ipython_extensions
