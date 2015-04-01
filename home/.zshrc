@@ -1,11 +1,14 @@
-~/config/term/solarized-termcolor-osc4/solarized.sh
+#~/config/term/solarized-termcolor-osc4/solarized.sh
 
 source /home/andmalc/config/term/antigen/antigen.zsh
 antigen use oh-my-zsh
 
 antigen bundles <<EOBUNDLES
 	ssh-agent
+	sudo # ESC twice: Puts sudo in front of the current command, or the last one if the command line is empty.
+	systemd # Add sc-[command] aliases to all systemctl commands, using sudo when needed.
 	git
+	virtualenvwrapper # Loads Python's virtualenvwrapper shell tools, and automatically activates virtualenv on cd into git repository with matching name.
 #	virtualenv
 #	zsh-users/zsh-syntax-highlighting
 	~/config/term/zsh-git-prompt
