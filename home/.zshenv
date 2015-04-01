@@ -12,13 +12,13 @@ export DOCKER_HOST=tcp://home.malcolmson.ca:2375
 
 export WORKON_HOME=~/Envs
 export PROJECT_HOME=$HOME/work
-source ~/.local/bin/virtualenvwrapper.sh
+#source ~/.local/bin/virtualenvwrapper.sh
 
 #PYTHONPATH='.'
 #export PYTHONSTARTUP=~/admin/startup.py
 
 #Google Cloud SDK
-#source ~/dev/google-cloud-sdk/path.zsh.inc 
+#source dev/google-cloud-sdk/path.zsh.inc 
 
 
 # vim: ft=zsh
