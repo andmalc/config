@@ -5,7 +5,7 @@
 
 #eval `keychain --eval --nogui -Q -q /home/andmalc/.ssh/andmalc`
 
-#eval `ssh-agent`
+eval `ssh-agent`
 ssh-add ~/.ssh/andmalc
 
 tmux a
