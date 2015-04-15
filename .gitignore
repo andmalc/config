@@ -1,7 +1,10 @@
+home/.local
 home/.vim/bundle
 home/.vim/ftplugin
 home/.ssh/known_hosts
-**/*.pyc
+*#*/*.pyc
+.zcompdump
+.zsh_history
 
 home/.ipython
 !home/.ipython/extentions
