@@ -45,6 +45,7 @@ umask 002
 #LANG='en_IE.UTF-8'
 #LC_CTYPE=C
 
+
 #Zsh Options {{{1
 # http://zsh.sunsite.dk/Doc/Release/zsh_15.html
 
