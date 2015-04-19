@@ -15,9 +15,11 @@ antigen bundles <<EOBUNDLES
 EOBUNDLES
 
 #antigen theme fox
-antigen-theme /home/andmalc/config/term/ mytheme
+#antigen-theme /home/andmalc/config/term/ mytheme
 #antigen-theme /home/andmalc/config/term/ af-magic
 antigen apply
+
+#source .local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
 
 
 #Shell Parameters {{{1
