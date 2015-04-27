@@ -7,9 +7,12 @@
 [submodule "term/antigen"]
 	path = term/antigen
 	url = https://github.com/zsh-users/antigen
-[submodule "term/vundle"]
-	path = home/.vim/bundle/Vundle.vim
-	url = https://github.com/gmarik/Vundle.vim
 [submodule "prog/ipython_extensions"]
 	path = prog/ipython_extensions
 	url = https://github.com/minrk/ipython_extensions
+[submodule "Vundle.vom"]
+	path = term/term/Vundle.vim
+	url = https://github.com/gmarik/Vundle.vim
+[submodule "Vundle.vim"]
+	path = term/Vundle.vim
+	url = https://github.com/gmarik/Vundle.vim
