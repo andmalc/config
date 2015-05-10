@@ -7,7 +7,7 @@ export LESS=-cex3M
 
 PATH=~/.local/bin:$PATH:~/dev/google-cloud-sdk/bin
 
-#export DOCKER_HOST=tcp://coreos.malcolmson.ca:2375
+export DOCKER_HOST=tcp://localhost:2375
 
 export WORKON_HOME=~/Envs
 export PROJECT_HOME=$HOME/work
