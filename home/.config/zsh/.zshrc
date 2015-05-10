@@ -9,14 +9,14 @@ antigen bundles <<EOBUNDLES
 	systemd # Add sc-[command] aliases to all systemctl commands, using sudo when needed.
 	git
 	virtualenvwrapper # Loads Python's virtualenvwrapper shell tools, and automatically activates virtualenv on cd into git repository with matching name.
-#	virtualenv
-#	zsh-users/zsh-syntax-highlighting
+##	virtualenv
+##	zsh-users/zsh-syntax-highlighting
 	~/config/term/zsh-git-prompt
 EOBUNDLES
 
 #antigen theme fox
 #antigen-theme /home/andmalc/config/term/ mytheme
-#antigen-theme /home/andmalc/config/term/ af-magic
+antigen-theme /home/andmalc/config/term/ af-magic
 antigen apply
 
 #source .local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
@@ -65,9 +65,10 @@ setopt NOTIFY
 HISTFILE=$HOME/.zsh_history
 SAVEHIST=1000
 HISTSIZE=1000
-setopt SHARE_HISTORY INC_APPEND_HISTORY
+setopt APPEND_HISTORY
+setopt SHARE_HISTORY
 #setopt HIST_IGNORE_SPACE
-#setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_ALL_DUPS
 
 # Key Bindings {{{1
 
@@ -147,6 +148,7 @@ alias -g xc='| xclip -selection clip-board'
 alias dmesg='dmesg --ctime'
 alias tree='tree -AC'
 alias free='free -m' #size in Megabytes
+alias xclip='xclip -selection c' #xclip to CLIPBOARD buffer not PRIMARY
 
 # Tmux UTF-8 support
 alias tmux='tmux -u'
@@ -183,4 +185,3 @@ alias llg='ls -alh'
 #Docker {{{2
 alias drm="docker rm"
 alias dps="docker ps"
-

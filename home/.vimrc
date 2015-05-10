@@ -47,7 +47,10 @@ Plugin 'jonathanfilip/vim-lucius'
 " PyFlakes
 Plugin 'vim-scripts/pyflakes.vim'
 
-"Bundle 'Valloric/YouCompleteMe'
+" Jedi
+Plugin 'davidhalter/jedi-vim'
+
+" Plugin 'Valloric/YouCompleteMe'
 
 " try next:
 " klen/python-mode
@@ -76,7 +79,7 @@ let g:ycm_filetype_blacklist = {'asciidoc': 0, 'text': 0, 'markdown': 0}
 
 " PyFlakes  
 " Jedi (with PyFlakes)
-"PyFlakes let g:jedi#popup_on_dot = 0
+" PyFlakes let g:jedi#popup_on_dot = 0
 highlight SpellBad term=underline gui=undercurl guisp=Yellow 
 
 " Appearance {{{1

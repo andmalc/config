@@ -17,6 +17,7 @@ home/.gnupg
 *.swp
 home/.ssh/environment*
 .zcompdump
+.zcompcache
 .zsh_history
 
 
