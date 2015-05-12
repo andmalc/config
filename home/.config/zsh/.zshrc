@@ -14,12 +14,23 @@ antigen bundles <<EOBUNDLES
 	~/config/term/zsh-git-prompt
 EOBUNDLES
 
-#antigen theme fox
+#source .local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
+
+antigen theme fox
 #antigen-theme /home/andmalc/config/term/ mytheme
-antigen-theme /home/andmalc/config/term/ af-magic
+#antigen-theme /home/andmalc/config/term/ af-magic
 antigen apply
 
-#source .local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
+#eval `keychain --eval --nogui -Q -q /home/andmalc/.ssh/andmalc`
+#eval `ssh-agent`
+if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+    antigen-theme /home/andmalc/config/term/ af-magic
+    antigen apply
+    tmux a
+else
+    ssh-add ~/.ssh/andmalc
+fi
+
 
 
 #Shell Parameters {{{1
