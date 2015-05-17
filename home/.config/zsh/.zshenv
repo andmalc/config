@@ -10,6 +10,9 @@ PATH=~/.local/bin:$PATH:~/dev/google-cloud-sdk/bin
 export DOCKER_HOST=tcp://localhost:2375
 #eval "$(docker-machine_linux-arm env home)"
 
+# Location of IPython config and user data
+export IPYTHONDIR=~/.config/ipython
+
 export WORKON_HOME=~/Envs
 export PROJECT_HOME=$HOME/work
 #source ~/.local/bin/virtualenvwrapper.sh

@@ -9,6 +9,11 @@ home/.config
 !home/.config/ipython/nbextentions
 !home/.config/ipython/profile_andmalc
 
+home/.gnupg
+!home/.gnupg/pubring.gpg
+!home/.gnupg/secring.gpg
+!home/.gnupg/trustdb.gpg
+
 *#*/*.pyc
 *.swp
 home/.ssh/environment*
