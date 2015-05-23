@@ -2,7 +2,6 @@ home/.local
 home/.vim/bundle/*
 !home/.vim/bundle/Vundle.vim
 home/.vim/ftplugin
-home/.ssh/known_hosts
 home/.config
 !home/.config/zsh
 !home/.config/ipython/extentions
@@ -16,10 +15,11 @@ home/.gnupg
 
 *#*/*.pyc
 *.swp
-home/.ssh/environment*
 .zcompdump
 .zcompcache
 .zsh_history
 
 
+home/.ssh/known_hosts
+home/.ssh/environment*
 
