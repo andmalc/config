@@ -22,4 +22,5 @@ home/.gnupg
 
 home/.ssh/known_hosts
 home/.ssh/environment*
+home/.ssh/authorized_keys
 

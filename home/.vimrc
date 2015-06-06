@@ -18,11 +18,13 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
-Plugin 'chase/vim-ansible-yaml'
 Plugin 'dart-lang/dart-vim-plugin'
 
 " Outliner
 Plugin 'VOom'
+
+" Ansible
+Bundle 'chase/vim-ansible-yaml'
 
 " Folding for MD files
 Plugin 'nelstrom/vim-markdown-folding'
