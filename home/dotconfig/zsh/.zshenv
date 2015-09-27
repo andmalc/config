@@ -5,7 +5,9 @@ export PAGER='less -R'
 export EDITOR=vi
 export LESS=-cex3M
 
-PATH=~/.local/bin:$PATH:~/dev/google-cloud-sdk/bin:~/dev/android-sdk-linux/platform-tools
+#PATH=~/.local/bin:PATH:~/dev/google-cloud-sdk/bin
+typeset -U PATH path 
+path+=(~/.local/bin:PATH ~/dev/google-cloud-sdk/bin)
 
 #export DOCKER_HOST=tcp://localhost:2375
 #eval "$(docker-machine_linux-arm env home)"
@@ -29,3 +31,9 @@ autoload -Uz compinit && compinit -i
 
 # vim: ft=zsh
 
+
+# The next line updates PATH for the Google Cloud SDK.
+source '/home/andmalc/dev/google-cloud-sdk/path.zsh.inc'
+
+# The next line enables shell command completion for gcloud.
+source '/home/andmalc/dev/google-cloud-sdk/completion.zsh.inc'
