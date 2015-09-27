@@ -1,3 +1,6 @@
+## This file for config of interactive shell
+## All else in zshenv
+
 #~/config/term/solarized-termcolor-osc4/solarized.sh
 
 source /home/andmalc/config/term/antigen/antigen.zsh
