@@ -5,9 +5,9 @@ export PAGER='less -R'
 export EDITOR=vi
 export LESS=-cex3M
 
-PATH=~/.local/bin:$PATH:~/dev/google-cloud-sdk/bin
+PATH=~/.local/bin:$PATH:~/dev/google-cloud-sdk/bin:~/dev/android-sdk-linux/platform-tools
 
-export DOCKER_HOST=tcp://localhost:2375
+#export DOCKER_HOST=tcp://localhost:2375
 #eval "$(docker-machine_linux-arm env home)"
 
 # Location of IPython config and user data
