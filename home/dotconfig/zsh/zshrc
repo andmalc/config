@@ -199,3 +199,9 @@ alias llg='ls -alh'
 #Docker {{{2
 alias drm="docker rm"
 alias dps="docker ps"
+
+# DNF {{{2
+alias di="sudo dnf install "
+alias da="sudo dnf list available "
+alias dup="sudo dnf update "
+
