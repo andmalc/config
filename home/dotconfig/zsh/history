@@ -1,0 +1,899 @@
+: 1441845595:0;git submodule init
+: 1441841385:0;cat .config/zsh/.zshrc
+: 1441841419:0;ssh-add .ssh/protected
+: 1441841424:0;git clone git@github.com:andmalc/notes.git
+: 1441841430:0;ls notes
+: 1441844111:0;sudo dnf search terminator
+: 1441844126:0;sudo dnf show terminator
+: 1441844136:0;sudo dnf info terminator
+: 1441908672:0;sudo dnf repolist 
+: 1441908685:0;sudo dnf install terminator
+: 1441910991:0;less notes/distros/fedora
+: 1441928118:0;sudo dnf install vim-minimal
+: 1441928148:0;vi notes/distros/fedora
+: 1441928155:0;which vi
+: 1441928331:0;vi
+: 1441928452:0;dnf list available | grep \^vim
+: 1441928606:0;sudo dnf install vim-enhanced
+: 1441932708:0;vim notes/distros/fedora
+: 1441936504:0;ga distros/fedora
+: 1441936515:0;gc -m 'fedora notes'
+: 1442065164:0;ping6 2607:f2c0:f00f:df00:16cc:20ff:fee6:4198/64
+: 1442065252:0;ping6 2607:f2c0:a000:002b:fd09:4de2:293d:5162
+: 1442065364:0;wget 2607:f2c0:a000:002b:fd09:4de2:293d:5162
+: 1442065376:0;man wget
+: 1442065421:0;wget -6 "2607:f2c0:a000:002b:fd09:4de2:293d:5162"
+: 1442065450:0;telnet open 2607:f2c0:a000:002b:fd09:4de2:293d:5162
+: 1442065461:0;man telnet
+: 1442065568:0;telnet 2607:f2c0:a000:002b:fd09:4de2:293d:5162
+: 1442067460:0;wget -6 2607:f2c0:a000:002b:fd09:4de2:293d:5162
+: 1442067525:0;curl http://2607:f2c0:a000:002b:fd09:4de2:293d:5162
+: 1442067536:0;curl http://\[2607:f2c0:a000:002b:fd09:4de2:293d:5162]
+: 1442067542:0;curl http://[2607:f2c0:a000:002b:fd09:4de2:293d:5162]
+: 1442067554:0;curl http://\[2607:f2c0:a000:002b:fd09:4de2:293d:5162\]
+: 1442067668:0;curl -g http://\[2607:f2c0:a000:002b:fd09:4de2:293d:5162\]
+: 1442067693:0;curl -g 'http://[2607:f2c0:a000:002b:fd09:4de2:293d:5162]'
+: 1442067750:0;curl -g 'http://[2607:f2c0:a000:002b:fd09:4de2:293d:5162]' -v
+: 1442083394:0;ip -6 route show
+: 1442083419:0;ip
+: 1442083534:0;route -A inet6 
+: 1442096632:0;ip a
+: 1442096683:0;tracepath6 2607:f2c0:a000:002b:4403:1759:924d:030d
+: 1442096717:0;tracepath6 2607:f2c0:f00f:df00:16cc:20ff:fee6:4198
+: 1442097943:0;_nmap
+: 1442098019:0;sudo dnf install nmap
+: 1442098037:0;nmap -sn 2607:f2c0:a000:002b:4403:1759:924d:030d
+: 1442098046:0;nmap -6sn 2607:f2c0:a000:002b:4403:1759:924d:030d
+: 1442098058:0;nmap -6sn '2607:f2c0:a000:002b:4403:1759:924d:030d'
+: 1442098071:0;nmap -6Pn '2607:f2c0:a000:002b:4403:1759:924d:030d'
+: 1442359731:0;sudo findmnt
+: 1442359830:0;vim disks-partitions-filesystems
+: 1442359971:0;sudo findmnt -df
+: 1442359978:0;sudo findmnt --df
+: 1442360004:0;sudo findmnt -D
+: 1442360050:0;sudo findmnt -s
+: 1442360234:0;sudo findmnt -T /dev/sda
+: 1442360252:0;sudo findmnt -T /dev/sda1
+: 1442360679:0;sudo dnf search flashback
+: 1442360689:0;sudo dnf search plank
+: 1442361061:0;vim docker
+: 1442362500:0;sudo ls -l /proc/$$/ns
+: 1442364229:0;ls /usr/lib/systemd
+: 1442364260:0;l /etc/systemd
+: 1442364271:0;l /etc/systemd/system
+: 1442364294:0;l /etc/systemd/system/multi-user.target.wants
+: 1442364367:0;l /lib/systemd/system/multi-user.target.wants
+: 1442367150:0;sudo dnf install docker.io
+: 1442367161:0;sudo dnf search docker
+: 1442367195:0;sudo dnf search docker L
+: 1442367204:0;sudo dnf install docker
+: 1442367337:0;/usr/bin/docker pull busybox
+: 1442367381:0;sudo systemctl start dock
+: 1442367410:0;ls /etc/systemd/system
+: 1442367441:0;l /lib/systemd/system/docker.service
+: 1442367452:0;systemctl start docker
+: 1442367471:0;docker
+: 1442367487:0;docker version
+: 1442367681:0;sudo su
+: 1442368004:0;cd /etc/selinux
+: 1442368015:0;sudo vim semanage.conf
+: 1442368041:0;sudo semanage
+: 1442368080:0;sudo selinuxenabled
+: 1442368084:0;sudo selinuxenabled --help
+: 1442368113:0;man selinuxenabled
+: 1442368127:0;man semanage
+: 1442368159:0;less /home/andmalc/notes/distros/fedora
+: 1442368176:0;sudo setenforce 0
+: 1442368180:0;sudo systemctl start docker
+: 1442369185:0;ls -l /
+: 1442369207:0;cd /lib/systemd/system/basic.target.wants
+: 1442369231:0;cd ../sysinit.target.wants
+: 1442369297:0;ls *.target
+: 1442369339:0;cat halt.target
+: 1442371123:0;dnf repolist
+: 1442371164:0;sudo dnf update systemd
+: 1442371183:0;sudo dnf update systemd --enablerepo=updates-testing
+: 1442371224:0;sudo dnf show systemd
+: 1442371231:0;sudo dnf info systemd
+: 1442371267:0;sudo dnf list installed systemd
+: 1442436878:0;vim distros/fedora
+: 1442437027:0;sudo systemd-cgtop
+: 1442437808:0;systemd-cgls system.slice
+: 1442437873:0;systemd-cgls dbus.service
+: 1442437894:0;systemd-cgls --help
+: 1442437937:0;systemd-cgls user1000.slice
+: 1442440003:0;mkdir dev
+: 1442440011:0;git clone git@github.com:appc/spec.git
+: 1442440015:0;cd spec
+: 1442440039:0;mv spec appc-spec
+: 1442440049:0;less README.md
+: 1442440120:0;./actool
+: 1442440127:0;./actool --help
+: 1442440146:0;ls actool.go
+: 1442440161:0;less actool.go
+: 1442440220:0;dnf search golang
+: 1442440240:0;dnf install ` golang
+: 1442440272:0;dnf search golang L
+: 1442440414:0;df -h /
+: 1442440421:0;sudo dnf install golang
+: 1442441690:0;/usr/bin/go ./actool.go
+: 1442441699:0;go help
+: 1442442989:0;export GOPATH= .
+: 1442442994:0;export GOPATH=~/dev
+: 1442443000:0;go install k  := 3
+: 1442443045:0;go install github.com/1player/openwrt-aci
+: 1442443068:0;go install appc-spec
+: 1442443179:0;echo $GOPATH
+: 1442443205:0;mkdir bin
+: 1442443227:0;export GOBIN=~/dev/bin
+: 1442443229:0;go install appc-spec/actool/actool.go
+: 1442443675:0;cd appc-spec
+: 1442443683:0;./build
+: 1442443749:0;ls test
+: 1442443753:0;cat test
+: 1442443765:0;cd examples
+: 1442443781:0;less image.json
+: 1442443920:0;cat image.json |python -m json.tool 
+: 1442443940:0;head image.json |python -m json.tool L
+: 1442443954:0;head image.json |python -m json.tool | head
+: 1442443962:0;head image.json |python -m json.tool 
+: 1442443973:0;cat image.json |python -m json.tool | head
+: 1442443992:0;cat image.json |head
+: 1442455051:0;git clone git@github.com:andmalc/work.git
+: 1442455072:0;lls
+: 1442455085:0;mkdir go
+: 1442455099:0;vim server.go
+: 1442455183:0;]]]]]]]]]]]]]]]]
+: 1442455216:0;go --version
+: 1442455231:0;dnf show golang
+: 1442455237:0;dnf info golang
+: 1442455479:0;rpm -q --whatprovides 'file'
+: 1442455485:0;rpm -q --whatprovides 'which file'
+: 1442455511:0;rpm -q --whatprovides `which file`
+: 1442455639:0;sudo dnf install file
+: 1442455676:0;file hello
+: 1442455692:0;ldd hello
+: 1442455826:0;gat disks-partitions-filesystems distros/fedora
+: 1442455830:0;ga disks-partitions-filesystems distros/fedora
+: 1442455837:0;gat system_monitoring
+: 1442455840:0;ga system_monitoring
+: 1442455867:0;vim prog/golang
+: 1442455904:0;gat prog/golang
+: 1442455911:0;ga prog/golang
+: 1442455944:0;gc -m 'new files'
+: 1442456024:0;vim manifest.json
+: 1442456067:0;~/dev/appc-spec/actool/
+: 1442456127:0;export PATH=$PATH:~/dev/appc-spec/bin
+: 1442456148:0;actool --debug validate manifest.json
+: 1442456284:0;mkdir rkt-app/rootfs/bin -p
+: 1442456297:0;mv hello rkt-app/rootfs/bin
+: 1442456301:0;mv manifest.json rkt-app
+: 1442456362:0;mv rkt-app/manifest.json rkt-app/manifest
+: 1442490745:0;actool build rkt-app myapp.aci
+: 1442490760:0;file myapp.aci
+: 1442490774:0;gunzip m
+: 1442490777:0;gunzip myapp.aci
+: 1442490811:0;rkt-app/rootfs
+: 1442504494:0;dnf search digitaloc
+: 1442516191:0;vim ~/.ssh/config
+: 1442516205:0;ssh coreos
+: 1442516279:0;cat .ssh/protected.pub
+: 1442516371:0;ssh cgedebian
+: 1442516382:0;ssh gcedebian
+: 1442516476:0;ssh -i .ssh/protected.pub 104.197.91.165
+: 1442516486:0;ssh -i .ssh/protected.pub 104.197.91.165 -p 8080
+: 1442516503:0;less .ssh/config
+: 1442516510:0;ssh -i .ssh/protected.pub 104.197.91.165 -p 8022
+: 1442518608:0;curl https://sdk.cloud.google.com | bash
+: 1442518686:0;source ~/.zshenv
+: 1442518713:0;ls google-cloud-sdk/bin
+: 1442518761:0;gcloud auth login
+: 1442518815:0;gcloud config set project andmalcvps
+: 1442518822:0;gcloud compute --project "andmalcvps" ssh --zone "us-central1-a" "coreos"
+: 1442518831:0;gcloud compute  ssh --zone "us-central1-a" "coreos"
+: 1442518983:0;gcloud compute  ssh --zone "us-central1-a" --ssh-keyfile "coreos" 
+: 1442519013:0;gcloud compute  ssh --zone "us-central1-a" --ssh-key-file=~/.ssh/protected  "coreos" 
+: 1442519024:0;gcloud compute  ssh --zone "us-central1-a" --ssh-key-file=~/.ssh/protected.pub  "coreos" 
+: 1442519043:0;gcloud compute  ssh --help
+: 1442519055:0;gcloud compute  ssh --zone "us-central1-a" --ssh-key-file ~/.ssh/protected.pub  "coreos" 
+: 1442519067:0;gcloud compute  ssh --zone "us-central1-a" --ssh-key-file ~/.ssh/protected  "coreos" 
+: 1442519110:0;ssh-add -l
+: 1442519156:0;gcloud compute  ssh --zone "us-central1-a" --ssh-key-file= ~/.ssh/google_compute_engine  "coreos" 
+: 1442519171:0;gcloud compute  ssh --zone "us-central1-a" --ssh-key-file ~/.ssh/google_compute_engine  "coreos" 
+: 1442587673:0;ls -la .vim
+: 1442587676:0;ls -la .vim/bundle
+: 1442587761:0;ls config/term
+: 1442587773:0;ls config/home
+: 1442587776:0;ls -a config/home
+: 1442587784:0;ls -a config/home/.vim
+: 1442587788:0;ls -a config/home/.vim/bundle
+: 1442677342:0;cd ../sysconfig
+: 1442677360:0;ls cloud-init
+: 1442677369:0;mkdir coreos
+: 1442677385:0;git mv cloud-init/coreosconfiglocal.yaml coreos
+: 1442677390:0;cd coreos
+: 1442677401:0;vim example.txt
+: 1442677436:0;ga example.txt
+: 1442677456:0;cd ~/work
+: 1442677477:0;ls go/rkt-app
+: 1442677504:0;git commit --help
+: 1442677647:0;cd go
+: 1442677700:0;ssh -i ~/.ssh/google_compute_engine core@146.148.41.225
+: 1442677852:0;vim ~/.config/zsh/.zshenv
+: 1442678067:0;cd .config/zsh
+: 1442678085:0;man zshexpn
+: 1442678105:0;vim zsh
+: 1442688993:0;vared path
+: 1442689020:0;echo $PATH
+: 1442690345:0;cd work/go
+: 1442690374:0;antigen-list
+: 1442690380:0;~/dev/google-cloud-sdk/bin/gcloud compute instances list
+: 1442690438:0;gcloud compute copy-files myapp.aci coreos:~core
+: 1442690512:0;gcloud compute set compute/zone us-central1-a
+: 1442690526:0;gcloud config set compute/zone us-central1-a
+: 1442690538:0;gcloud ssh coreos
+: 1442690578:0;gcloud compute copy-files myapp.aci coreos:~
+: 1442690638:0;grep -ir 'gcloud'
+: 1442690648:0;vim distros/google-cloud
+: 1442705978:0;ls rkt-app
+: 1442705987:0;less rkt-app/manifest
+: 1442707486:0;gcloud compute ssh coreos
+: 1442719858:0;gcloud compute set compute/zonadsf
+: 1442841534:0;less systemd
+: 1442841681:0;less distros/fedora
+: 1442841715:0;less users
+: 1443198267:0;git add --help
+: 1443198337:0;git -i
+: 1443198390:0;man git
+: 1443198453:0;man git-add
+: 1443198715:0;git add -i
+: 1443308867:0;git all 
+: 1443308935:0;git commit -m updates
+: 1443377919:0;less .config/zsh/.zshenv
+: 1443377937:0;ls -lh .config/zsh/.zshenv
+: 1443377967:0;ls -lh .config/
+: 1443378035:0;ls -lh .config/gcloud
+: 1443378057:0;cat .config/gcloud/credentials
+: 1443378077:0;ls -lh .config
+: 1443384680:0;rm .config
+: 1443384688:0;mkdir .config
+: 1443384699:0;cd config/home/.config
+: 1443384784:0;git mv .config/ dotconfig
+: 1443384822:0;cd.
+: 1443384861:0;ln -s config/home/dotconfig/zsh .config/zsh
+: 1443384883:0;ln -s config/home/dotconfig/gcloud .config
+: 1443385004:0;ls -la
+: 1443385054:0;rm gcloud
+: 1443385057:0;rm zsh
+: 1443385080:0;mv ../config/home/dotconfig/gcloud .
+: 1443385087:0;ls -lh
+: 1443385146:0;rm home/dotconfig/zsh/.zshenv.backup
+: 1443385225:0;git diff home/dotconfig/zsh/.zshenv
+: 1443385247:0;vim home/dotconfig/zsh/.zshenv
+: 1443385294:0;git diff home/dotconfig/zsh/.zshrc
+: 1443385333:0;ga home/dotconfig/zsh/.zshrc
+: 1443385336:0;ga home/dotconfig/zsh/.zshenv
+: 1443385345:0;cd term
+: 1443385349:0;git submodule update
+: 1443385370:0;git commit -a
+: 1443457839:0;man gpg
+: 1443457867:12;sudo dnf install gnupg
+: 1443458019:0;setopt G -i hist
+: 1443458037:0;unsetopt | grep -i hist
+: 1443458088:0;source .config/zsh/.zshenv
+: 1443458119:0; grep -i hist .config/zsh/.zshrc
+: 1443458178:0;gpg2 --help
+: 1443458188:0;gpg2 --fingerprints
+: 1443458216:0;rm -rf .gnupg
+: 1443458256:0;configdir=config/home/dotconfig
+: 1443458262:0;ls -a $configdir
+: 1443458371:0;configdir=config/home
+: 1443458378:0;ln -s $configdir/.gnupg
+: 1443458382:0;gpg2 --fingerprint
+: 1443557617:0;ping6 2607:f2c0:f00f:df00:16cc:20ff:fee6:4198
+: 1443558682:0;ping6 2607:f2c0:a000:002b:f42a:f16b:05c9:08b7/64
+: 1443558684:0;ping6 2607:f2c0:a000:002b:f42a:f16b:05c9:08b7
+: 1443559131:0;homewan=2607:f2c0:a000:002b:f42a:f16b:05c9:08b7/64
+: 1443559133:0;homewan=2607:f2c0:a000:002b:f42a:f16b:05c9:08b7
+: 1443559211:0;ping6 $homewan
+: 1443559280:0;ping6 "$homewan"
+: 1443559302:0;ping6 '"$homewan"'
+: 1443559312:0;nc -p -l $homewan 80
+: 1443560295:0;ls /tmp
+: 1443560304:0;ls /var
+: 1443560308:0;ls /var/tmp
+: 1443560856:0;man ping6
+: 1443561101:0;ssh digitral
+: 1443561104:0;ssh digital
+: 1443561156:0;dnf install traceroute
+: 1443561161:0;sudo dnf install traceroute
+: 1443561293:0;homewan='2607:f2c0:a000:002b:f42a:f16b:05c9:08b7'
+: 1443561297:0;export homewan='2607:f2c0:a000:002b:f42a:f16b:05c9:08b7'
+: 1443561323:0;traceroute6 $homewan numeric
+: 1443561327:0;traceroute6 $homewan 
+: 1443561632:0;echo $homewan
+: 1443885571:0;gcloud components update kubectl
+: 1443886697:0;gcloud config list
+: 1443999662:0;sudo dnf install bpython
+: 1443999732:0;sudo dnf list available ipython
+: 1443999737:0;sudo dnf list available ipython*
+: 1443999741:0;sudo dnf list available ipython\*
+: 1443999750:0;sudo dnf list available \*ipython\*
+: 1443999972:0;sudo dnf info python-ipython-console
+: 1444000125:0;source .config/zsh/.zshrc
+: 1444000565:0;di python-ipython-console
+: 1444000681:0;ssh-keygen --help
+: 1444000774:0;ssh-keygen -l .ssh/protected.pub
+: 1444000787:0;ssh-keygen -l -f .ssh/protected.pub
+: 1444002815:0;cd /etc/ssh/
+: 1444002844:0;grep -i md5 * 
+: 1444002850:0;sudo grep -i md5 * 
+: 1444002860:0;sudo vim ssh_config
+: 1444002938:0;di openssl
+: 1444002969:0;openssl pkcs8 -in andmalc.pub -nocrypt -topk8 -outform DER | openssl sha1 -c
+: 1444002982:0;openssl pkcs8 -in andmalc -nocrypt -topk8 -outform DER | openssl sha1 -c
+: 1444003244:0;man ssh-keygen
+: 1444003593:0;openssl dgst -md5 andmalc.pub
+: 1444003615:0;openssl dgst -md5 andmalc
+: 1444003835:0;ssh-keygen -l -f andmalc
+: 1444004388:0;openssl rsa -in andmalc -text
+: 1444004427:0;openssl rsa -in andmalc.pub -text
+: 1444004462:0;openssl rsa -in andmalc -pubout > Identity.pub
+: 1444004471:0;tail Identity.pub
+: 1444004475:0;tail andmalc.pub
+: 1444004623:0;ssh-keygen -f Identity.pub -i
+: 1444005389:0;ssh -i andmalc fedora@67.205.60.21
+: 1444005466:0;ssh -i andmalc 67.205.60.21
+: 1444005483:0;ssh-keygen -l -f andmalc.pub
+: 1444005582:0;cat 'AAAAB3NzaC1yc2EAAAADAQABAAABAQC/zlieuEIsazbUjECH4FnPV1G51orZEH3TMWj+gxqpfkK0P5LfTOJ8FvHVTcsG/S6HFDrxTTYJ/6XNFz9ldTjTRNxdyFHUTcZ4f9IqK/+PUo6V/SRU49nVH7y0JcZaowPMrt27CaQByKV/WRC31HDLIEY4HG68TWhlfKk9HUIyP39xh6OTqUUaholpcdSZGdvYoueYAx91AGP/dwvC+81nYHQYLt/NqLoU62K1BzmObi7eNg9xwgBZJ+aA08d14bGJecl8GbMGOkSqEctkqdK5l9h5UYDa/Ggx2mYxCS24IgSm7ihcJf22wCtDTXnhOiTY/kFfG0SnkEPOCfoohZcX' | base64 -D 
+: 1444005595:0;cat 'AAAAB3NzaC1yc2EAAAADAQABAAABAQC/zlieuEIsazbUjECH4FnPV1G51orZEH3TMWj+gxqpfkK0P5LfTOJ8FvHVTcsG/S6HFDrxTTYJ/6XNFz9ldTjTRNxdyFHUTcZ4f9IqK/+PUo6V/SRU49nVH7y0JcZaowPMrt27CaQByKV/WRC31HDLIEY4HG68TWhlfKk9HUIyP39xh6OTqUUaholpcdSZGdvYoueYAx91AGP/dwvC+81nYHQYLt/NqLoU62K1BzmObi7eNg9xwgBZJ+aA08d14bGJecl8GbMGOkSqEctkqdK5l9h5UYDa/Ggx2mYxCS24IgSm7ihcJf22wCtDTXnhOiTY/kFfG0SnkEPOCfoohZcX' | base64 
+: 1444005617:0;man base64
+: 1444005638:0;cat 'AAAAB3NzaC1yc2EAAAADAQABAAABAQC/zlieuEIsazbUjECH4FnPV1G51orZEH3TMWj+gxqpfkK0P5LfTOJ8FvHVTcsG/S6HFDrxTTYJ/6XNFz9ldTjTRNxdyFHUTcZ4f9IqK/+PUo6V/SRU49nVH7y0JcZaowPMrt27CaQByKV/WRC31HDLIEY4HG68TWhlfKk9HUIyP39xh6OTqUUaholpcdSZGdvYoueYAx91AGP/dwvC+81nYHQYLt/NqLoU62K1BzmObi7eNg9xwgBZJ+aA08d14bGJecl8GbMGOkSqEctkqdK5l9h5UYDa/Ggx2mYxCS24IgSm7ihcJf22wCtDTXnhOiTY/kFfG0SnkEPOCfoohZcX' | base64 -d
+: 1444005650:0;echo 'AAAAB3NzaC1yc2EAAAADAQABAAABAQC/zlieuEIsazbUjECH4FnPV1G51orZEH3TMWj+gxqpfkK0P5LfTOJ8FvHVTcsG/S6HFDrxTTYJ/6XNFz9ldTjTRNxdyFHUTcZ4f9IqK/+PUo6V/SRU49nVH7y0JcZaowPMrt27CaQByKV/WRC31HDLIEY4HG68TWhlfKk9HUIyP39xh6OTqUUaholpcdSZGdvYoueYAx91AGP/dwvC+81nYHQYLt/NqLoU62K1BzmObi7eNg9xwgBZJ+aA08d14bGJecl8GbMGOkSqEctkqdK5l9h5UYDa/Ggx2mYxCS24IgSm7ihcJf22wCtDTXnhOiTY/kFfG0SnkEPOCfoohZcX' | base64 -d
+: 1444005667:0;echo 'AAAAB3NzaC1yc2EAAAADAQABAAABAQC/zlieuEIsazbUjECH4FnPV1G51orZEH3TMWj+gxqpfkK0P5LfTOJ8FvHVTcsG/S6HFDrxTTYJ/6XNFz9ldTjTRNxdyFHUTcZ4f9IqK/+PUo6V/SRU49nVH7y0JcZaowPMrt27CaQByKV/WRC31HDLIEY4HG68TWhlfKk9HUIyP39xh6OTqUUaholpcdSZGdvYoueYAx91AGP/dwvC+81nYHQYLt/NqLoU62K1BzmObi7eNg9xwgBZJ+aA08d14bGJecl8GbMGOkSqEctkqdK5l9h5UYDa/Ggx2mYxCS24IgSm7ihcJf22wCtDTXnhOiTY/kFfG0SnkEPOCfoohZcX' | base64 -d | md5
+: 1444005671:0;di md5
+: 1444005681:0;echo 'AAAAB3NzaC1yc2EAAAADAQABAAABAQC/zlieuEIsazbUjECH4FnPV1G51orZEH3TMWj+gxqpfkK0P5LfTOJ8FvHVTcsG/S6HFDrxTTYJ/6XNFz9ldTjTRNxdyFHUTcZ4f9IqK/+PUo6V/SRU49nVH7y0JcZaowPMrt27CaQByKV/WRC31HDLIEY4HG68TWhlfKk9HUIyP39xh6OTqUUaholpcdSZGdvYoueYAx91AGP/dwvC+81nYHQYLt/NqLoU62K1BzmObi7eNg9xwgBZJ+aA08d14bGJecl8GbMGOkSqEctkqdK5l9h5UYDa/Ggx2mYxCS24IgSm7ihcJf22wCtDTXnhOiTY/kFfG0SnkEPOCfoohZcX' | base64 -d | md5sum
+: 1444005720:0;vim ssh
+: 1444005899:0;chmod 600 andmalc*
+: 1444005902:0;ssh -i andmalc root@67.205.60.21
+: 1444005926:0;ssh -i andmalc dhc-user@67.205.60.21
+: 1444066777:0;git diff ssh
+: 1444268664:0;ls .ssh
+: 1444268691:0;mv andmalc.pub .ssh
+: 1444268697:0;ls -l .ssh
+: 1444268704:0;mv andmalc .ssh
+: 1444268802:0;s dnf list available node\*
+: 1444268811:0;s dnf list available nodejs\*
+: 1444268871:0;s dnf install nodejs
+: 1444268899:0;which node
+: 1444268990:0;s dnf list available nodejs\* | grep leg
+: 1444269006:0;s dnf install nodejs-grunt-legacy-util.noarch
+: 1444269189:0;cat .ssh/andmalc.pub
+: 1444269209:0;cat .ssh/authorized_keys
+: 1444269225:0;whoami
+: 1444271124:0;s chmod 711 .
+: 1444271126:0;ls -ld .
+: 1444271527:0;s dnf group list
+: 1444271545:0;s dnf group list -v
+: 1444271581:0;s dnf group install 'C Development Tools and Libraries'
+: 1444271640:0;curl -L https://raw.githubusercontent.com/c9/install/master/install.sh | bash
+: 1444271739:0;cd .c9
+: 1444271743:0;ls bin
+: 1444271754:0;./node/bin/node
+: 1444271910:0;cd .ssh
+: 1444271921:0;cat andmalc.pub
+: 1444272197:0;cat authorized_keys
+: 1444272317:0;vim authorized_keys
+: 1444272643:0;s dnf group remove 'C Development Tools and Libraries'
+: 1446587249:0;less network-utilities
+: 1446587336:0;man arp
+: 1446650630:0;sudo dnf install dnf-plugin-system-upgrade
+: 1446650654:0;sudo dnf system-upgrade download --releasever=23 --best
+: 1446650926:0;s dnf system-upgrade reboot
+: 1446652743:0;cat /etc/fedora-release
+: 1446652816:0;s dnf clean packages
+: 1446652842:0;ls -l /boot
+: 1446764624:0;s dnf upgrade
+: 1446764817:0;s dnf install journal-brief
+: 1446765436:0;journal-brief -p err
+: 1446766496:0;ls .config/journal-brief
+: 1446766502:0;journal-brief -p err debrief > ~/.config/journal-brief/journal-brief.conf
+: 1446766510:0;vim ~/.config/journal-brief/journal-brief.conf
+: 1446766759:0;crontab
+: 1446767255:0;s rpm -q vixie-cron
+: 1446767268:0;s dnf install vixie-cron
+: 1446767295:0;s dnf list available vixie
+: 1446767307:0;s dnf list available \*vixie\*
+: 1446767383:0;s rpm -q cronie
+: 1446767394:0;systemctl status crond.service
+: 1446767429:0;crontab -e
+: 1446767448:0;which zsh
+: 1446767555:0;ls /etc/cron.d/
+: 1446767672:0;man crontab
+: 1446767880:0;man mail
+: 1446767887:0;sc-status sendmail
+: 1446768034:0;s dnf install mail
+: 1446768150:0;s dnf list available \*mail\*
+: 1446768243:0;s dnf info email-notification
+: 1446768257:0;s dnf list available \*notification\*
+: 1446768266:0;s dnf info mail-notification
+: 1446768362:0;mail -s 'test subject' andmalc
+: 1446768366:0;mail
+: 1446768375:0;sdfasfdsa
+: 1446768402:0;s dnf install mutt
+: 1446770110:0;s dnf install postfix
+: 1446770475:0;s vim sasl_passwd
+: 1446770623:0;s which postmap
+: 1446770633:0;s /sbin/postmap /etc/postfix/sasl_passwd
+: 1446770645:0;s chown postfix /etc/postfix/sasl_passwd
+: 1446770671:0;sc-status postfix
+: 1446770682:0;sc-start postfix
+: 1446770988:0;sc-reload postfix
+: 1446771031:0;s hostnamectl --help
+: 1446771056:0;s hostnamectl set-hostname digital.downtownbelleville.info
+: 1446773125:0;s vim /etc/postfix/main.cf
+: 1446773154:0;s vim tls_policy
+: 1446773192:0;s /sbin/postmap tls_policy
+: 1446773500:0;s tail main.cf
+: 1446773649:0;cd ../pki/tls
+: 1446774064:0;cd certs
+: 1446774066:0;s make server.key
+: 1446777896:0;make server.csr
+: 1446777907:0;sudo make server.csr
+: 1446778056:0;s openssl x509 -in server.csr -out server.crt -req -signkey server.key -days 3650
+: 1446778179:0;cd /etc/postfix
+: 1446778297:0;cd /etc/
+: 1446778300:0;ls ssl
+: 1446829386:0;ls ssh
+: 1446829400:0;ls ssl/*.pem
+: 1446829410:0;ls ssl/certs/*.pem
+: 1446829517:0;ls pki
+: 1446829523:0;tree pki
+: 1446829532:0;ls pki/CA
+: 1446829537:0;ls pki/CA/certs
+: 1446829547:0;ls pki/tls
+: 1446829602:0;sc-restart postfix
+: 1446829606:0;mutt
+: 1446829635:0;sc-status postfix.service
+: 1446829912:0;less system_monitoring
+: 1446829955:0;journalctl -u postfix -r
+: 1446830005:0;s vim main.cf
+: 1446830309:0;grep -ir ssl *
+: 1446830317:0;vim ssl
+: 1446830663:0;cd pki/
+: 1446830669:0;cd tls
+: 1446830722:0;cat certs/server.crt
+: 1446832074:0;s dnf remove postfix mutt
+: 1446832139:0;journal-brief -p err -r
+: 1446832154:0;journal-brief -p err 
+: 1446913089:0;s dnf update
+: 1446913109:0;s dnf install cockpit
+: 1446913160:0;sc-enable cockpit.socket
+: 1446913169:0;sc-start cockpit
+: 1446913196:0;s firewall-cmd --add-service=cockpit
+: 1446913212:0;s which firewall-cmd
+: 1446931218:0;s dnf install firewalld
+: 1446931399:0;sc-stop firewalld
+: 1446931477:0;sc-start firewalld
+: 1446931481:0;s firewall-cmd --state
+: 1446931487:0;s firewall-cmd --get-zones
+: 1446931604:0;ga .
+: 1446931641:0;s poweroff
+: 1446932242:0;s  firewall-cmd --list-all-zones
+: 1446932398:0;ls network
+: 1446932419:0;vim network/iptables
+: 1446932451:0;less network/firewall_setup
+: 1446932467:0;cd network
+: 1446932471:0;git rm firewall_setup
+: 1446932485:0;vim firewalld
+: 1446932771:0;s  firewall-cmd --get-active-zones
+: 1446933001:0;s  firewall-cmd --list-services
+: 1446935143:0;s  firewall-cmd --set-default-zone=external
+: 1446935153:0;s  firewall-cmd --add-service cockpit
+: 1446935207:0;sudo  firewall-cmd --permanent\
+ --remove-masquerade
+: 1446935244:0;s  firewall-cmd --permanent --add-service cockpit
+: 1446935602:0;sudo  firewall-cmd  --remove-masquerade
+: 1446935763:0;s passwd
+: 1446935803:0;s vim /etc/ssh/sshd
+: 1446935811:0;s vim /etc/ssh/sshd_config
+: 1446935876:0;sc-reload sshd
+: 1446936228:0;top
+: 1446936254:0;s journal-brief 
+: 1446936267:0;s journal-brief  -p err
+: 1446936306:0;ga firewalld
+: 1446936325:0;sc-enable firewalld
+: 1446945547:0;vim system_monitoring
+: 1446945609:0;s journalctl -u sshd -b --no-pager G andm
+: 1446945711:0;s timedatectl    set-timezone America/Toronto
+: 1446945738:0;s journalctl  -b --no-pager G andm
+: 1446945981:0;s journalctl  -b --no-pager G CRED_ACQ
+: 1446946065:0;s journalctl   --no-pager -u audit
+: 1446946110:0;s journalctl   --no-pager G CRED_ACQ
+: 1446946121:0;man journalctl
+: 1446946185:0;s journalctl   --no-pager --since=2015-10-30 G CRED_ACQ
+: 1446946197:0;s journalctl  --since=2015-10-30 G CRED_ACQ
+: 1446946239:0;s journalctl -r  --since=2015-10-30 G CRED_ACQ
+: 1446946399:0;last
+: 1446947038:0;reboot
+: 1446947077:0;reboot\
+
+: 1446947194:0;s  firewall-cmd --list-all
+: 1447184212:0;tmux 
+: 1447184227:0;sudo dnf search '*rhc*'
+: 1447184255:0;which python3.4
+: 1447184692:0;dnf install rubygem-rhc
+: 1447184834:0;man rhc
+: 1447184839:0;rhc --help
+: 1447192500:0;ls flask
+: 1447192518:0;ls sysconfig
+: 1447192524:0;ls sysconfig/coreos
+: 1447192534:0;ls sysconfig/docker
+: 1447192551:0;ls sysconfig/docker/examples
+: 1447192565:0;ls sysconfig/docker/python
+: 1447192579:0;cd sysconfig/docker/python
+: 1447192581:0;cat python-app-base
+: 1447192637:0;cat python-app-compose
+: 1447193112:0;sudo dnf search '*rkt*'
+: 1447445732:0;ls dev
+: 1447445741:0;gcloud
+: 1447445782:0;gcloud compute --project "andmalcvps" ssh --zone "us-central1-a" "coreos-alpha"
+: 1447446293:0;cd dev
+: 1447446310:0;wget https://github.com/coreos/rkt/releases/download/v0.10.0/rkt-v0.10.0.tar.gz
+: 1447446315:0;tar xzvf rkt-v0.10.0.tar.gz
+: 1447446322:0;rm rkt-v0.10.0.tar.gz
+: 1447446350:0;cd rkt-v0.10.0
+: 1447446352:0;sudo rkt trust --prefix=coreos.com/etcd
+: 1447446358:0;sudo ./rkt trust --prefix=coreos.com/etcd
+: 1447446379:0;less gpg
+: 1447446944:0;cd .local/bin
+: 1447446953:0;ln -s ~/dev/rkt-v0.10.0/rkt
+: 1447446973:0;rkt
+: 1447446984:0;rkt fetch coreos.com/etcd:v2.0.4
+: 1447447017:0;groups
+: 1447447026:0;cd /var/lib
+: 1447447047:0;s mkdir rkt
+: 1447447056:0;s chgrp wheel rkt
+: 1447447075:0;s chmod g+w rkt
+: 1447447077:0;sudo rkt fetch coreos.com/etcd:v2.0.4
+: 1447447121:0;ls -l rkt
+: 1447447131:0;ls -l rkt/cas
+: 1447447707:0;ls -l rkt/locks
+: 1447447718:0;ls -ld rkt
+: 1447447730:0;ls -ld rkt/
+: 1447447734:0;ls -l rkt/
+: 1447447759:0;s chmod -R g+w rkt
+: 1447447765:0;rkt run coreos.com/etcd:v2.0.4
+: 1447447789:0;cd /usr/local/bin
+: 1447447799:0;s ln -s ~andmalc/dev/rkt-v0.10.0/rkt
+: 1447447820:0;hash
+: 1447447821:0;s rkt run coreos.com/etcd:v2.0.4
+: 1447447833:0;s ./rkt run coreos.com/etcd:v2.0.4
+: 1447450503:0;gcloud components update
+: 1448898978:0;ls hardware
+: 1448898990:0;grep -r dd *
+: 1448899011:0;grep -r dd hardware/*
+: 1448899029:0;grep -r ' dd ' *
+: 1448899051:0;grep -r 'dd ' *
+: 1448899190:0;vim bennie-new/filesystems filesystems-disks
+: 1448899589:0;git rm bennie-new/filesystems
+: 1448899641:0;ga gpg
+: 1448899658:0;gcmsg updates
+: 1448899670:0;vim filesystems-disks
+: 1448899753:0;gc filesystems-disks
+: 1448899760:0;ga filesystems-disks
+: 1448899774:0;gcmsg fixconflict
+: 1449950928:0;sudo dnf search juyp
+: 1449950973:0;sudo dnf search jupyter
+: 1449951001:0;sudo dnf install python3-jupyter_core
+: 1449951135:0;sudo dnf remove python3-jupyter_core
+: 1449951146:0;sudo dnf search Anaconda
+: 1449951288:0;poweroff
+: 1449951293:0;sudo poweroff
+: 1449951810:0;sudo dnf install anaconda
+: 1449951860:0;sudo dnf remove anaconda
+: 1449951902:0;wget https://3230d63b5fc54e62148e-c95ac804525aac4b6dba79b00b39d1d3.ssl.cf1.rackcdn.com/Anaconda3-2.4.1-Linux-x86_64.sh
+: 1449951923:0;bash Anaconda3-2.4.1-Linux-x86_64.sh
+: 1449952102:0;source .bashrc
+: 1449952106:0;conda install jupyter
+: 1449952229:0;ls .config
+: 1449952252:0;ls envs
+: 1449952254:0;ls etc
+: 1449952335:0;jupyter --config-dir
+: 1449952439:0;jupyter  --generate-config
+: 1449952455:0;jupyter  --generate-config --config-dir
+: 1449952466:0;pwd
+: 1449952537:0;cd notes/network
+: 1449952543:0;less firewalld
+: 1449952585:0;sudo firewall-cmd --list-services
+: 1449952594:0;sudo firewall-cmd --list-all-services
+: 1449952792:0;sudo firewall-cmd --set-default-zone=public
+: 1449952903:0;sudo firewall-cmd --set-default-zone=external
+: 1449952923:0;sudo firewall-cmd --state
+: 1449953045:0;man firewalld.service
+: 1449953210:0;sudo firewall-cmd firewall-cmd --get-active-zones
+: 1449953263:0;firewall-cmd --list-all
+: 1449953409:0;sudo firewall-cmd --add-service=http
+: 1449953414:0;sudo firewall-cmd --list-all
+: 1449953503:0;cd /usr/lib/firewalld/services
+: 1449953508:0;less http.xml
+: 1449953941:0;jupyter NotebookApp --generate-config --config-dir
+: 1449954013:0;jupyter notebook --generate-config --config-dir
+: 1449954107:0;jupyter notebook --generate-config 
+: 1449954151:0;jupyter --help
+: 1449954159:0;jupyter-notebook --help
+: 1449954169:0;jupyter-notebook --help-all
+: 1449954253:0;jupyter-notebook --NotebookApp.port=80
+: 1449954502:0;sudo firewall-cmd --add-port=8888
+: 1449954515:0;sudo firewall-cmd --add-port=8888/tcp
+: 1449954729:0;sudo firewall-cmd --get-services
+: 1449954735:0;firewall-cmd --get-active-zones
+: 1449954749:0;sudo firewall-cmd --list-ports
+: 1449955084:0;cd anaconda3/bin
+: 1449955132:0;vim .jupyter/jupyter_notebook_config.py
+: 1449955641:0;cd anaconda3
+: 1449955647:0;conda build IPython-notebook-extensions
+: 1449955661:0;bin/conda-build IPython-notebook-extensions
+: 1449955795:0;anaconda3/bin
+: 1449955815:0;./conda-index
+: 1449956081:0;./conda install -c http://conda.anaconda.org/janschulz nbextensions
+: 1449956104:0;anaconda search -t conda nbextensions
+: 1449956132:0;./anaconda search -t conda nbextensions
+: 1449956175:0;./conda install -c http://conda.anaconda.org/Rafayel nbextensions
+: 1449956330:0;./conda install nbextensions
+: 1449956375:0;cd .jupyter
+: 1449956382:0;vim jupyter_notebook_config.py
+: 1449956461:0;cd ..
+: 1449956468:0;ls imports
+: 1449956476:0;ls lib
+: 1449956488:0;ls pkgs
+: 1449956508:0;ls pkgs/nbextensions-master-py35_2015101900
+: 1449956512:0;ls pkgs/nbextensions-master-py35_2015101900/lib
+: 1449956514:0;ls pkgs/nbextensions-master-py35_2015101900/lib/python3.5
+: 1449956516:0;ls pkgs/nbextensions-master-py35_2015101900/lib/python3.5/site-packages
+: 1449956664:0;cd bin
+: 1449956756:0;cd .local/share/jupyter
+: 1449956805:0;cd anaconda3/share
+: 1449956810:0;ls applications
+: 1449956872:0;mkdir tmp
+: 1449956874:0;cd tmp
+: 1449956896:0;~/anaconda3/bin/conda install -c http://conda.anaconda.org/Rafayel nbextensions
+: 1449957269:0;git clone https://github.com/ipython-contrib/IPython-notebook-extensions.git
+: 1449957273:0;cd IPython-notebook-extensions
+: 1449957304:0;~/anaconda3/bin/python3 setup.py install
+: 1449957328:0;ls ~/.local/share/jupyter
+: 1449958428:0;jupyter-notebook 
+: 1450113637:0;./ipython3
+: 1451260231:0;sudo dnf search neovim
+: 1451260384:0;sudo dnf -y install dnf-plugins-core
+: 1451260414:0;sudo dnf -y copr enable dperson/neovim
+: 1451260431:0;sudo dnf install neovim
+: 1451262681:0;/usr/bin/nvim
+: 1451265729:0;grep shell *
+: 1451265771:0;vim .config/zsh/.zshrc
+: 1451265885:0;echo $TERM
+: 1451266094:0;vim display_colours.sh
+: 1451266109:0;chmod +x display_colours.sh
+: 1451266271:0;ls /etc/profile.d
+: 1451266316:0;vim .config/zsh/.zshenv
+: 1451266344:0;SEND_256_COLORS_TO_REMOTE=1
+: 1451266394:0;ssh-add ~/.ssh/protected
+: 1451266634:0;man grep
+: 1451266795:0;grep --help
+: 1451266842:0;cd -
+: 1451266846:0;vim home/.tmux.conf
+: 1451267029:0;cd .config
+: 1451267033:0;mkdir nvim
+: 1451267038:0;cd nvim
+: 1451267040:0;wget https://github.com/mhartington/dotfiles/blob/master/config/nvim/init.vim
+: 1451267047:0;ls init.vim
+: 1451267055:0;rm init.vim
+: 1451267075:0;wget https://raw.githubusercontent.com/mhartington/dotfiles/master/config/nvim/init.vim
+: 1451267079:0;cat init.vim
+: 1451417244:0;ls -l .zshenv
+: 1451417787:0;cd home/dotconfig/zsh
+: 1451417794:0;git mv .zshenv zshenv
+: 1451417800:0;git mv .zshrc zshrc
+: 1451417815:0;git commit -m zsh
+: 1451418263:0;ssh-add
+: 1451418290:0;ls -l .config/zsh
+: 1451418292:0;ls -l .config/zsh/
+: 1451419092:12;vim .zshenv
+: 1451419113:0;source \
+source 
+: 1451419123:0;source .zshenv\
+source 
+: 1451419163:0;pkill tmux
+: 1451419175:0;source .zshenv
+: 1451419193:0;ga home/.zshenv
+: 1451419203:0;gc -m updates
+: 1451487050:0;cat .zshenv
+: 1451487067:0;antigen-theme fox
+: 1451487123:0;less notes/systemd
+: 1451487150:0;sudo hostnamectl
+: 1451487169:0;sudo hostnamectl set-hostname digital
+: 1451487203:0;sudo hostnamectl --help
+: 1451487259:0;less .config/zsh/zshrc
+: 1451762587:0;setopt | grep -i hist
+: 1451762611:0;~712
+: 1451762717:0;./display_colours.sh
+: 1451762760:0;history
+: 1451762901:0;vim .config/nvim/init.vim
+: 1451762978:0;python
+: 1451763243:0;ls -a
+: 1451763291:0;ls -la .config/nvim
+: 1451763319:0;less .config/nvim/init.vim
+: 1451764321:0;python3
+: 1451764505:0;mv .config/nvim/init.vim .
+: 1451764583:0;mv init.vim .config/nvim
+: 1451764784:0;nvim
+: 1451764910:0;less .nvimlog
+: 1451765060:0;pip install --user neovim
+: 1451765150:0;rm -rf anaconda3 Anaconda3-2.4.1-Linux-x86_64.sh
+: 1451765379:0;tput colours
+: 1451765382:0;tput colors
+: 1452638539:0;sudo dnf search brew
+: 1452638735:0;sudo dnf search gem
+: 1452638746:0;sudo dnf search rubygem
+: 1452638784:0;sudo dnf search rubygem | less
+: 1452639064:0;sudo dnf install ruby
+: 1452639160:0;sudo dnf install ruby-devl
+: 1452639163:0;sudo dnf install ruby-devel
+: 1452639217:0;sudo dnf install gcc
+: 1452639310:0;sudo dnf install redhat-rpm-config
+: 1452639380:0;less /usr/local/lib64/gems/ruby/nokogiri-1.6.7.1/gem_make.out
+: 1452639447:0;sudo dnf install libxml2-devel
+: 1452639461:0;sudo gem install evernote-editor
+: 1452732961:0;less /usr/local/bin/evned
+: 1452732976:0;/usr/local/bin/evned
+: 1452733746:0;/usr/local/bin/evned -e mynote
+: 1453846722:0;cd py
+: 1453846742:0;cd ../
+: 1453846745:0;ls googleapi
+: 1453846751:0;cd googleapi/spreadsheet
+: 1453846759:0;less spreadsheetExample.py
+: 1453846768:0;l
+: 1453846782:0;less gapitest.py
+: 1453846804:0;cd ../..
+: 1453846810:0;ls gdata
+: 1453846819:0;less gdata/spreadsheetExample.py
+: 1453846842:0;ls -l gdata/spreadsheetExample.py
+: 1453846863:0;ls py
+: 1453846932:0;less .zshenv
+: 1453846948:0;less .config/zsh/zshenv
+: 1453847026:0;pip
+: 1453847056:0;pip install --user virtualenvwrapper
+: 1453847074:0;ls .local/bin
+: 1453847097:0;vim .config/zsh/zshenv
+: 1453847120:0;source .config/zsh/zshenv
+: 1453847177:0;rmvirtualenv google_client_api
+: 1453847183:0;lsvirtualenv
+: 1453847186:0;ls Envs
+: 1453847204:0;mkvirtualenv --help
+: 1453847267:0;mkdir work/gspread
+: 1453847353:0;which pip
+: 1453847369:0;sudo pip install --upgrade pip
+: 1453847394:0;rmvirtualenv gspread
+: 1453847409:0;mkvirtualenv gspread -a ~/work/gspread
+: 1453847425:0;pip install gspread
+: 1453847449:0;pip --version
+: 1453847690:0;dnf search numpy
+: 1453847776:0;dnf install numpy
+: 1453847781:0;sudo dnf install numpy
+: 1453848420:0;pip install --upgrade oauth2client
+: 1453848454:0;ls ..
+: 1453848458:0;ls ../googleapi
+: 1453848465:0;wget blob:https%3A//console.developers.google.com/44f87db1-3d8b-48f5-9958-f801af2c530c
+: 1453849069:0;vim gspread_test.py
+: 1453862157:0;cd work/gspread/
+: 1453862157:0;vim gspread.py
+: 1453862157:0;ls -l .tmux.conf 
+: 1453862157:0;source config/home/.tmux.conf 
+: 1453862157:0;echo $SHELL
+: 1453862157:0;tmux config/home/.tmux.conf 
+: 1453862157:0;tmux -f config/home/.tmux.conf 
+: 1453860883:0;tset
+: 1453860900:0;grep -ir tset 
+: 1453860941:0;ls -l prog
+: 1453860953:0;less prog/wp_macros
+: 1453860985:0;grep -ir 256 
+: 1453861445:0;git rm hardware/hardware_owned/thinkpads/More\ Battery\ Tips.htm
+: 1453861471:0;git rm prog/web_prog/fcg*
+: 1453861489:0;git rm hardware/hardware_owned/thinkpads/Battery\ Tips.htm
+: 1453861642:0;git rm misc/shopping/
+: 1453861647:0;git rm misc/shopping/ -r
+: 1453861691:0;git rm misc/home/utility_bills/ -r
+: 1453861735:0;git rm misc/work/job\ ideas/web-documentMgmt-developer-example-job.htm
+: 1453861768:0;git rm misc/work/job\ ideas
+: 1453861782:0;git rm misc/work/job-sites-orgs.txt
+: 1453861817:0;git rm misc/work/job\ descriptions/ -r
+: 1453861927:0;git rm misc/work/invoices/ -r
+: 1453861937:0;git rm misc/work/applications/ -r
+: 1453862032:0;git rm -r misc/pol/Broadbent\'s\ bold\ advice\ -\ The\ Globe\ and\ Mail\ 2009.html
+: 1453862040:0;grep -ir color
+: 1453862061:0;git rm misc/software_owned/Software\ Reg\ -\ very\ old.rtf
+: 1453862093:0;git commit -m deletions
+: 1453862116:0;ssh-add ~/.ssh/andmalc
+: 1453862118:0;git pull
+: 1453862122:0;git push
+: 1453862147:0;unset $TMUX
+: 1454118346:0;zsh
+: 1453864287:0;cd gspread
+: 1453864325:0;ls 
+: 1453864330:0;ls -l
+: 1453864335:0;cat gspread.py
+: 1453864343:0;cat gspread_test.py
+: 1453864349:0;rm gspread_test.py
+: 1453864355:0;mv gspread.py gspreadtest.py
+: 1453864390:0;pip install PyOpenSSL
+: 1453864416:0;dnf search pyssl
+: 1453864426:0;dnf search ssl
+: 1453864432:0;dnf search ssl G py
+: 1453864462:0;sudo dnf install pyOpenSSL
+: 1453864506:0;ipython
+: 1453864742:0;less gspreadtest.py
+: 1453947674:0;ls
+: 1453947692:0;vim gspreadtest.py
+: 1454117871:0;cd /etc/dnf/
+: 1454117875:0;sudo vim dnf.conf
+: 1454117943:0;man dnf.conf
+: 1454118036:0;sudo dnf update 
+: 1454118137:0;fg
+: 1454118175:0;sudo systemctl restart sshd
+: 1454118187:0;sudo systemctl status sshd
+: 1454380802:0;sudo dnf update
+: 1454382438:0;deactivate
+: 1454382452:0;sudo reboot
+: 1454706568:0;tmux a
+: 1454706568:0;tmux l
+: 1454706568:0;tmux da
+: 1454706568:0;man tmux
+: 1454706568:0;tmux attach-session
+: 1454706568:0;tmux attach-session -t 0
+: 1454706568:0;tmux list-windows
+: 1454706568:0;tmux attach-session -t 0:
+: 1454706568:0;less notes/systemd 
+: 1454706568:0;systemd-cgls
+: 1454382560:0;tmux
+: 1454382569:0;sudo gem install rhc
+: 1454382696:0;sudo gem uninstall rhc
+: 1454382808:0;sudo dnf remove rubygem-rhc
+: 1454382825:0;ls /usr/share/gems
+: 1454382829:0;ls /usr/share/gems/gems
+: 1454382846:0;sudo rm -rf /usr/share/gems/gems/rhc*
+: 1454382866:0;sudo rm -rf /usr/share/gems/gems/*
+: 1454382872:0;sudo ls /usr/local/share
+: 1454382876:0;sudo ls /usr/local/share/gems
+: 1454382907:0;sudo gem uninstall evernote-editor
+: 1454382943:0;sudo dnf remove rubygems
+: 1454382955:0;sudo ls /usr/local/share/gems/gems
+: 1454382970:0;sudo rm -rf /usr/local/share/gems/gems/*
+: 1454382987:0;sudo dnf install rubygems
+: 1454383210:0;rm -rf .openshift
+: 1454383945:0;sudo dnf search net-ssh
+: 1454383966:0;sudo dnf remove rubygem-net-ssh
+: 1454383988:0;sudo gem install net-ssh -v 2.9.2
+: 1454384029:0;sudo dnf reinstall rubygem-rhc
+: 1454384067:0;sudo dnf install rubygem-rhc
+: 1454384109:0;rhc setup
+: 1454706498:0;gpg2 --list-keys
+: 1454706506:0;cd notes
+: 1454706513:0;cd work
+: 1454706521:0;ls go
+: 1454706528:0;cd
+: 1454706530:0;cd config
+: 1454706531:0;gst
+: 1454706543:0;git diff home/dotconfig/zsh/zshenv
+: 1454706558:0;git diff home/dotconfig/zsh/zshrc
+: 1454710512:0;git diff home/dotconfig/zsh/zshenv
+: 1454710570:0;git checkout home/dotconfig/zsh/zshenv
+: 1454710579:0;git diff home/dotconfig/zsh/zshrc
+: 1454710643:0;vim home/dotconfig/zsh/zshenv
+: 1454710876:0;vim home/dotconfig/zsh/zshrc
+: 1454711082:0;fg
+: 1454711112:0;cd home/dotconfig
+: 1454711113:0;ls -a
+: 1454711116:0;cd zsh
+: 1454711118:0;ls -a
+: 1454711158:0;ls -ls ~/.zsh_history
+: 1454711176:0;cp /home/andmalc/.zsh_history .
