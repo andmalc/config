@@ -19,7 +19,7 @@ EOBUNDLES
 
 #source .local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
 
-antigen theme fox
+antigen-theme fox
 #antigen-theme /home/andmalc/config/term/ mytheme
 #antigen-theme /home/andmalc/config/term/ af-magic
 antigen apply
@@ -76,13 +76,14 @@ setopt AUTO_NAME_DIRS #Any parameter refering to an absolute path to a dir becom
 setopt NOTIFY
 
 ## HISTORY
-HISTFILE=$HOME/.zsh_history
-SAVEHIST=1000
+HISTFILE=~/.config/zsh/history
 HISTSIZE=1000
 setopt APPEND_HISTORY
+SAVEHIST=1000
 setopt SHARE_HISTORY
-#setopt HIST_IGNORE_SPACE
 setopt HIST_IGNORE_ALL_DUPS
+
+
 
 # Key Bindings {{{1
 
@@ -199,3 +200,9 @@ alias llg='ls -alh'
 #Docker {{{2
 alias drm="docker rm"
 alias dps="docker ps"
+
+# DNF {{{2
+alias di="sudo dnf install "
+alias da="sudo dnf list available "
+alias dup="sudo dnf update "
+
