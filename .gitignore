@@ -2,8 +2,10 @@ home/.local
 home/.vim/bundle/*
 !home/.vim/bundle/Vundle.vim
 home/.vim/ftplugin
-home/.config
-!home/.config/zsh
+
+home/dotconfig
+!home/dotconfig/zsh/zshrc
+!home/dotconfig/zsh/zshenv
 !home/.config/ipython/extentions
 !home/.config/ipython/nbextentions
 !home/.config/ipython/profile_andmalc
