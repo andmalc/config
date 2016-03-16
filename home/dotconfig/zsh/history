@@ -353,7 +353,6 @@
 : 1444005667:0;echo 'AAAAB3NzaC1yc2EAAAADAQABAAABAQC/zlieuEIsazbUjECH4FnPV1G51orZEH3TMWj+gxqpfkK0P5LfTOJ8FvHVTcsG/S6HFDrxTTYJ/6XNFz9ldTjTRNxdyFHUTcZ4f9IqK/+PUo6V/SRU49nVH7y0JcZaowPMrt27CaQByKV/WRC31HDLIEY4HG68TWhlfKk9HUIyP39xh6OTqUUaholpcdSZGdvYoueYAx91AGP/dwvC+81nYHQYLt/NqLoU62K1BzmObi7eNg9xwgBZJ+aA08d14bGJecl8GbMGOkSqEctkqdK5l9h5UYDa/Ggx2mYxCS24IgSm7ihcJf22wCtDTXnhOiTY/kFfG0SnkEPOCfoohZcX' | base64 -d | md5
 : 1444005671:0;di md5
 : 1444005681:0;echo 'AAAAB3NzaC1yc2EAAAADAQABAAABAQC/zlieuEIsazbUjECH4FnPV1G51orZEH3TMWj+gxqpfkK0P5LfTOJ8FvHVTcsG/S6HFDrxTTYJ/6XNFz9ldTjTRNxdyFHUTcZ4f9IqK/+PUo6V/SRU49nVH7y0JcZaowPMrt27CaQByKV/WRC31HDLIEY4HG68TWhlfKk9HUIyP39xh6OTqUUaholpcdSZGdvYoueYAx91AGP/dwvC+81nYHQYLt/NqLoU62K1BzmObi7eNg9xwgBZJ+aA08d14bGJecl8GbMGOkSqEctkqdK5l9h5UYDa/Ggx2mYxCS24IgSm7ihcJf22wCtDTXnhOiTY/kFfG0SnkEPOCfoohZcX' | base64 -d | md5sum
-: 1444005720:0;vim ssh
 : 1444005899:0;chmod 600 andmalc*
 : 1444005902:0;ssh -i andmalc root@67.205.60.21
 : 1444005926:0;ssh -i andmalc dhc-user@67.205.60.21
@@ -519,7 +518,6 @@
 : 1446947077:0;reboot\
 
 : 1446947194:0;s  firewall-cmd --list-all
-: 1447184212:0;tmux 
 : 1447184227:0;sudo dnf search '*rhc*'
 : 1447184255:0;which python3.4
 : 1447184692:0;dnf install rubygem-rhc
@@ -643,7 +641,6 @@
 : 1449956330:0;./conda install nbextensions
 : 1449956375:0;cd .jupyter
 : 1449956382:0;vim jupyter_notebook_config.py
-: 1449956461:0;cd ..
 : 1449956468:0;ls imports
 : 1449956476:0;ls lib
 : 1449956488:0;ls pkgs
@@ -677,7 +674,6 @@
 : 1451266271:0;ls /etc/profile.d
 : 1451266316:0;vim .config/zsh/.zshenv
 : 1451266344:0;SEND_256_COLORS_TO_REMOTE=1
-: 1451266394:0;ssh-add ~/.ssh/protected
 : 1451266634:0;man grep
 : 1451266795:0;grep --help
 : 1451266842:0;cd -
@@ -691,24 +687,19 @@
 : 1451267075:0;wget https://raw.githubusercontent.com/mhartington/dotfiles/master/config/nvim/init.vim
 : 1451267079:0;cat init.vim
 : 1451417244:0;ls -l .zshenv
-: 1451417787:0;cd home/dotconfig/zsh
 : 1451417794:0;git mv .zshenv zshenv
 : 1451417800:0;git mv .zshrc zshrc
 : 1451417815:0;git commit -m zsh
 : 1451418263:0;ssh-add
 : 1451418290:0;ls -l .config/zsh
 : 1451418292:0;ls -l .config/zsh/
-: 1451419092:12;vim .zshenv
 : 1451419113:0;source \
 source 
 : 1451419123:0;source .zshenv\
 source 
 : 1451419163:0;pkill tmux
-: 1451419175:0;source .zshenv
 : 1451419193:0;ga home/.zshenv
 : 1451419203:0;gc -m updates
-: 1451487050:0;cat .zshenv
-: 1451487067:0;antigen-theme fox
 : 1451487123:0;less notes/systemd
 : 1451487150:0;sudo hostnamectl
 : 1451487169:0;sudo hostnamectl set-hostname digital
@@ -720,7 +711,6 @@ source
 : 1451762760:0;history
 : 1451762901:0;vim .config/nvim/init.vim
 : 1451762978:0;python
-: 1451763243:0;ls -a
 : 1451763291:0;ls -la .config/nvim
 : 1451763319:0;less .config/nvim/init.vim
 : 1451764321:0;python3
@@ -759,7 +749,6 @@ source
 : 1453846819:0;less gdata/spreadsheetExample.py
 : 1453846842:0;ls -l gdata/spreadsheetExample.py
 : 1453846863:0;ls py
-: 1453846932:0;less .zshenv
 : 1453846948:0;less .config/zsh/zshenv
 : 1453847026:0;pip
 : 1453847056:0;pip install --user virtualenvwrapper
@@ -789,7 +778,6 @@ source
 : 1453862157:0;vim gspread.py
 : 1453862157:0;ls -l .tmux.conf 
 : 1453862157:0;source config/home/.tmux.conf 
-: 1453862157:0;echo $SHELL
 : 1453862157:0;tmux config/home/.tmux.conf 
 : 1453862157:0;tmux -f config/home/.tmux.conf 
 : 1453860883:0;tset
@@ -813,8 +801,6 @@ source
 : 1453862040:0;grep -ir color
 : 1453862061:0;git rm misc/software_owned/Software\ Reg\ -\ very\ old.rtf
 : 1453862093:0;git commit -m deletions
-: 1453862116:0;ssh-add ~/.ssh/andmalc
-: 1453862118:0;git pull
 : 1453862122:0;git push
 : 1453862147:0;unset $TMUX
 : 1454118346:0;zsh
@@ -830,7 +816,6 @@ source
 : 1453864426:0;dnf search ssl
 : 1453864432:0;dnf search ssl G py
 : 1453864462:0;sudo dnf install pyOpenSSL
-: 1453864506:0;ipython
 : 1453864742:0;less gspreadtest.py
 : 1453947674:0;ls
 : 1453947692:0;vim gspreadtest.py
@@ -838,23 +823,16 @@ source
 : 1454117875:0;sudo vim dnf.conf
 : 1454117943:0;man dnf.conf
 : 1454118036:0;sudo dnf update 
-: 1454118137:0;fg
 : 1454118175:0;sudo systemctl restart sshd
 : 1454118187:0;sudo systemctl status sshd
-: 1454380802:0;sudo dnf update
 : 1454382438:0;deactivate
-: 1454382452:0;sudo reboot
-: 1454706568:0;tmux a
 : 1454706568:0;tmux l
 : 1454706568:0;tmux da
-: 1454706568:0;man tmux
-: 1454706568:0;tmux attach-session
 : 1454706568:0;tmux attach-session -t 0
 : 1454706568:0;tmux list-windows
 : 1454706568:0;tmux attach-session -t 0:
 : 1454706568:0;less notes/systemd 
 : 1454706568:0;systemd-cgls
-: 1454382560:0;tmux
 : 1454382569:0;sudo gem install rhc
 : 1454382696:0;sudo gem uninstall rhc
 : 1454382808:0;sudo dnf remove rubygem-rhc
@@ -877,23 +855,94 @@ source
 : 1454384067:0;sudo dnf install rubygem-rhc
 : 1454384109:0;rhc setup
 : 1454706498:0;gpg2 --list-keys
-: 1454706506:0;cd notes
 : 1454706513:0;cd work
 : 1454706521:0;ls go
 : 1454706528:0;cd
-: 1454706530:0;cd config
-: 1454706531:0;gst
-: 1454706543:0;git diff home/dotconfig/zsh/zshenv
-: 1454706558:0;git diff home/dotconfig/zsh/zshrc
 : 1454710512:0;git diff home/dotconfig/zsh/zshenv
 : 1454710570:0;git checkout home/dotconfig/zsh/zshenv
 : 1454710579:0;git diff home/dotconfig/zsh/zshrc
 : 1454710643:0;vim home/dotconfig/zsh/zshenv
 : 1454710876:0;vim home/dotconfig/zsh/zshrc
-: 1454711082:0;fg
 : 1454711112:0;cd home/dotconfig
-: 1454711113:0;ls -a
 : 1454711116:0;cd zsh
-: 1454711118:0;ls -a
 : 1454711158:0;ls -ls ~/.zsh_history
 : 1454711176:0;cp /home/andmalc/.zsh_history .
+: 1454711730:0;ls -la .gnupg
+: 1454711734:0;ls -la .gnupg/
+: 1454711756:0;cd config
+: 1454711838:0;ls -la home/.gnupg
+: 1454711934:0;ssh-add ~/.ssh/andmalc
+: 1454711956:0;ssh-add ~/.ssh/protected
+: 1454711969:0;git pull
+: 1454712021:0;cd home/dotconfig/zsh
+: 1454712059:0;antigen-theme fox
+: 1454712192:0;antigen-theme /home/andmalc/config/term/ af-magic
+: 1454712256:0;less zshrc
+: 1454712496:0;echo $SSH_CLIENT
+: 1454712520:0;cd ../...
+: 1454712531:0;ls -a
+: 1454712537:0;cd ..
+: 1454712546:0;less .zshenv
+: 1454712588:0;cat .zshenv
+: 1454712614:0;ls dotconfig
+: 1454712646:0;ls ~/.config
+: 1454712716:0;ls ~/.config/zsh
+: 1454712758:0;vim .zshenv
+: 1454712778:0;source .zshenv
+: 1454712832:0;echo $SHELL
+: 1454712843:0;ls -la .zshenv
+: 1454712888:0;ls /etc/zshenv
+: 1454712900:0;sudo cat /etc/zshenv
+: 1454713260:0;echo $ZDOTDIR
+: 1454713280:0;vim config/home/dotconfig/zsh/zshenv
+: 1454713391:0;tmux a
+: 1454713399:0;man tmux
+: 1454713829:0;vim config/home/dotconfig/zsh/zshrc
+: 1455900863:0;tmux 
+: 1455900868:0;cd notes
+: 1455900870:0;gst
+: 1455900886:0;less ssh
+: 1455901273:0;man ssh
+: 1455901974:0;fg
+: 1455901978:0;vim ssh
+: 1457189863:0;tmux new-session
+: 1457265656:0;ipython
+: 1457268335:0;sudo reboot
+: 1457977941:0;tmux attach-session
+: 1457977945:0;tmux
+: 1457977950:0;sudo dnf update
+: 1457978168:0;sudo systemctl reboot
+: 1458133746:0;tmux
+: 1458133771:0;vim .tmux.conf
+: 1458133816:0;cd notes
+: 1458133849:0;vim filesystems-disks
+: 1458134747:0;gst
+: 1458134766:0;ga filesystems-disks network/firewalld ssh
+: 1458134779:0;git commit -m updates
+: 1458134786:0;git pull
+: 1458134790:0;cd
+: 1458134795:0;ssh-add ~/.ssh/protected
+: 1458134800:0;cd notes
+: 1458134803:0;git pull
+: 1458134809:0;git push
+: 1458134816:0;cd
+: 1458134818:0;cd config
+: 1458134819:0;gst
+: 1458134903:0;git status home/.zshenv
+: 1458134916:0;git diff home/.zshenv
+: 1458134977:0;git diff home/zsh/zshrc
+: 1458134989:0;git diff home/dotconfig/zsh/zshrc
+: 1458135134:0;antigen-theme
+: 1458135165:0;antigen-theme config/term/ af-magic
+: 1458135190:0;antigen-theme config/term/af-magic
+: 1458135237:0;source .config/zsh/zshrc
+: 1458135258:0;antigen-theme --help
+: 1458135278:0;antigen-list
+: 1458135310:0;source .config/zsh/zshrc
+: 1458135314:0;antigen-list
+: 1458135358:0;antigen-theme fox
+: 1458135579:0;man git-commit
+: 1458135593:0;git commit -a
+: 1458135622:0;git pull
+: 1458135625:0;git push
+: 1458135649:0;git commit -a -m updates

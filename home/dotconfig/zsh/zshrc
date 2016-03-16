@@ -26,9 +26,12 @@ antigen apply
 
 #eval `keychain --eval --nogui -Q -q /home/andmalc/.ssh/andmalc`
 #eval `ssh-agent`
+
+# -n test: true if string non-zero
 if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
     antigen-theme /home/andmalc/config/term/ af-magic
     antigen apply
+    #ssh-add ~/.ssh/protected
     tmux a
 else
     ssh-add ~/.ssh/andmalc
