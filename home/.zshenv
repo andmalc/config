@@ -11,7 +11,8 @@ export LESS=-cex3M
 
 #PATH=~/.local/bin:PATH:~/dev/google-cloud-sdk/bin
 typeset -U PATH path 
-path+=(~/.local/bin:PATH ~/dev/google-cloud-sdk/bin)
+path+=(~/.local/bin)
+#path+=(~/.local/bin:PATH ~/dev/google-cloud-sdk/bin)
 
 #export DOCKER_HOST=tcp://localhost:2375
 #eval "$(docker-machine_linux-arm env home)"
@@ -37,7 +38,7 @@ autoload -Uz compinit && compinit -i
 
 
 # The next line updates PATH for the Google Cloud SDK.
-source '/home/andmalc/dev/google-cloud-sdk/path.zsh.inc'
+#source '/home/andmalc/dev/google-cloud-sdk/path.zsh.inc'
 
 # The next line enables shell command completion for gcloud.
-source '/home/andmalc/dev/google-cloud-sdk/completion.zsh.inc'
+#source '/home/andmalc/dev/google-cloud-sdk/completion.zsh.inc'
