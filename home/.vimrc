@@ -88,11 +88,11 @@ highlight SpellBad term=underline gui=undercurl guisp=Yellow
 " Colors {{{2
 
 " Lucius
-let g:lucius_no_term_bg = 1
-colorscheme lucius
+"let g:lucius_no_term_bg = 1
+"colorscheme lucius
 " For dark background terminals
 " Elflord is also good
-LuciusBlack
+"LuciusBlack
 
 
 
@@ -102,7 +102,14 @@ LuciusBlack
 "let g:solarized_termcolors=256  
 " Prevents 'selected' appearance on transparent backgrounds
 "let g:solarized_termtrans=1
-"colorscheme solarized
+
+if has('gui_running')
+    set background=light
+else
+    set background=dark
+endif
+
+colorscheme solarized
 
 " Interface {{{2
 
