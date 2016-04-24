@@ -18,7 +18,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
-Plugin 'dart-lang/dart-vim-plugin'
+"Plugin 'dart-lang/dart-vim-plugin'
 
 " Outliner
 Plugin 'VOom'
