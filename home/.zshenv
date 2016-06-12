@@ -27,18 +27,18 @@ export PROJECT_HOME=$HOME/work
 #PYTHONPATH='.'
 #export PYTHONSTARTUP=~/admin/startup.py
 
-#Google Cloud SDK
-#source dev/google-cloud-sdk/path.zsh.inc 
 
 fpath=($ZDOTDIR/completion $fpath)
 autoload -Uz compinit && compinit -i
 
 
-# vim: ft=zsh
-
+#Google Cloud SDK
+#source dev/google-cloud-sdk/path.zsh.inc 
 
 # The next line updates PATH for the Google Cloud SDK.
 #source '/home/andmalc/dev/google-cloud-sdk/path.zsh.inc'
 
 # The next line enables shell command completion for gcloud.
 #source '/home/andmalc/dev/google-cloud-sdk/completion.zsh.inc'
+
+# vim: ft=zsh
