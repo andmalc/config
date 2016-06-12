@@ -79,7 +79,7 @@ setopt AUTO_NAME_DIRS #Any parameter refering to an absolute path to a dir becom
 setopt NOTIFY
 
 ## HISTORY
-HISTFILE=~/.config/zsh/history
+HISTFILE=~/.zsh_history
 HISTSIZE=1000
 setopt APPEND_HISTORY
 SAVEHIST=1000
