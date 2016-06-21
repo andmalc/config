@@ -113,6 +113,95 @@ filetype plugin indent on
 " LuciusBlackLowContrast
 " For darcolors
 
+
+" File format {{{1
+
+" Tabs
+set ai
+set ts=4
+set sw=4
+set sts=4
+set expandtab
+
+" sane text files
+set fileformat=unix
+set encoding=utf-8
+
+" Mapping {{{1
+" To run normal or command mode commands from Insert Mode, enter: ctrl+v[Escape key]:command
+" Candidates: func, Shift+func, '_' or ',' + any other char
+" lhs notation:
+" 	<C-A>	CTRL-A
+" 	<M-A>	Alt-A
+" 	<S-F2> Shift F2
+
+" Candidate leaders: - H L space ctrl cr
+let mapleader = ","
+map ,f	<PageDown>
+map <leader>w :wincmd 
+map <leader>~ :NERDTreeToggle<CR>
+map <leader>s :w<CR>
+imap <leader>s <ESC>:w<CR>
+noremap ; :
+
+" ctrl-q doesnt work in console vim, so use leader-q 
+" " to enter block visual mode
+nnoremap <leader>q <C-Q>
+
+map ,H	:e $HOME/
+map ,N	:e $HOME/notes/
+map ,T	:set titlestring=
+
+map <leader>x :suspend<CR>
+map <leader>bn :bn<CR>
+map <leader>bp :bp<CR>
+map <leader>bw :bw<CR>
+
+
+" map cut & paste to what they bloody should be
+vnoremap <C-c> "+y
+vnoremap <C-x> "+x
+map <C-v> "+gP
+
+" ctrl-s to save
+map <C-s> :w<CR>
+map! <C-s> <Esc>:w<CR>
+
+" move up/down by visible lines on long wrapped lines of text
+nnoremap k gk
+nnoremap j gj
+
+" map sudo-write-file to w!! in command line
+cmap w!! %!sudo tee > /dev/null %
+
+"remap jj to escape in insert mode.
+inoremap jj <Esc>
+
+" make Y yank to end of line (consistent with C and D)
+noremap Y y$
+
+" make Q do somethign useful - format para
+noremap Q gq}
+
+" aliases for window switching
+noremap <C-l> <C-w>l
+noremap <C-h> <C-w>h
+noremap <C-k> <C-w>k
+noremap <C-j> <C-w>j
+
+
+" copy/paste selection/line to X CLIPBOARD
+"ap <F6> "+y
+"ap <S-F6> "+p  
+"requires xclip:
+" vmap <F6> :!xclip -f -sel clip<CR>
+
+" copy/paste selection/line to X Primary
+"map <F7> "*y
+"map <S-F7> "*p
+"requires xclip:
+" map <F7> :-1r !xclip -o -sel clip<CR>
+
 " Search {{{1
 
 " Make searches case-sensitive only if they contain upper-case characters
