@@ -10,9 +10,6 @@
 [submodule "prog/ipython_extensions"]
 	path = prog/ipython_extensions
 	url = https://github.com/minrk/ipython_extensions
-[submodule "Vundle.vim"]
-	path = home/.vim/bundle/Vundle.vim
-	url = https://github.com/gmarik/Vundle.vim
 [submodule "term/tpm"]
 	path = term/tpm
 	url = git://github.com/tmux-plugins/tpm
