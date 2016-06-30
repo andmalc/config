@@ -1,4 +1,4 @@
-so ~/.vim/myvimfunctions.vim
+so ~/config/dotfiles/vim/.vim/myvimfunctions.vim
 set foldtext=CustomFoldText()
 autocmd BufRead,BufNewFile /home/andmalc/notes/* setlocal foldmethod=marker
 autocmd BufRead,BufNewFile /home/andmalc/config/* setlocal foldmethod=marker
