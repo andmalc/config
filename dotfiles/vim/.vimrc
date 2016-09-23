@@ -79,14 +79,14 @@ autocmd BufWinEnter *.py setlocal foldexpr=SimpylFold(v:lnum) foldmethod=expr
 autocmd BufWinLeave *.py setlocal foldexpr< foldmethod<
 
 " YouCompleteMe options, replace jedi-vim
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
 " ensures that the autocomplete window goes away when done
-let g:ycm_autoclose_preview_window_after_completion=1
+" let g:ycm_autoclose_preview_window_after_completion=1
 " shortcut for goto definition
-map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+" map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " switch off ycm for text markup formats
-let g:ycm_filetype_blacklist = {'asciidoc': 0, 'text': 0, 'markdown': 0}
+" let g:ycm_filetype_blacklist = {'asciidoc': 0, 'text': 0, 'markdown': 0}
 
 
 " PyFlakes  
@@ -101,17 +101,25 @@ filetype plugin indent on
 
 " Colors {{{1
 
+
 "if has('gui_running')
 "    set background=light
 "else
 "    set background=dark
 "endif
 
+" Solarized
+" let g:solarized_termtrans=1
+" let g:solarized_termcolors=256
+" colorscheme solarized
+
+
 " Lucius
-"let g:lucius_no_term_bg = 1
-" colorscheme lucius
-" LuciusBlackLowContrast
-" For darcolors
+" For black background in console:
+"   let g:lucius_no_term_bg = 1 #default 0 makes lucius set the background
+"   colorscheme lucius
+"   LuciusBlackLowContrast
+colorscheme lucius
 
 
 " File format {{{1
@@ -146,7 +154,7 @@ noremap ; :
 
 " ctrl-q doesnt work in console vim, so use leader-q 
 " " to enter block visual mode
-nnoremap <leader>q <C-Q>
+noremap <leader>q <C-Q>
 
 map ,H	:e $HOME/
 map ,N	:e $HOME/notes/
@@ -202,7 +210,10 @@ noremap <C-j> <C-w>j
 "requires xclip:
 " map <F7> :-1r !xclip -o -sel clip<CR>
 
-" Search {{{1
+" List & Search {{{1
+
+" Nicer chars in list mode
+"set list lcs=trail:·,tab:»·
 
 " Make searches case-sensitive only if they contain upper-case characters
 set ignorecase

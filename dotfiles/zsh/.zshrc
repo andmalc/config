@@ -7,34 +7,38 @@ source /home/andmalc/config/term/antigen/antigen.zsh
 antigen use oh-my-zsh
 
 antigen bundles <<EOBUNDLES
-	ssh-agent
-	sudo # ESC twice: Puts sudo in front of the current command, or the last one if the command line is empty.
-	systemd # Add sc-[command] aliases to all systemctl commands, using sudo when needed.
-	#git
-	virtualenvwrapper # Loads Python's virtualenvwrapper shell tools, and automatically activates virtualenv on cd into git repository with matching name.
-##	virtualenv
-##	zsh-users/zsh-syntax-highlighting
-	~/config/term/zsh-git-prompt
+ssh-agent
+sudo # ESC twice: Puts sudo in front of the current command, or the last one if the command line is empty.
+systemd # Add sc-[command] aliases to all systemctl commands, using sudo when needed.
+git
+virtualenvwrapper # Loads Python's virtualenvwrapper shell tools, and automatically activates virtualenv on cd into git repository with matching name.  
+
+zsh-users/zsh-autosuggestions
+
+###	zsh-users/zsh-syntax-highlighting
+#	~/config/term/zsh-git-prompt
 EOBUNDLES
 
-#source .local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
-
 antigen-theme fox
-#antigen-theme /home/andmalc/config/term/ mytheme
-#antigen-theme /home/andmalc/config/term/ af-magic
+##antigen-theme /home/andmalc/config/term/ mytheme
+##antigen-theme /home/andmalc/config/term/ af-magic
 antigen apply
-
+#
 #eval `keychain --eval --nogui -Q -q /home/andmalc/.ssh/andmalc`
 #eval `ssh-agent`
 
-# -n test: true if string non-zero
-if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
-    antigen-theme /home/andmalc/config/term/ af-magic
-    antigen apply
-    #ssh-add ~/.ssh/protected
-    #tmux a
-else
+# Required by ssh-agent plugin
+zstyle :omz:plugins:ssh-agent agent-forwarding on
+#
+
+# On remote, tmux not running
+if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ] && [ -z "$TMUX" ]; then
+    #mux default
+    tmux attach
+# On local, tmux not running
+elif [ -z "$SSH_CLIENT" ] || [ -z "$SSH_TTY" ] && [ -z "$TMUX" ]; then
     ssh-add ~/.ssh/andmalc
+else
 fi
 
 
@@ -108,17 +112,10 @@ bindkey '\ea' beginning-of-line
 # Set the prompt to "[bold{user@host}]relative_working_directory$ "
 # PS1="[%B%n@%m%b]%~$ "
 
-#autoload -U promptinit
-#promptinit
+autoload -U promptinit
+promptinit
 
-#autoload -U predict-on
-#predict-on
-#prompt oliver
-
-# Git prompt
-# https://github.com/olivierverdier/zsh-git-prompt
-#source ~/config/home/zsh/olivierverdier/zsh-git-prompt/zshrc.sh
-#PROMPT='%B%m%~%b$(git_super_status) %# '
+prompt oliver
 
 
 

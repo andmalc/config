@@ -1,4 +1,4 @@
-export TERM=xterm-256color
+#export TERM=xterm-256color
 
 #For gnupg2
 GPG_TTY=$(tty)
@@ -11,8 +11,8 @@ export LESS=-cex3M
 
 #PATH=~/.local/bin:PATH:~/dev/google-cloud-sdk/bin
 typeset -U PATH path 
-path+=(~/.local/bin)
-#path+=(~/.local/bin:PATH ~/dev/google-cloud-sdk/bin)
+#path+=(~/.local/bin)
+path+=(~/.local/bin ~/dev/google-cloud-sdk/bin)
 
 #export DOCKER_HOST=tcp://localhost:2375
 #eval "$(docker-machine_linux-arm env home)"

@@ -1,0 +1,14 @@
+name: mywin
+root: ~/
+windows:
+  - first: vim
+  - second:
+      layout: main-vertical
+      panes:
+        -
+        -
+  - notes: vim
+    root: ~/notes
+
+
+# vim: ft=ansible
