@@ -34,9 +34,6 @@ Plugin 'VOom'
 " Ansible
 Bundle 'chase/vim-ansible-yaml'
 
-" Rec for Py coding
-Plugin 'tmhedberg/SimpylFold'
-
 " Folding for MD files
 Plugin 'nelstrom/vim-markdown-folding'
 " Default fold syle is 'stacked' (shows all headings). 'nested' is shows h1 only
@@ -72,8 +69,10 @@ Plugin 'davidhalter/jedi-vim'
 "Bundle 'scrooloose/nerdtree'
 "Bundle 'klen/python-mode'
 
-
+" SimpylFold
 " https://github.com/tmhedberg/SimpylFold
+" Rec for Py coding
+Plugin 'tmhedberg/SimpylFold'
 let g:SimpylFold_docstring_preview = 1
 autocmd BufWinEnter *.py setlocal foldexpr=SimpylFold(v:lnum) foldmethod=expr
 autocmd BufWinLeave *.py setlocal foldexpr< foldmethod<
@@ -84,7 +83,6 @@ Plugin 'Valloric/YouCompleteMe'
 let g:ycm_autoclose_preview_window_after_completion=1
 " shortcut for goto definition
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
-
 " switch off ycm for text markup formats
 let g:ycm_filetype_blacklist = {'asciidoc': 0, 'text': 0, 'markdown': 0}
 
