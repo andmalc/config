@@ -1,9 +1,6 @@
 [submodule "home/zsh/zsh-git-prompt"]
 	path = term/zsh-git-prompt
 	url = https://github.com/olivierverdier/zsh-git-prompt
-[submodule "term/solarized-termcolor-osc4"]
-	path = term/solarized-termcolor-osc4
-	url = https://github.com/benley/solarized-termcolor-osc4
 [submodule "term/antigen"]
 	path = term/antigen
 	url = https://github.com/zsh-users/antigen

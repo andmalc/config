@@ -138,8 +138,6 @@ set encoding=utf-8
 " Candidate leaders: - H L space ctrl cr
 let mapleader = ","
 map ,f	<PageDown>
-map <leader>w :wincmd 
-map <leader>~ :NERDTreeToggle<CR>
 map <leader>s :w<CR>
 imap <leader>s <ESC>:w<CR>
 noremap ; :
@@ -161,6 +159,7 @@ map <leader>bw :bw<CR>
 " map cut & paste to what they bloody should be
 vnoremap <C-c> "+y
 vnoremap <C-x> "+x
+" paste before cursor
 map <C-v> "+gP
 
 " ctrl-s to save
