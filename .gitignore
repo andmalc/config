@@ -25,7 +25,7 @@ home/.tmux/plugins
 .zsh_history
 
 
-home/.ssh/known_hosts
-home/.ssh/environment*
-home/.ssh/authorized_keys
+**/.ssh/known_hosts
+**/.ssh/environment*
+**/.ssh/authorized_keys
 
