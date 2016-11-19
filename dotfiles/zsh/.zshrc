@@ -1,3 +1,6 @@
+#autoload -U select-word-style
+#select-word-style bash
+
 ## This file for config of interactive shell
 ## All else in zshenv
 

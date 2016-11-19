@@ -1,5 +1,8 @@
 #export TERM=xterm-256color
 
+#export WORDCHARS='`~!@#$%^&*()-_=+[{]}\|;:",<.>/?'"'" 
+export WORDCHARS=''
+
 #For gnupg2
 GPG_TTY=$(tty)
 export GPG_TTY
