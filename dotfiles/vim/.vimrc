@@ -72,14 +72,14 @@ autocmd BufWinEnter *.py setlocal foldexpr=SimpylFold(v:lnum) foldmethod=expr
 autocmd BufWinLeave *.py setlocal foldexpr< foldmethod<
 
 " YouCompleteMe options, replace jedi-vim
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
 " ensures that the autocomplete window goes away when done
-let g:ycm_autoclose_preview_window_after_completion=1
+" let g:ycm_autoclose_preview_window_after_completion=1
 " shortcut for goto definition
-map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+" map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " switch off ycm for text markup formats
-let g:ycm_filetype_blacklist = {'asciidoc': 0, 'text': 0, 'markdown': 0}
+" let g:ycm_filetype_blacklist = {'asciidoc': 0, 'text': 0, 'markdown': 0}
 
 
 " PyFlakes  
@@ -91,6 +91,9 @@ let g:ycm_filetype_blacklist = {'asciidoc': 0, 'text': 0, 'markdown': 0}
 call vundle#end()
 filetype plugin indent on
 
+" Statusline
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 " Colors {{{1
 
@@ -101,10 +104,16 @@ filetype plugin indent on
 "endif
 
 " Lucius
-"let g:lucius_no_term_bg = 1
-" colorscheme lucius
+let g:lucius_no_term_bg = 1
+ colorscheme lucius
 " LuciusBlackLowContrast
 " For darcolors
+
+" Statusline {{{1
+" Show always, not just when window split
+" set laststatus=2
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='luna'
 
 
 " File format {{{1
@@ -208,7 +217,3 @@ set hlsearch
 " map key to dismiss search highlightedness
 map <bs> :noh<CR>
 
-" Examples {{{1
-
-" Harry Percival
-" https://github.com/hjwp/dotfiles/tree/master/vim

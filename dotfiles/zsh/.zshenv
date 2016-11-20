@@ -1,7 +1,7 @@
 #export TERM=xterm-256color
 
-#export WORDCHARS='`~!@#$%^&*()-_=+[{]}\|;:",<.>/?'"'" 
-export WORDCHARS=''
+# Words not split by special characters
+export WORDCHARS='/-.'
 
 #For gnupg2
 GPG_TTY=$(tty)
