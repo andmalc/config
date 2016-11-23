@@ -17,6 +17,8 @@ set backspace=indent,eol,start
 " enable automatic yanking to and pasting from the selection
 set clipboard+=unnamed
 
+" Wrap at character in 'breakat' rather than at last character on screen
+set linebreak
 
 " Vundle {{{1
  
