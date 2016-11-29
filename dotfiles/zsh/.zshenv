@@ -1,5 +1,8 @@
 #export TERM=xterm-256color
 
+# Words not split by special characters
+export WORDCHARS='/-.'
+
 #For gnupg2
 GPG_TTY=$(tty)
 export GPG_TTY
