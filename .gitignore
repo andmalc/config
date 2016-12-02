@@ -15,8 +15,8 @@ home/.gnupg
 !home/.gnupg/secring.gpg
 !home/.gnupg/trustdb.gpg
 
-home/.tmux/plugins
-!home/.tmux/plugins/tpm
+**/.tmux/plugins
+!**/.tmux/plugins/tpm
 
 *#*/*.pyc
 *.swp
