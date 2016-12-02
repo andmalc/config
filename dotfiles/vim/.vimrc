@@ -105,7 +105,7 @@ endif
 
 " Lucius
 let g:lucius_no_term_bg = 1
- colorscheme lucius
+colorscheme koehler
 " LuciusBlackLowContrast
 " For darcolors
 
