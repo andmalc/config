@@ -97,11 +97,11 @@ Plugin 'vim-airline/vim-airline-themes'
 
 " Colors {{{1
 
-"if has('gui_running')
-"    set background=light
-"else
-"    set background=dark
-"endif
+if has('gui_running')
+    set background=light
+else
+    set background=dark
+endif
 
 " Lucius
 let g:lucius_no_term_bg = 1

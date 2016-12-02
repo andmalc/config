@@ -1,0 +1,7 @@
+pane	admin	1	:zsh	1	:*	1	:/home/andmalc	1	zsh	:
+pane	admin	2	:config	0	:	1	:/home/andmalc	1	zsh	:
+pane	admin	3	:notes	0	:-	1	:/home/andmalc/notes	1	zsh	:
+window	admin	1	1	:*	d1fe,149x39,0,0,1
+window	admin	2	0	:	d1ff,149x39,0,0,2
+window	admin	3	0	:-	d200,149x39,0,0,3
+state	admin	
