@@ -16,6 +16,7 @@ home/.gnupg
 !home/.gnupg/trustdb.gpg
 
 **/.tmux/plugins
+**/.tmux/resurrect
 !**/.tmux/plugins/tpm
 
 *#*/*.pyc
