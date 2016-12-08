@@ -1,5 +1,10 @@
 #!/bin/bash
-if [[ -n $SSH_TTY ]];then
+
+# If SSH_TTY variable is set, set tmux escape to backtick.
+# Run from .tmux.conf
+
+if [[ -n $SSH_TTY ]]; 
+then
     tmux unbind-key C-b
     tmux  set -g prefix \`
     tmux bind \` send-prefix
