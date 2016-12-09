@@ -2,6 +2,7 @@ home/.local
 **/.vim/bundle/*
 !**/.vim/bundle/Vundle.vim
 **/.vim/ftplugin
+**/.vim/pack/*
 
 home/dotconfig
 !home/dotconfig/zsh/zshrc
