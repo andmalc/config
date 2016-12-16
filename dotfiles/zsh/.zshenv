@@ -1,24 +1,29 @@
+setopt ALL_EXPORT #all options subsequently defined are exported
+
+# Zsh env {{{1
 #export TERM=xterm-256color
+
+# ZSH function path
+fpath=( "$HOME/.zfunctions" $fpath )
+
+#fpath=($ZDOTDIR/completion $fpath)
 
 # Words not split by special characters
 export WORDCHARS='/-.'
 
-#For gnupg2
-GPG_TTY=$(tty)
-export GPG_TTY
+# Shell env {{{1
 
-# Raw control chars - for IPython
-export PAGER='less -R'
-export EDITOR=vi
-export LESS=-cex3M
-
-#PATH=~/.local/bin:PATH:~/dev/google-cloud-sdk/bin
 typeset -U PATH path 
-#path+=(~/.local/bin)
 path+=(~/.local/bin ~/dev/google-cloud-sdk/bin)
 
-#export DOCKER_HOST=tcp://localhost:2375
-#eval "$(docker-machine_linux-arm env home)"
+# Apps env {{{1
+#
+export EDITOR=vim
+PAGER='less -M'
+export LESS=-cex3M
+
+# Raw control chars - for IPython
+# export PAGER='less -R'
 
 # Location of IPython config and user data
 export IPYTHONDIR=~/.config/ipython
@@ -30,9 +35,9 @@ export PROJECT_HOME=$HOME/work
 #PYTHONPATH='.'
 #export PYTHONSTARTUP=~/admin/startup.py
 
-
-fpath=($ZDOTDIR/completion $fpath)
-autoload -Uz compinit && compinit -i
+#For gnupg2
+GPG_TTY=$(tty)
+export GPG_TTY
 
 
 #Google Cloud SDK
