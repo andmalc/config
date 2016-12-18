@@ -30,11 +30,13 @@ Plugin 'gmarik/Vundle.vim'
 
 " My plugins
 
+Bundle 'https://github.com/neilagabriel/vim-geeknote'
+
 " Outliner
 Plugin 'VOom'
 
 " Ansible
-Bundle 'chase/vim-ansible-yaml'
+" Bundle 'chase/vim-ansible-yaml'
 
 " Rec for Py coding
 Plugin 'tmhedberg/SimpylFold'
