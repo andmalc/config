@@ -1,39 +1,31 @@
-#autoload -U select-word-style
-#select-word-style bash
+# Plugins {{{1
 
-## This file for config of interactive shell
-## All else in zshenv
-
-#~/config/term/solarized-termcolor-osc4/solarized.sh
-
+# Required by ssh-agent plugin
+zstyle :omz:plugins:ssh-agent agent-forwarding on
+ 
 source /home/andmalc/config/term/antigen/antigen.zsh
 antigen use oh-my-zsh
 
 antigen bundles <<EOBUNDLES
+dnf
 ssh-agent
 sudo # ESC twice: Puts sudo in front of the current command, or the last one if the command line is empty.
 systemd # Add sc-[command] aliases to all systemctl commands, using sudo when needed.
 git
 virtualenvwrapper # Loads Python's virtualenvwrapper shell tools, and automatically activates virtualenv on cd into git repository with matching name.  
-
 zsh-users/zsh-autosuggestions
 
 ###	zsh-users/zsh-syntax-highlighting
 #	~/config/term/zsh-git-prompt
 EOBUNDLES
 
+# Themes {{{1
 antigen-theme fox
 ##antigen-theme /home/andmalc/config/term/ mytheme
 ##antigen-theme /home/andmalc/config/term/ af-magic
 antigen apply
-#
-#eval `keychain --eval --nogui -Q -q /home/andmalc/.ssh/andmalc`
-#eval `ssh-agent`
 
-# Required by ssh-agent plugin
-zstyle :omz:plugins:ssh-agent agent-forwarding on
-#
-
+# Location specific {{{1
 # On remote, tmux not running
 if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ] && [ -z "$TMUX" ]; then
     #mux default
@@ -46,16 +38,23 @@ fi
 
 
 
-#Shell Parameters {{{1
+# zsh Parameters {{{1
 
 # Parameters (i.e. variables)
 # No space before or after '='
 #see zshparam for more
 
-setopt ALL_EXPORT #all options subsequently defined are exported
+## HISTORY
+HISTFILE=~/.zsh_history
+HISTSIZE=1000
+SAVEHIST=1000
 
-PAGER='less -M'
-export LESS=-cex3M
+#Shell Variables {{{1
+ 
+#LANGUAGE=
+#LC_ALL='en_IE.UTF-8'
+#LANG='en_IE.UTF-8'
+#LC_CTYPE=C
 
 limit core 0
 
@@ -65,15 +64,12 @@ stty stop undef
 # Set up the file creation mask
 umask 002
 
-#SHELL VARIABLES
-#LANGUAGE=
-#LC_ALL='en_IE.UTF-8'
-#LANG='en_IE.UTF-8'
-#LC_CTYPE=C
-
 
 #Zsh Options {{{1
 # http://zsh.sunsite.dk/Doc/Release/zsh_15.html
+
+autoload -U select-word-style
+select-word-style shell
 
 #Defaults
 setopt CORRECT
@@ -85,22 +81,17 @@ setopt AUTO_CD AUTO_PUSHD PUSHDIGNOREDUPS
 setopt AUTO_NAME_DIRS #Any parameter refering to an absolute path to a dir becomes a named dir: ~dir
 setopt NOTIFY
 
-## HISTORY
-HISTFILE=~/.zsh_history
-HISTSIZE=1000
-setopt APPEND_HISTORY
-SAVEHIST=1000
 setopt SHARE_HISTORY
 setopt HIST_IGNORE_ALL_DUPS
+setopt APPEND_HISTORY
 
 
 
-# Key Bindings {{{1
+#Key Bindings {{{1
 
-EDITOR=vim
 # Emacs mode, overrides EDITOR=vi
-bindkey -e 
-bindkey '\ea' beginning-of-line
+#bindkey -e 
+#bindkey '\ea' beginning-of-line
 
 #bindkey -M menuselect '^o' accept-and-infer-next-history  # ^o completes dir in menu
 # gathering multiple args with completion.  End each with 'Esc-CR'
@@ -108,6 +99,7 @@ bindkey '\ea' beginning-of-line
 
 
 #Prompt {{{1
+
 ## %~ is short (/home > ~) form of current dir
 # %m short hostname, %M full host name, %n is $USERNAME
 #PROMPT='%/> '
@@ -115,10 +107,10 @@ bindkey '\ea' beginning-of-line
 # Set the prompt to "[bold{user@host}]relative_working_directory$ "
 # PS1="[%B%n@%m%b]%~$ "
 
-autoload -U promptinit
-promptinit
+#autoload -U promptinit
+#promptinit
 
-prompt oliver
+#prompt oliver
 
 
 
@@ -126,6 +118,7 @@ prompt oliver
 
 setopt MENU_COMPLETE COMPLETE_IN_WORD LIST_PACKED
 
+# loading of compinit handled by OMZ
 #autoload -U compinit
 #compinit
 # The following lines were added by compinstall
@@ -142,13 +135,13 @@ setopt MENU_COMPLETE COMPLETE_IN_WORD LIST_PACKED
 #compinit
 # End of lines added by compinstall
 
-# Aliases {{{1
+#Aliases {{{1
 alias s='sudo'
 alias aup='sudo aptitude update; sudo aptitude full-upgrade; sudo aptitude clean'
 alias mkidr='mkdir -p'
 alias hash="hash -r" #Clear cache of  executables - for newly installed programs
 
-## aptitude {{{2
+#aptitude {{{2
 alias	ap='sudo aptitude'
 alias	apu='sudo aptitude update'
 alias	aps='aptitude search'
@@ -204,8 +197,8 @@ alias llg='ls -alh'
 alias drm="docker rm"
 alias dps="docker ps"
 
-# DNF {{{2
-alias di="sudo dnf install "
-alias da="sudo dnf list available "
-alias dup="sudo dnf update "
+#DNF {{{2
+#alias di="sudo dnf install "
+#alias da="sudo dnf list available "
+#alias dup="sudo dnf update "
 

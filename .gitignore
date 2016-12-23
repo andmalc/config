@@ -2,6 +2,7 @@ home/.local
 **/.vim/bundle/*
 !**/.vim/bundle/Vundle.vim
 **/.vim/ftplugin
+**/.vim/pack/*
 
 home/dotconfig
 !home/dotconfig/zsh/zshrc
@@ -15,17 +16,22 @@ home/.gnupg
 !home/.gnupg/secring.gpg
 !home/.gnupg/trustdb.gpg
 
+# Tmux
 **/.tmux/plugins
-**/.tmux/resurrect
 !**/.tmux/plugins/tpm
+**/.tmux/resurrect
 
+**/dotfiles/localbin
+!**/dotfiles/localbin/.local/bin/tmux-set-escape.sh
+
+# File Types
 *#*/*.pyc
 *.swp
 .zcompdump
 .zcompcache
 .zsh_history
 
-
+# SSH
 **/.ssh/known_hosts
 **/.ssh/environment*
 **/.ssh/authorized_keys
