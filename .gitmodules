@@ -4,9 +4,6 @@
 [submodule "term/antigen"]
 	path = term/antigen
 	url = https://github.com/zsh-users/antigen
-[submodule "prog/ipython_extensions"]
-	path = prog/ipython_extensions
-	url = https://github.com/minrk/ipython_extensions
 [submodule "term/tpm"]
 	path = term/tpm
 	url = git://github.com/tmux-plugins/tpm

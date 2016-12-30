@@ -33,6 +33,7 @@ if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ] && [ -z "$TMUX" ]; then
 # On local, tmux not running
 elif [ -z "$SSH_CLIENT" ] || [ -z "$SSH_TTY" ] && [ -z "$TMUX" ]; then
     ssh-add ~/.ssh/andmalc
+    ssh-add ~/.ssh/id_ed25519
 else
 fi
 
