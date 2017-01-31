@@ -30,7 +30,7 @@ Plugin 'gmarik/Vundle.vim'
 
 " My plugins
 
-Bundle 'https://github.com/neilagabriel/vim-geeknote'
+"Bundle 'https://github.com/neilagabriel/vim-geeknote'
 
 " Outliner
 Plugin 'VOom'
@@ -97,9 +97,10 @@ filetype plugin indent on
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
-" Colors {{{1
+" Appearance {{{1
 
 if has('gui_running')
+    set guifont=Hack\ Regular\ 11
     set background=light
 else
     set background=dark
@@ -164,7 +165,7 @@ map <leader>bw :bw<CR>
 vnoremap <C-c> "+y
 vnoremap <C-x> "+x
 " paste before cursor
-map <C-v> "+gP
+imap <C-v> "+gP
 
 " ctrl-s to save
 map <C-s> :w<CR>
