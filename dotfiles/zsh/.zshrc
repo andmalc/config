@@ -1,14 +1,16 @@
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+
 # Plugins {{{1
 
 # Required by ssh-agent plugin
-zstyle :omz:plugins:ssh-agent agent-forwarding on
+#zstyle :omz:plugins:ssh-agent agent-forwarding on
  
 source /home/andmalc/config/term/antigen/antigen.zsh
 antigen use oh-my-zsh
 
 antigen bundles <<EOBUNDLES
 dnf
-ssh-agent
+#ssh-agent
 sudo # ESC twice: Puts sudo in front of the current command, or the last one if the command line is empty.
 systemd # Add sc-[command] aliases to all systemctl commands, using sudo when needed.
 git
@@ -17,6 +19,7 @@ zsh-users/zsh-autosuggestions
 
 ###	zsh-users/zsh-syntax-highlighting
 #	~/config/term/zsh-git-prompt
+
 EOBUNDLES
 
 # Themes {{{1
@@ -32,7 +35,8 @@ if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ] && [ -z "$TMUX" ]; then
     tmux attach
 # On local, tmux not running
 elif [ -z "$SSH_CLIENT" ] || [ -z "$SSH_TTY" ] && [ -z "$TMUX" ]; then
-    ssh-add ~/.ssh/andmalc
+#    ssh-add ~/.ssh/andmalc
+    ssh-add ~/.ssh/id_ed25519
 else
 fi
 
@@ -51,13 +55,6 @@ SAVEHIST=1000
 
 #Shell Variables {{{1
  
-#LANGUAGE=
-#LC_ALL='en_IE.UTF-8'
-#LANG='en_IE.UTF-8'
-#LC_CTYPE=C
-
-limit core 0
-
 #Disable Ctrl+S/Ctrl+Q freeze/resume
 stty stop undef 
 
@@ -185,7 +182,7 @@ alias -g '...'='../..'
 alias -g '....'='../../..'
 alias dirs='dirs -v'
 
-alias ld='ls -l | grep "^d"' 
+#   alias ld='ls -l | grep "^d"' 
 #or maybe ld='ls -ld */'
 alias lm='ls -tl |  head -20'
 alias ls='ls --color'
