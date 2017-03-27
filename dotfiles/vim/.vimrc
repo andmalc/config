@@ -65,7 +65,7 @@ Plugin 'jnurmine/Zenburn'
 " Plugin 'vim-scripts/pyflakes.vim'
 
 " Jedi
-Plugin 'davidhalter/jedi-vim'
+" Plugin 'davidhalter/jedi-vim'
 
 
 " https://github.com/tmhedberg/SimpylFold
