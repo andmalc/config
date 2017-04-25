@@ -25,7 +25,6 @@ LESS=-cex3M
 
 #For gnupg2
 GPG_TTY=$(tty)
-GPG_TTY
 
 # Python {{{1
 

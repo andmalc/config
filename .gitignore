@@ -3,6 +3,7 @@ home/.local
 !**/.vim/bundle/Vundle.vim
 **/.vim/ftplugin
 **/.vim/pack/*
+**/.vim/.netrwhist
 
 home/dotconfig
 !home/dotconfig/zsh/zshrc
