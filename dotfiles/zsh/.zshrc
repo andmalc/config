@@ -199,3 +199,7 @@ alias dps="docker ps"
 #alias da="sudo dnf list available "
 #alias dup="sudo dnf update "
 
+# fix for Tilix 
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+        source /etc/profile.d/vte.sh
+fi
