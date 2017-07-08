@@ -20,6 +20,10 @@ set clipboard+=unnamed
 " Wrap at character in 'breakat' rather than at last character on screen
 set linebreak
 
+" Read lines at bottom of file for settings
+" set modeline #default is on
+" set modelines=5 # default
+
 " Vundle {{{1
  
 filetype off
