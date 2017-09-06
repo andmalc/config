@@ -33,7 +33,7 @@ home/.gnupg
 .zsh_history
 
 # SSH
-**/.ssh/known_hosts
+**/.ssh/*known_hosts
 **/.ssh/environment*
 **/.ssh/authorized_keys
 

@@ -24,8 +24,11 @@ LANG=C.UTF-8
 # Apps env {{{1
 #
 EDITOR=vim
-PAGER='less -M'
+
+# Less -F - do not paginate if less than a page
+PAGER='less -F -M'
 LESS=-cex3M
+
 
 #For gnupg2
 GPG_TTY=$(tty)

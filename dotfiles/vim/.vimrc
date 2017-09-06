@@ -24,6 +24,11 @@ set linebreak
 " relative line numbering - see # of line from insertion point
 set rnu 
 
+
+" Read lines at bottom of file for settings
+" set modeline #default is on
+" set modelines=5 # default
+
 " Vundle {{{1
  
 filetype off

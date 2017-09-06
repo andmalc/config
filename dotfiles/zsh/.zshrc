@@ -199,6 +199,10 @@ alias dps="docker ps"
 #alias da="sudo dnf list available "
 #alias dup="sudo dnf update "
 
+#systemctl {{{2
+alias sclua='systemctl list-units --all ' 
+
+# Tilix config {{{1
 # fix for Tilix 
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
         source /etc/profile.d/vte.sh
