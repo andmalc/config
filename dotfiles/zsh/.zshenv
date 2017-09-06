@@ -15,7 +15,7 @@ fpath=( "$HOME/.zfunctions" $fpath )
 WORDCHARS='/-.'
 
 typeset -U PATH path 
-path+=(~/.local/bin ~/dev/google-cloud-sdk/bin)
+path+=(~/.local/bin ~/dev/miniconda3/bin  ~/dev/google-cloud-sdk/bin)
 
 # UTF8 lang
 LC_ALL=C.UTF-8

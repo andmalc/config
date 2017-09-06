@@ -20,6 +20,10 @@ set clipboard+=unnamed
 " Wrap at character in 'breakat' rather than at last character on screen
 set linebreak
 
+
+" relative line numbering - see # of line from insertion point
+set rnu 
+
 " Vundle {{{1
  
 filetype off
@@ -30,22 +34,24 @@ Plugin 'gmarik/Vundle.vim'
 
 " My plugins
 
-"Bundle 'https://github.com/neilagabriel/vim-geeknote'
-
+" Folding plugins {{{2
+"
 " Outliner
 Plugin 'VOom'
 
-" Ansible
-" Bundle 'chase/vim-ansible-yaml'
-
 " Rec for Py coding
 Plugin 'tmhedberg/SimpylFold'
+" https://github.com/tmhedberg/SimpylFold
+let g:SimpylFold_docstring_preview = 1
+autocmd BufWinEnter *.py setlocal foldexpr=SimpylFold(v:lnum) foldmethod=expr
+autocmd BufWinLeave *.py setlocal foldexpr< foldmethod<
 
 " Folding for MD files
 Plugin 'nelstrom/vim-markdown-folding'
 " Default fold syle is 'stacked' (shows all headings). 'nested' is shows h1 only
 " let g:markdown_fold_style = 'nested'
 
+" Tools plugins {{{2
 
 " Gundo - undo graph http://sjl.bitbucket.org/gundo.vim/ 
 Plugin 'https://github.com/sjl/gundo.vim.git'
@@ -55,23 +61,16 @@ Plugin 'https://github.com/sjl/gundo.vim.git'
 Plugin 'tpope/vim-fugitive.git'
 
 
-" Colorschemes
-Plugin 'Lokaltog/vim-distinguished'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'jonathanfilip/vim-lucius'
-Plugin 'jnurmine/Zenburn'
-
 " PyFlakes
 " Plugin 'vim-scripts/pyflakes.vim'
 
 " Jedi
 " Plugin 'davidhalter/jedi-vim'
 
+" Ansible
+" Bundle 'chase/vim-ansible-yaml'
 
-" https://github.com/tmhedberg/SimpylFold
-let g:SimpylFold_docstring_preview = 1
-autocmd BufWinEnter *.py setlocal foldexpr=SimpylFold(v:lnum) foldmethod=expr
-autocmd BufWinLeave *.py setlocal foldexpr< foldmethod<
+
 
 " YouCompleteMe options, replace jedi-vim
 " Plugin 'Valloric/YouCompleteMe'
@@ -89,15 +88,41 @@ autocmd BufWinLeave *.py setlocal foldexpr< foldmethod<
 " PyFlakes let g:jedi#popup_on_dot = 0
 " highlight SpellBad term=underline gui=undercurl guisp=Yellow 
 
-" End of Vundle Bundles
-call vundle#end()
-filetype plugin indent on
-
+" Interface plugins {{{2
+"
 " Statusline
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
-" Appearance {{{1
+
+" Colorscheme Plugins  {{{2
+Plugin 'Lokaltog/vim-distinguished'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'jnurmine/Zenburn'
+
+" Moonfly
+" dark color scheme for Vim and Neovim
+" https://github.com/bluz71/vim-moonfly-colors
+Plugin 'bluz71/vim-moonfly-colors'
+
+" Lucius
+Plugin 'jonathanfilip/vim-lucius'
+let g:lucius_no_term_bg = 1
+" LuciusBlackLowContrast
+" For darcolors
+
+
+" End of Vundle Bundles
+call vundle#end()
+filetype plugin indent on
+
+" Interface {{{1
+
+" Set colorscheme
+
+colorscheme moonfly
+let g:moonflyCursorColor = 1
+let g:moonflyTerminalColors = 1
 
 if has('gui_running')
     set guifont=Hack\ Regular\ 11
@@ -106,11 +131,8 @@ else
     set background=dark
 endif
 
-" Lucius
-let g:lucius_no_term_bg = 1
-colorscheme koehler
-" LuciusBlackLowContrast
-" For darcolors
+set cursorline
+
 
 " Statusline {{{1
 " Show always, not just when window split
@@ -147,51 +169,48 @@ map <leader>s :w<CR>
 imap <leader>s <ESC>:w<CR>
 noremap ; :
 
-" ctrl-q doesnt work in console vim, so use leader-q 
-" " to enter block visual mode
-nnoremap <leader>q <C-Q>
-
 map ,H	:e $HOME/
 map ,N	:e $HOME/notes/
 map ,T	:set titlestring=
 
+
+" Buffers {{{2
+"
 map <leader>x :suspend<CR>
 map <leader>bn :bn<CR>
 map <leader>bp :bp<CR>
 map <leader>bw :bw<CR>
 
-
-" map cut & paste to what they bloody should be
-vnoremap <C-c> "+y
-vnoremap <C-x> "+x
-" paste before cursor
-imap <C-v> "+gP
-
 " ctrl-s to save
 map <C-s> :w<CR>
 map! <C-s> <Esc>:w<CR>
 
-" move up/down by visible lines on long wrapped lines of text
-nnoremap k gk
-nnoremap j gj
-
 " map sudo-write-file to w!! in command line
 cmap w!! %!sudo tee > /dev/null %
 
-"remap jj to escape in insert mode.
-inoremap jj <Esc>
-
-" make Y yank to end of line (consistent with C and D)
-noremap Y y$
-
-" make Q do somethign useful - format para
-noremap Q gq}
-
+" Windows Panes {{{2
+"
 " aliases for window switching
 noremap <C-l> <C-w>l
 noremap <C-h> <C-w>h
 noremap <C-k> <C-w>k
 noremap <C-j> <C-w>j
+
+" splitting
+nnoremap <silent> <leader>sp :split<CR>
+nnoremap <silent> <leader>v :vsplit<CR>
+nnoremap <silent> <leader>q :close<CR>
+
+" create tab pane at top
+nnoremap <silent> <leader>t :$tabnew<CR>
+
+" Selection Copy Paste {{{2
+"
+" map cut & paste to what they bloody should be
+vnoremap <C-c> "+y
+vnoremap <C-x> "+x
+" paste before cursor
+imap <C-v> "+gP
 
 
 " copy/paste selection/line to X CLIPBOARD
@@ -206,6 +225,21 @@ noremap <C-j> <C-w>j
 "requires xclip:
 " map <F7> :-1r !xclip -o -sel clip<CR>
 
+" Editing {{{2
+"
+"remap jj to escape in insert mode.
+inoremap jj <Esc>
+
+" move up/down by visible lines on long wrapped lines of text
+nnoremap k gk
+nnoremap j gj
+
+" make Y yank to end of line (consistent with C and D)
+noremap Y y$
+
+" make Q do somethign useful - format para
+noremap Q gq}
+
 " Search {{{1
 
 " Make searches case-sensitive only if they contain upper-case characters
@@ -219,4 +253,20 @@ set wrapscan
 set hlsearch
 " map key to dismiss search highlightedness
 map <bs> :noh<CR>
+" centre search match
+noremap n nzz
+noremap N Nzz
 
+" Nvim features {{{1
+"
+
+if has("nvim")
+        " live substitution previews
+        set inccommand=nosplit
+
+        " Control + Q to quit all
+        noremap <C-q> :confirm qall<CR>
+
+        " new tab
+        noremap <silent> <A-t> :$tabnew<CR>
+endif
