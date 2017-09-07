@@ -8,9 +8,12 @@ home/.local
 home/dotconfig
 !home/dotconfig/zsh/zshrc
 !home/dotconfig/zsh/zshenv
-!home/.config/ipython/extentions
-!home/.config/ipython/nbextentions
-!home/.config/ipython/profile_andmalc
+
+
+home/.config/prog/
+!home/.config/prog/ipython/extentions
+!home/.config/prog/ipython/nbextentions
+!home/.config/prog/ipython/profile_andmalc
 
 home/.gnupg
 !home/.gnupg/pubring.gpg
