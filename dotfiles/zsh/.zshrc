@@ -1,4 +1,3 @@
-export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 # Plugins {{{1
 
@@ -11,6 +10,7 @@ antigen use oh-my-zsh
 antigen bundles <<EOBUNDLES
 dnf
 #ssh-agent
+
 sudo # ESC twice: Puts sudo in front of the current command, or the last one if the command line is empty.
 systemd # Add sc-[command] aliases to all systemctl commands, using sudo when needed.
 git
@@ -22,25 +22,32 @@ zsh-users/zsh-autosuggestions
 
 EOBUNDLES
 
+# GPG & SSH agents {{{1
+# http://ryanlue.com/posts/2017-06-29-gpg-for-ssh-auth
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+gpgconf --launch gpg-agent
+
+# export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+
+#DISABLED
+# On remote, tmux not running
+#if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ] && [ -z "$TMUX" ]; then
+    #mux default
+#   tmux attach
+# On local, tmux not running
+#elif [ -z "$SSH_CLIENT" ] || [ -z "$SSH_TTY" ] && [ -z "$TMUX" ]; then
+#    ssh-add ~/.ssh/andmalc
+#    ssh-add ~/.ssh/id_ed25519
+#else
+#fi
+
+
+
 # Themes {{{1
 antigen-theme fox
 ##antigen-theme /home/andmalc/config/term/ mytheme
 ##antigen-theme /home/andmalc/config/term/ af-magic
 antigen apply
-
-# Location specific {{{1
-# On remote, tmux not running
-if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ] && [ -z "$TMUX" ]; then
-    #mux default
-    tmux attach
-# On local, tmux not running
-elif [ -z "$SSH_CLIENT" ] || [ -z "$SSH_TTY" ] && [ -z "$TMUX" ]; then
-#    ssh-add ~/.ssh/andmalc
-    ssh-add ~/.ssh/id_ed25519
-else
-fi
-
-
 
 # zsh Parameters {{{1
 
@@ -82,7 +89,7 @@ setopt SHARE_HISTORY
 setopt HIST_IGNORE_ALL_DUPS
 setopt APPEND_HISTORY
 
-
+unset zle_bracketed_paste
 
 #Key Bindings {{{1
 
