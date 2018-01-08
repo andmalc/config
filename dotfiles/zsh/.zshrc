@@ -4,7 +4,7 @@
 # Required by ssh-agent plugin
 #zstyle :omz:plugins:ssh-agent agent-forwarding on
  
-source /home/andmalc/config/term/antigen/antigen.zsh
+source ~/config/term/antigen/antigen.zsh
 antigen use oh-my-zsh
 
 antigen bundles <<EOBUNDLES
