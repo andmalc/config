@@ -8,4 +8,9 @@ set full dir path to .ssh to 700
 Antigen - zsh plugin & theme manager
 zsh-users/antigen.git
 
+git submodule update --init --recursive
+
+Tmux
+    prefix + I to install tpm modules
+
 

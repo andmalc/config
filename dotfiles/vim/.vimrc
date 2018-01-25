@@ -22,7 +22,7 @@ set linebreak
 
 
 " relative line numbering - see # of line from insertion point
-set rnu 
+" set rnu 
 
 
 " Read lines at bottom of file for settings
@@ -96,8 +96,8 @@ Plugin 'tpope/vim-fugitive.git'
 " Interface plugins {{{2
 "
 " Statusline
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+" Plugin 'vim-airline/vim-airline'
+" Plugin 'vim-airline/vim-airline-themes'
 
 
 " Colorscheme Plugins  {{{2
@@ -125,7 +125,7 @@ filetype plugin indent on
 
 " Set colorscheme
 
-colorscheme moonfly
+" colorscheme moonfly
 let g:moonflyCursorColor = 1
 let g:moonflyTerminalColors = 1
 
@@ -136,14 +136,18 @@ else
     set background=dark
 endif
 
-set cursorline
+"set cursorline
 
 
 " Statusline {{{1
-" Show always, not just when window split
-" set laststatus=2
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='luna'
+" Bar at bottom of window
+" 1 Show when more than one window open
+" 2 Show always, not just when window split
+set laststatus=1
+
+" ???
+" let g:airline#extensions#tabline#enabled = 1
+" let g:airline_theme='luna'
 
 
 " File format {{{1

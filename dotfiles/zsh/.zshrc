@@ -1,24 +1,31 @@
 
 # Plugins {{{1
 
-# Required by ssh-agent plugin
-#zstyle :omz:plugins:ssh-agent agent-forwarding on
- 
 source ~/config/term/antigen/antigen.zsh
 antigen use oh-my-zsh
 
+# Required by ssh-agent plugin
+#zstyle :omz:plugins:ssh-agent agent-forwarding on
+ 
 antigen bundles <<EOBUNDLES
-dnf
+
+# Aliases: https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins#aliases-1
+#tmux
+
+
+## Linux plugins
+#dnf
 #ssh-agent
-
+#systemd # Add sc-[command] aliases to all systemctl commands, using sudo when needed.
 sudo # ESC twice: Puts sudo in front of the current command, or the last one if the command line is empty.
-systemd # Add sc-[command] aliases to all systemctl commands, using sudo when needed.
-git
-virtualenvwrapper # Loads Python's virtualenvwrapper shell tools, and automatically activates virtualenv on cd into git repository with matching name.  
-zsh-users/zsh-autosuggestions
 
-###	zsh-users/zsh-syntax-highlighting
-#	~/config/term/zsh-git-prompt
+## Prog plugins
+git
+#virtualenvwrapper # Loads virtualenvwrapper shell tools, activates virtualenv on cd into git repository with matching name.  
+
+## Shell plugins
+zsh-users/zsh-autosuggestions
+#	zsh-users/zsh-syntax-highlighting
 
 EOBUNDLES
 
@@ -44,9 +51,8 @@ gpgconf --launch gpg-agent
 
 
 # Themes {{{1
-antigen-theme fox
-##antigen-theme /home/andmalc/config/term/ mytheme
-##antigen-theme /home/andmalc/config/term/ af-magic
+#antigen-theme fox
+#antigen-theme /home/andmalc/config/term/ af-magic
 antigen apply
 
 # zsh Parameters {{{1
@@ -166,7 +172,7 @@ alias free='free -m' #size in Megabytes
 alias xclip='xclip -selection c' #xclip to CLIPBOARD buffer not PRIMARY
 
 # Tmux UTF-8 support
-alias tmux='tmux -u'
+#alias tmux='tmux -u'
 
 #alias locations {{{2
 alias -g nt='~/notes'    
@@ -196,6 +202,9 @@ alias ls='ls --color'
 alias l='ls -lha'
 alias ll='ls -aoh'
 alias llg='ls -alh'
+
+# Show types, hidden but not ./.., in columns
+alias la='ls -AFC'
 
 #Docker {{{2
 alias drm="docker rm"
