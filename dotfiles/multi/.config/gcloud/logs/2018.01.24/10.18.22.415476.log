@@ -1,0 +1,33 @@
+2018-01-24 10:18:22,420 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'images']
+2018-01-24 10:18:22,512 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'images', 'list']
+2018-01-24 10:18:22,516 DEBUG    root            Running [gcloud.compute.images.list] with arguments: [--no-standard-images: "False", --project: "cos-cloud"]
+2018-01-24 10:18:22,847 INFO     root            Display format "    table(
+      name,
+      selfLink.map().scope(projects).segment(0):label=PROJECT,
+      family,
+      deprecated.state:label=DEPRECATED,
+      status
+    )".
+2018-01-24 10:18:43,116 DEBUG    root            (gcloud.compute.images.list) Some requests did not succeed:
+ - Insufficient Permission
+Traceback (most recent call last):
+  File "/usr/lib/google-cloud-sdk/lib/googlecloudsdk/calliope/cli.py", line 797, in Execute
+    resources = calliope_command.Run(cli=self, args=args)
+  File "/usr/lib/google-cloud-sdk/lib/googlecloudsdk/calliope/backend.py", line 759, in Run
+    display_info=self.ai.display_info).Display()
+  File "/usr/lib/google-cloud-sdk/lib/googlecloudsdk/calliope/display.py", line 469, in Display
+    self._printer.Print(self._resources)
+  File "/usr/lib/google-cloud-sdk/lib/googlecloudsdk/core/resource/resource_printer_base.py", line 251, in Print
+    for resource in resources:
+  File "/usr/lib/google-cloud-sdk/lib/surface/compute/images/list.py", line 98, in _FilterDeprecated
+    for image in images:
+  File "/usr/lib/google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/lister.py", line 1043, in __call__
+    utils.RaiseException(errors, ListException)
+  File "/usr/lib/google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/utils.py", line 118, in RaiseException
+    errors))
+ListException: Some requests did not succeed:
+ - Insufficient Permission
+
+2018-01-24 10:18:43,281 ERROR    root            (gcloud.compute.images.list) Some requests did not succeed:
+ - Insufficient Permission
+
