@@ -109,6 +109,9 @@ unset zle_bracketed_paste
 # gathering multiple args with completion.  End each with 'Esc-CR'
 #bindkey '\e^M' accept-and-menu-complete
 
+# Alt+ arrow for word forward/back.  Ctrl+arrows works already
+bindkey "^[[1;3C" forward-word
+bindkey "^[[1;3D" backward-word
 
 #Prompt {{{1
 
