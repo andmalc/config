@@ -104,6 +104,7 @@ Plugin 'tpope/vim-fugitive.git'
 Plugin 'Lokaltog/vim-distinguished'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'jnurmine/Zenburn'
+Plugin 'chriskempson/base16-vim'
 
 " Moonfly
 " dark color scheme for Vim and Neovim
@@ -121,25 +122,31 @@ let g:lucius_no_term_bg = 1
 call vundle#end()
 filetype plugin indent on
 
-" Interface {{{1
 
+" Colorschemes {{{1
 " Set colorscheme
 
-" colorscheme moonfly
-let g:moonflyCursorColor = 1
-let g:moonflyTerminalColors = 1
-
-if has('gui_running')
-    set guifont=Hack\ Regular\ 11
-    set background=light
-else
-    set background=dark
+if filereadable(expand("~/.vimrc_background"))
+      let base16colorspace=256
+      source ~/.vimrc_background
 endif
+
+" set background=dark
+
+" colorscheme moonfly
+" let g:moonflyCursorColor = 1
+" let g:moonflyTerminalColors = 1
+
+
+"colorscheme zenburn
+" colorscheme solarized
+
+" Interface {{{1
 
 "set cursorline
 
 
-" Statusline {{{1
+" Statusline
 " Bar at bottom of window
 " 1 Show when more than one window open
 " 2 Show always, not just when window split
