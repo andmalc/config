@@ -98,6 +98,9 @@ Plugin 'tpope/vim-fugitive.git'
 " Statusline
 " Plugin 'vim-airline/vim-airline'
 " Plugin 'vim-airline/vim-airline-themes'
+"
+" https://github.com/itchyny/lightline.vim
+Plugin 'itchyny/lightline.vim'
 
 
 " Colorscheme Plugins  {{{2
@@ -126,8 +129,10 @@ filetype plugin indent on
 " Colorschemes {{{1
 " Set colorscheme
 
+set termguicolors
+
 if filereadable(expand("~/.vimrc_background"))
-      let base16colorspace=256
+    "      let base16colorspace=256
       source ~/.vimrc_background
 endif
 
@@ -150,7 +155,15 @@ endif
 " Bar at bottom of window
 " 1 Show when more than one window open
 " 2 Show always, not just when window split
-set laststatus=1
+set laststatus=2
+" Don't show editing mode e.g. Insert below Statusline if status line plugin
+" shows it
+set noshowmode
+
+" Lightline colours
+let g:lightline = {
+      \ 'colorscheme': 'jellybeans',
+      \ }
 
 " ???
 " let g:airline#extensions#tabline#enabled = 1
