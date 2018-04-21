@@ -20,6 +20,7 @@ antigen bundles <<EOBUNDLES
 sudo # ESC twice: Puts sudo in front of the current command, or the last one if the command line is empty.
 
 ## Prog plugins
+# https://github.com/robbyrussell/oh-my-zsh/wiki/Plugin:git
 git
 #virtualenvwrapper # Loads virtualenvwrapper shell tools, activates virtualenv on cd into git repository with matching name.  
 
@@ -61,10 +62,15 @@ antigen apply
 # No space before or after '='
 #see zshparam for more
 
-## HISTORY
+# HISTORY {{{1
+
 HISTFILE=~/.zsh_history
 HISTSIZE=1000
 SAVEHIST=1000
+
+setopt INC_APPEND_HISTORY
+setopt SHARE_HISTORY
+setopt HIST_IGNORE_ALL_DUPS
 
 #Shell Variables {{{1
  
@@ -91,10 +97,6 @@ setopt AUTO_CD AUTO_PUSHD PUSHDIGNOREDUPS
 setopt AUTO_NAME_DIRS #Any parameter refering to an absolute path to a dir becomes a named dir: ~dir
 setopt NOTIFY
 
-setopt SHARE_HISTORY
-setopt HIST_IGNORE_ALL_DUPS
-setopt APPEND_HISTORY
-
 unset zle_bracketed_paste
 
 #Key Bindings {{{1
@@ -107,6 +109,9 @@ unset zle_bracketed_paste
 # gathering multiple args with completion.  End each with 'Esc-CR'
 #bindkey '\e^M' accept-and-menu-complete
 
+# Alt+ arrow for word forward/back.  Ctrl+arrows works already
+bindkey "^[[1;3C" forward-word
+bindkey "^[[1;3D" backward-word
 
 #Prompt {{{1
 
@@ -230,3 +235,7 @@ alias sclua='systemctl list-units --all '
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
         source /etc/profile.d/vte.sh
 fi
+
+#Base16 config {{{1
+BASE16_SHELL=$HOME/.config/base16-shell/
+[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"

@@ -1,0 +1,25 @@
+4/20
+
+Vim not changing colorscheme to base16 modes until added set termguicolours
+
+
+4/19
+
+Bas16 colour schemes
+
+Dark
+base16_harmonic-dark - dark blue bg
+base16_material - dark grey/green
+base16_hopscotch  - brown/red
+
+
+Light
+base16_gruvbox-light-soft
+
+
+
+Tmux
+
+When nested bg colour will be red
+
+set -w window-style "bg=colour102" - grey
