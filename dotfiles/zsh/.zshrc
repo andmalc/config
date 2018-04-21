@@ -206,6 +206,13 @@ alias llg='ls -alh'
 # Show types, hidden but not ./.., in columns
 alias la='ls -AFC'
 
+# Buildah
+alias bd='sudo buildah'
+alias bdi='sudo buildah images'
+alias bdc='sudo buildah containers'
+alias bdr='sudo buildah run'
+alias bdf='sudo buildah from'
+
 #Docker {{{2
 alias drm="docker rm"
 alias dps="docker ps"
