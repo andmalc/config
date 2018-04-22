@@ -98,12 +98,16 @@ Plugin 'tpope/vim-fugitive.git'
 " Statusline
 " Plugin 'vim-airline/vim-airline'
 " Plugin 'vim-airline/vim-airline-themes'
+"
+" https://github.com/itchyny/lightline.vim
+Plugin 'itchyny/lightline.vim'
 
 
 " Colorscheme Plugins  {{{2
 Plugin 'Lokaltog/vim-distinguished'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'jnurmine/Zenburn'
+Plugin 'chriskempson/base16-vim'
 
 " Moonfly
 " dark color scheme for Vim and Neovim
@@ -121,29 +125,45 @@ let g:lucius_no_term_bg = 1
 call vundle#end()
 filetype plugin indent on
 
-" Interface {{{1
 
+" Colorschemes {{{1
 " Set colorscheme
 
-" colorscheme moonfly
-let g:moonflyCursorColor = 1
-let g:moonflyTerminalColors = 1
+set termguicolors
 
-if has('gui_running')
-    set guifont=Hack\ Regular\ 11
-    set background=light
-else
-    set background=dark
+if filereadable(expand("~/.vimrc_background"))
+    "      let base16colorspace=256
+      source ~/.vimrc_background
 endif
+
+" set background=dark
+
+" colorscheme moonfly
+" let g:moonflyCursorColor = 1
+" let g:moonflyTerminalColors = 1
+
+
+"colorscheme zenburn
+" colorscheme solarized
+
+" Interface {{{1
 
 "set cursorline
 
 
-" Statusline {{{1
+" Statusline
 " Bar at bottom of window
 " 1 Show when more than one window open
 " 2 Show always, not just when window split
-set laststatus=1
+set laststatus=2
+" Don't show editing mode e.g. Insert below Statusline if status line plugin
+" shows it
+set noshowmode
+
+" Lightline colours
+let g:lightline = {
+      \ 'colorscheme': 'jellybeans',
+      \ }
 
 " ???
 " let g:airline#extensions#tabline#enabled = 1
