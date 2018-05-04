@@ -9,6 +9,7 @@ home/dotconfig
 !home/dotconfig/zsh/zshrc
 !home/dotconfig/zsh/zshenv
 
+dotfiles/multi/.config/gcloud/logs
 
 home/.config/prog/
 !home/.config/prog/ipython/extentions
