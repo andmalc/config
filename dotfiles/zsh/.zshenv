@@ -1,7 +1,7 @@
 setopt ALL_EXPORT #all options subsequently defined are exported
 
 #Nix package manager
-. /home/andmalc/.nix-profile/etc/profile.d/nix.sh
+#. /home/andmalc/.nix-profile/etc/profile.d/nix.sh
 
 # Zsh env {{{1
 

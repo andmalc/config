@@ -1,3 +1,11 @@
+4/23
+
+Postgres
+scan for sockets -  ss -tnlp
+
+psql -h localhost -U postgres 
+
+
 4/20
 
 Vim not changing colorscheme to base16 modes until added set termguicolours
