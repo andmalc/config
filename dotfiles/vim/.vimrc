@@ -58,9 +58,6 @@ Plugin 'nelstrom/vim-markdown-folding'
 
 " Tools plugins {{{2
 
-" Gundo - undo graph http://sjl.bitbucket.org/gundo.vim/ 
-Plugin 'https://github.com/sjl/gundo.vim.git'
-
 " Fugitive - Git tools
 " https://github.com/tpope/vim-fugitive
 Plugin 'tpope/vim-fugitive.git'
