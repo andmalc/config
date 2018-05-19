@@ -12,48 +12,29 @@ antigen bundles <<EOBUNDLES
 # Aliases: https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins#aliases-1
 #tmux
 
-
-## Linux plugins
+# Linux plugins {{{2
 #dnf
 #ssh-agent
 #systemd # Add sc-[command] aliases to all systemctl commands, using sudo when needed.
 sudo # ESC twice: Puts sudo in front of the current command, or the last one if the command line is empty.
 
-## Prog plugins
+# Prog plugins {{{2
 # https://github.com/robbyrussell/oh-my-zsh/wiki/Plugin:git
+# virtualenvwrapper # Loads virtualenvwrapper shell tools, activates virtualenv on cd into git repository with matching name.  
 git
-#virtualenvwrapper # Loads virtualenvwrapper shell tools, activates virtualenv on cd into git repository with matching name.  
 
-## Shell plugins
+# Shell plugins {{{2
 zsh-users/zsh-autosuggestions
-#	zsh-users/zsh-syntax-highlighting
+zsh-users/zsh-syntax-highlighting
+zsh-users/zsh-completions
 
 EOBUNDLES
 
-# GPG & SSH agents {{{1
-# http://ryanlue.com/posts/2017-06-29-gpg-for-ssh-auth
-export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-gpgconf --launch gpg-agent
-
-# export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
-
-#DISABLED
-# On remote, tmux not running
-#if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ] && [ -z "$TMUX" ]; then
-    #mux default
-#   tmux attach
-# On local, tmux not running
-#elif [ -z "$SSH_CLIENT" ] || [ -z "$SSH_TTY" ] && [ -z "$TMUX" ]; then
-#    ssh-add ~/.ssh/andmalc
-#    ssh-add ~/.ssh/id_ed25519
-#else
-#fi
-
-
-
-# Themes {{{1
+# Themes {{{2
 #antigen-theme fox
 #antigen-theme /home/andmalc/config/term/ af-magic
+antigen-theme robbyrussell
+
 antigen apply
 
 # zsh Parameters {{{1
