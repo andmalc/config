@@ -52,7 +52,7 @@ gpgconf --launch gpg-agent
 
 
 # Themes {{{1
-#antigen-theme fox
+antigen-theme bira
 #antigen-theme /home/andmalc/config/term/ af-magic
 antigen apply
 
