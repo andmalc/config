@@ -14,3 +14,9 @@ Tmux
     prefix + I to install tpm modules
 
 
+Fzf
+    https://codeyarns.com/2017/10/24/how-to-install-and-use-fzf/
+    Install into shell 
+        ./.fzf/install 
+
+
