@@ -18,7 +18,8 @@ fpath=( "$HOME/.zfunctions" $fpath )
 WORDCHARS='/-.'
 
 typeset -U PATH path 
-path+=(~/.local/bin ~/dev/miniconda3/bin  ~/dev/google-cloud-sdk/bin)
+path+=(~/.local/bin  )
+#path+=(~/.local/bin  ~/dev/google-cloud-sdk/bin)
 
 # UTF8 lang
 LC_ALL=C.UTF-8
@@ -52,7 +53,13 @@ PROJECT_HOME=$HOME/work
 #export PYTHONSTARTUP=~/admin/startup.py
 
 
-#Google Cloud SDK
+#Google Cloud SDK {{{1
+
+# Cloud Shell
+if [[ -e "/google/google-cloud-sdk/path.zsh.inc" ]]; then
+  source "/google/google-cloud-sdk/path.zsh.inc"
+fi
+
 #source dev/google-cloud-sdk/path.zsh.inc 
 
 # The next line updates PATH for the Google Cloud SDK.

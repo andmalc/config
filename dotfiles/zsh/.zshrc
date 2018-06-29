@@ -224,3 +224,18 @@ BASE16_SHELL=$HOME/.config/base16-shell/
 #Autojump
 . /usr/share/autojump/autojump.sh
 
+# Google Cloud Shell {{{1
+
+setopt promptsubst
+PROMPT='%n@${DEVSHELL_PROJECT_ID:-cloudshell}:%~ %(!.#.Z) '
+if [[ -e "/google/google-cloud-sdk/completion.zsh.inc" ]]; then
+  source "/google/google-cloud-sdk/completion.zsh.inc"
+fi
+onexit () {
+  for FILE in /google/devshell/bash_exit.google.d/*; do
+    if [ -x "$FILE" ]; then
+      "$FILE"
+    fi
+  done
+}
+trap onexit EXIT

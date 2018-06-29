@@ -1,4 +1,13 @@
-test
+6/28
+
+Cloud Shell
+    https://gist.github.com/zombiezen/d24fbe7d59d56f61b762ec1435699df2
+    andmalc default shell is /bin/bash
+    .profile reads .bashrc and runs zsh
+    .zshenv - path to Google SDK under /google added 
+    .zshrc - prompt config and other
+
+
 
 5/11
 
