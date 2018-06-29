@@ -13,4 +13,6 @@ git submodule update --init --recursive
 Tmux
     prefix + I to install tpm modules
 
+Vim
+    VundleInstall
 
