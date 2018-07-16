@@ -12,21 +12,21 @@ antigen bundles <<EOBUNDLES
 # Aliases: https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins#aliases-1
 #tmux
 
-
-## Linux plugins
+# Linux plugins {{{2
 #dnf
 #ssh-agent
 #systemd # Add sc-[command] aliases to all systemctl commands, using sudo when needed.
 sudo # ESC twice: Puts sudo in front of the current command, or the last one if the command line is empty.
 
-## Prog plugins
+# Prog plugins {{{2
 # https://github.com/robbyrussell/oh-my-zsh/wiki/Plugin:git
+# virtualenvwrapper # Loads virtualenvwrapper shell tools, activates virtualenv on cd into git repository with matching name.  
 git
-#virtualenvwrapper # Loads virtualenvwrapper shell tools, activates virtualenv on cd into git repository with matching name.  
 
-## Shell plugins
+# Shell plugins {{{2
 zsh-users/zsh-autosuggestions
-#	zsh-users/zsh-syntax-highlighting
+zsh-users/zsh-syntax-highlighting
+zsh-users/zsh-completions
 
 EOBUNDLES
 
@@ -53,7 +53,10 @@ gpgconf --launch gpg-agent
 
 # Themes {{{1
 antigen-theme bira
+#antigen-theme fox
 #antigen-theme /home/andmalc/config/term/ af-magic
+#antigen-theme robbyrussell
+
 antigen apply
 
 # zsh Parameters {{{1
