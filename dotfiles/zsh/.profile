@@ -15,4 +15,4 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
-/usr/bin/zsh
+exec /usr/bin/zsh
