@@ -1,39 +1,8 @@
 
-# Plugins {{{1
-
-source ~/config/term/antigen/antigen.zsh
-antigen use oh-my-zsh
-
-# Required by ssh-agent plugin
-#zstyle :omz:plugins:ssh-agent agent-forwarding on
- 
-antigen bundles <<EOBUNDLES
-
-# Aliases: https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins#aliases-1
-#tmux
-
-# Linux plugins {{{2
-#dnf
-#ssh-agent
-#systemd # Add sc-[command] aliases to all systemctl commands, using sudo when needed.
-sudo # ESC twice: Puts sudo in front of the current command, or the last one if the command line is empty.
-
-# Prog plugins {{{2
-# https://github.com/robbyrussell/oh-my-zsh/wiki/Plugin:git
-# virtualenvwrapper # Loads virtualenvwrapper shell tools, activates virtualenv on cd into git repository with matching name.  
-git
-
-# Shell plugins {{{2
-zsh-users/zsh-autosuggestions
-zsh-users/zsh-syntax-highlighting
-zsh-users/zsh-completions
-
-EOBUNDLES
-
 # GPG & SSH agents {{{1
 # http://ryanlue.com/posts/2017-06-29-gpg-for-ssh-auth
-export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-gpgconf --launch gpg-agent
+#export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+#gpgconf --launch gpg-agent
 
 # export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
@@ -50,14 +19,6 @@ gpgconf --launch gpg-agent
 #fi
 
 
-
-# Themes {{{1
-antigen-theme bira
-#antigen-theme fox
-#antigen-theme /home/andmalc/config/term/ af-magic
-#antigen-theme robbyrussell
-
-antigen apply
 
 # zsh Parameters {{{1
 
