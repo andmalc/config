@@ -221,13 +221,16 @@ fi
 BASE16_SHELL=$HOME/.config/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 
-#Autojump
+base16_hopscotch
+
+#Autojump {{{1
+#
 . /usr/share/autojump/autojump.sh
 
 # Google Cloud Shell {{{1
 
 setopt promptsubst
-PROMPT='%n@${DEVSHELL_PROJECT_ID:-cloudshell}:%~ %(!.#.Z) '
+#PROMPT='%n@${DEVSHELL_PROJECT_ID:-cloudshell}:%~ %(!.#.Z) '
 if [[ -e "/google/google-cloud-sdk/completion.zsh.inc" ]]; then
   source "/google/google-cloud-sdk/completion.zsh.inc"
 fi
