@@ -96,6 +96,7 @@ Plugin 'tpope/vim-fugitive.git'
 " Plugin 'vim-airline/vim-airline'
 " Plugin 'vim-airline/vim-airline-themes'
 "
+" Lightline
 " https://github.com/itchyny/lightline.vim
 Plugin 'itchyny/lightline.vim'
 
@@ -135,9 +136,9 @@ endif
 
 " set background=dark
 
-" colorscheme moonfly
-" let g:moonflyCursorColor = 1
-" let g:moonflyTerminalColors = 1
+colorscheme moonfly
+let g:moonflyCursorColor = 1
+let g:moonflyTerminalColors = 1
 
 
 "colorscheme zenburn
@@ -153,15 +154,23 @@ endif
 " 1 Show when more than one window open
 " 2 Show always, not just when window split
 set laststatus=2
+
+" Lightlight overrides following statusline settings
+"set statusline=
+"set statusline+=%f\ 
+"set statusline+=buffer\ %n
+"set statusline+=%=
+"set statusline+=line\ %l
+
+" Display editing mode under status line.
 " Don't show editing mode e.g. Insert below Statusline if status line plugin
 " shows it
-set noshowmode
+"set showmode
 
 " Lightline colours
-let g:lightline = {
+" let g:lightline = {
       \ 'colorscheme': 'jellybeans',
       \ }
-
 " ???
 " let g:airline#extensions#tabline#enabled = 1
 " let g:airline_theme='luna'
