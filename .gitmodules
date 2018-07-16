@@ -13,3 +13,6 @@
 [submodule "term/base16-shell"]
 	path = term/base16-shell
 	url = https://github.com/chriskempson/base16-shell.git
+[submodule "term/fzf"]
+	path = term/fzf
+	url = https://github.com/junegunn/fzf.git

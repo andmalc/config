@@ -30,10 +30,32 @@ zsh-users/zsh-completions
 
 EOBUNDLES
 
-# Themes {{{2
+# GPG & SSH agents {{{1
+# http://ryanlue.com/posts/2017-06-29-gpg-for-ssh-auth
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+gpgconf --launch gpg-agent
+
+# export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+
+#DISABLED
+# On remote, tmux not running
+#if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ] && [ -z "$TMUX" ]; then
+    #mux default
+#   tmux attach
+# On local, tmux not running
+#elif [ -z "$SSH_CLIENT" ] || [ -z "$SSH_TTY" ] && [ -z "$TMUX" ]; then
+#    ssh-add ~/.ssh/andmalc
+#    ssh-add ~/.ssh/id_ed25519
+#else
+#fi
+
+
+
+# Themes {{{1
+antigen-theme bira
 #antigen-theme fox
 #antigen-theme /home/andmalc/config/term/ af-magic
-antigen-theme robbyrussell
+#antigen-theme robbyrussell
 
 antigen apply
 
@@ -224,3 +246,5 @@ BASE16_SHELL=$HOME/.config/base16-shell/
 #Autojump
 . /usr/share/autojump/autojump.sh
 
+# FZF source
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

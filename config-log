@@ -23,16 +23,16 @@ Vim not changing colorscheme to base16 modes until added set termguicolours
 4/19
 
 Bas16 colour schemes
+    Dark
+    base16_harmonic-dark - dark blue bg
+    base16_material - dark grey/green
+    base16_hopscotch  - brown/red
 
-Dark
-base16_harmonic-dark - dark blue bg
-base16_material - dark grey/green
-base16_hopscotch  - brown/red
+    Light
+    base16_gruvbox-light-soft
 
-
-Light
-base16_gruvbox-light-soft
-
+Base16 config
+    Vim - Vungle plugin
 
 
 Tmux
