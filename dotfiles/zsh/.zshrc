@@ -221,7 +221,7 @@ fi
 BASE16_SHELL=$HOME/.config/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 
-base16_hopscotch
+#base16_hopscotch
 
 #Autojump {{{1
 #
@@ -229,16 +229,31 @@ base16_hopscotch
 
 # Google Cloud Shell {{{1
 
-setopt promptsubst
-#PROMPT='%n@${DEVSHELL_PROJECT_ID:-cloudshell}:%~ %(!.#.Z) '
+
+
+# Zsh completion
 if [[ -e "/google/google-cloud-sdk/completion.zsh.inc" ]]; then
   source "/google/google-cloud-sdk/completion.zsh.inc"
 fi
-onexit () {
-  for FILE in /google/devshell/bash_exit.google.d/*; do
-    if [ -x "$FILE" ]; then
-      "$FILE"
-    fi
-  done
-}
-trap onexit EXIT
+
+# Cloud Shell
+if [[ -e "/google/google-cloud-sdk/path.zsh.inc" ]]; then
+    source "/google/google-cloud-sdk/path.zsh.inc"
+fi
+
+# Cloud Shell prompt and exit script
+if [[ $CLOUD_SHELL ]]; then
+    #exec /usr/bin/zsh
+
+    setopt promptsubst
+    #PROMPT='%n@${DEVSHELL_PROJECT_ID:-cloudshell}:%~ %(!.#.Z) '
+
+    onexit () {
+      for FILE in /google/devshell/bash_exit.google.d/*; do
+        if [ -x "$FILE" ]; then
+          "$FILE"
+        fi
+      done
+    }
+    trap onexit EXIT
+fi

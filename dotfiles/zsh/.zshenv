@@ -55,17 +55,6 @@ PROJECT_HOME=$HOME/work
 
 #Google Cloud SDK {{{1
 
-# Cloud Shell
-if [[ -e "/google/google-cloud-sdk/path.zsh.inc" ]]; then
-  source "/google/google-cloud-sdk/path.zsh.inc"
-fi
 
-#source dev/google-cloud-sdk/path.zsh.inc 
-
-# The next line updates PATH for the Google Cloud SDK.
-#source '/home/andmalc/dev/google-cloud-sdk/path.zsh.inc'
-
-# The next line enables shell command completion for gcloud.
-#source '/home/andmalc/dev/google-cloud-sdk/completion.zsh.inc'
 
 # vim: ft=zsh

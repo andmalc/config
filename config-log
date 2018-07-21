@@ -1,5 +1,8 @@
 6/28
 
+Tmux
+    enabled tmux continuum
+
 Cloud Shell
     https://gist.github.com/zombiezen/d24fbe7d59d56f61b762ec1435699df2
     andmalc default shell is /bin/bash
@@ -32,6 +35,7 @@ Vim not changing colorscheme to base16 modes until added set termguicolours
 4/19
 
 Bas16 colour schemes
+Set manually as needed.  Don't set in .zshrc
 
 Dark
 base16_harmonic-dark - dark blue bg
