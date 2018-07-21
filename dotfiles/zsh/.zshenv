@@ -18,7 +18,8 @@ fpath=( "$HOME/.zfunctions" $fpath )
 WORDCHARS='/-.'
 
 typeset -U PATH path 
-path+=(~/.local/bin ~/dev/miniconda3/bin  ~/dev/google-cloud-sdk/bin)
+path+=(~/.local/bin  )
+#path+=(~/.local/bin  ~/dev/google-cloud-sdk/bin)
 
 # UTF8 lang
 LC_ALL=C.UTF-8
@@ -52,13 +53,8 @@ PROJECT_HOME=$HOME/work
 #export PYTHONSTARTUP=~/admin/startup.py
 
 
-#Google Cloud SDK
-#source dev/google-cloud-sdk/path.zsh.inc 
+#Google Cloud SDK {{{1
 
-# The next line updates PATH for the Google Cloud SDK.
-#source '/home/andmalc/dev/google-cloud-sdk/path.zsh.inc'
 
-# The next line enables shell command completion for gcloud.
-#source '/home/andmalc/dev/google-cloud-sdk/completion.zsh.inc'
 
 # vim: ft=zsh
