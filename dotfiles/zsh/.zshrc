@@ -1,25 +1,4 @@
 
-# GPG & SSH agents {{{1
-# http://ryanlue.com/posts/2017-06-29-gpg-for-ssh-auth
-#export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-#gpgconf --launch gpg-agent
-
-# export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
-
-#DISABLED
-# On remote, tmux not running
-#if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ] && [ -z "$TMUX" ]; then
-    #mux default
-#   tmux attach
-# On local, tmux not running
-#elif [ -z "$SSH_CLIENT" ] || [ -z "$SSH_TTY" ] && [ -z "$TMUX" ]; then
-#    ssh-add ~/.ssh/andmalc
-#    ssh-add ~/.ssh/id_ed25519
-#else
-#fi
-
-
-
 # zsh Parameters {{{1
 
 # Parameters (i.e. variables)
@@ -203,6 +182,8 @@ fi
 #Base16 config {{{1
 BASE16_SHELL=$HOME/.config/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
+
+# Other {{{1
 
 #Autojump
 . /usr/share/autojump/autojump.sh
