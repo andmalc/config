@@ -6,7 +6,7 @@
 	url = https://github.com/zsh-users/antigen
 [submodule "term/tpm"]
 	path = term/tpm
-	url = git://github.com/tmux-plugins/tpm
+	url = https://github.com/zsh-users/antigen
 [submodule "term/Vundle.vim"]
 	path = term/Vundle.vim
 	url = https://github.com/VundleVim/Vundle.vim.git

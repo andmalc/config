@@ -1,4 +1,7 @@
 home/.local
+
+# Vim
+*.zwc
 **/.vim/bundle/*
 !**/.vim/bundle/Vundle.vim
 **/.vim/ftplugin
