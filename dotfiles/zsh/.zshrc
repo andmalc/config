@@ -185,8 +185,41 @@ BASE16_SHELL=$HOME/.config/base16-shell/
 
 # Other {{{1
 
-#Autojump
+#Autojump {{{1
+#
 . /usr/share/autojump/autojump.sh
 
+# FZF {{{1
 # FZF source
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Google Cloud Shell {{{1
+
+
+
+# Zsh completion
+if [[ -e "/google/google-cloud-sdk/completion.zsh.inc" ]]; then
+  source "/google/google-cloud-sdk/completion.zsh.inc"
+fi
+
+# Cloud Shell
+if [[ -e "/google/google-cloud-sdk/path.zsh.inc" ]]; then
+    source "/google/google-cloud-sdk/path.zsh.inc"
+fi
+
+# Cloud Shell prompt and exit script
+if [[ $CLOUD_SHELL ]]; then
+    #exec /usr/bin/zsh
+
+    setopt promptsubst
+    #PROMPT='%n@${DEVSHELL_PROJECT_ID:-cloudshell}:%~ %(!.#.Z) '
+
+    onexit () {
+      for FILE in /google/devshell/bash_exit.google.d/*; do
+        if [ -x "$FILE" ]; then
+          "$FILE"
+        fi
+      done
+    }
+    trap onexit EXIT
+fi
