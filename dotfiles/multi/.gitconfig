@@ -15,11 +15,13 @@
 	graph = log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an>%Creset'
   	g = grep --extended-regexp --break --heading --line-number --ignore-case
 
+# Colours: normal, black, red, green, yellow, blue, magenta, cyan, or white
+# Effects: bold, dim, ul (underline), blink, and reverse 
 [color "diff"]
-  meta = yellow bold ul  
-  frag = cyan bold ul
-  old = red bold  
-  new = green bold 
+  meta = magenta bold 
+  frag = cyan
+  old = red  
+  new = green 
 [color "status"]  
   added = green bold  
   changed = yellow bold  
