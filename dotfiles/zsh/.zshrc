@@ -1,5 +1,5 @@
 source ~/config/term/antigen/antigen.zsh
-#source ~/config/dotfiles/zsh/antigenrc
+source ~/config/dotfiles/zsh/antigenrc
 
 # GPG & SSH agents {{{1
 # http://ryanlue.com/posts/2017-06-29-gpg-for-ssh-auth
