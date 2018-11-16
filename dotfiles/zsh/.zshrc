@@ -1,5 +1,5 @@
-source ~/config/term/antigen/antigen.zsh
-source ~/config/dotfiles/zsh/antigenrc
+#source ~/antigen.zsh
+#antigen-init ~/config/dotfiles/zsh/antigenrc
 
 # GPG & SSH agents {{{1
 # http://ryanlue.com/posts/2017-06-29-gpg-for-ssh-auth
@@ -245,3 +245,22 @@ if [[ $CLOUD_SHELL ]]; then
     }
     trap onexit EXIT
 fi
+
+# Plugin Submodules {{{1
+
+PLUGIN_DIR=~/config/term
+
+# Zsh syntax highlighting
+source $PLUGIN_DIR/zsh-users/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Zsh completions
+# Completions here: https://github.com/zsh-users/zsh-completions/tree/master/src
+# Not much: postresql client, tmuxp session manger
+fpath=($PLUGIN_DIR/zsh-users/zsh-completions/src $fpath)
+
+# Zsh autosuggestions
+source $PLUGIN_DIR/zsh-users/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+
+
+

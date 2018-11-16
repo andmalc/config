@@ -1,3 +1,9 @@
+11/16
+
+Antigen was renunning itself upon tmux start
+remove antigen - zsh plugins as submodules, sourced individually in .zshrc
+
+
 6/28
 
 Tmux

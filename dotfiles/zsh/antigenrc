@@ -1,17 +1,18 @@
-
 antigen use oh-my-zsh
 
  
 antigen bundles <<EOBUNDLES
 
 # Aliases: https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins#aliases-1
-#tmux
+# tmux
 
 # Linux plugins {{{1
 #dnf
 #ssh-agent
 #systemd # Add sc-[command] aliases to all systemctl commands, using sudo when needed.
-sudo # ESC twice: Puts sudo in front of the current command, or the last one if the command line is empty.
+
+# Sudo plugin - ESC twice: Puts sudo in front of the current command, or the last one if the command line is empty.
+sudo 
 
 # Prog plugins {{{1
 # https://github.com/robbyrussell/oh-my-zsh/wiki/Plugin:git
