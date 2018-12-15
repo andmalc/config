@@ -66,8 +66,9 @@ unset zle_bracketed_paste
 
 #Key Bindings {{{1
 
+# Editor mode. Must choose one for history search and line editing
 # Emacs mode, overrides EDITOR=vi
-#bindkey -e 
+bindkey -e 
 #bindkey '\ea' beginning-of-line
 
 #bindkey -M menuselect '^o' accept-and-infer-next-history  # ^o completes dir in menu
@@ -209,7 +210,7 @@ BASE16_SHELL=$HOME/.config/base16-shell/
 
 #Autojump {{{1
 #
-. /usr/share/autojump/autojump.sh
+#. /usr/share/autojump/autojump.sh
 
 # FZF {{{1
 # FZF source
