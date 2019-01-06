@@ -12,6 +12,23 @@ add these lines:
 include "level3(ralt_switch)"
 key <BKSP> { [ BackSpace, BackSpace, Delete ] };
 
+12/12
+
+How to connect to server running on ATomic DO
+
+- Installed Apache httpd per https://github.com/containers/libpod/blob/master/docs/tutorials/podman_tutorial.md
+
+Show Atomic IP addresses:
+    ip a show dev eth0
+
+Open firewall
+firewall-cmd --add-service http
+
+
+11/16
+
+Antigen was renunning itself upon tmux start
+remove antigen - zsh plugins as submodules, sourced individually in .zshrc
 
 6/28
 

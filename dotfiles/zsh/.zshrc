@@ -1,5 +1,5 @@
-source ~/config/term/antigen/antigen.zsh
-antigen init config/dotfiles/zsh/antigenrc
+#source ~/antigen.zsh
+#antigen-init ~/config/dotfiles/zsh/antigenrc
 
 # GPG & SSH agents {{{1
 # http://ryanlue.com/posts/2017-06-29-gpg-for-ssh-auth
@@ -66,8 +66,9 @@ unset zle_bracketed_paste
 
 #Key Bindings {{{1
 
+# Editor mode. Must choose one for history search and line editing
 # Emacs mode, overrides EDITOR=vi
-#bindkey -e 
+bindkey -e 
 #bindkey '\ea' beginning-of-line
 
 #bindkey -M menuselect '^o' accept-and-infer-next-history  # ^o completes dir in menu
@@ -209,7 +210,7 @@ BASE16_SHELL=$HOME/.config/base16-shell/
 
 #Autojump {{{1
 #
-. /usr/share/autojump/autojump.sh
+#. /usr/share/autojump/autojump.sh
 
 # FZF {{{1
 # FZF source
@@ -245,3 +246,22 @@ if [[ $CLOUD_SHELL ]]; then
     }
     trap onexit EXIT
 fi
+
+# Plugin Submodules {{{1
+
+PLUGIN_DIR=~/config/term
+
+# Zsh syntax highlighting
+source $PLUGIN_DIR/zsh-users/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Zsh completions
+# Completions here: https://github.com/zsh-users/zsh-completions/tree/master/src
+# Not much: postresql client, tmuxp session manger
+fpath=($PLUGIN_DIR/zsh-users/zsh-completions/src $fpath)
+
+# Zsh autosuggestions
+source $PLUGIN_DIR/zsh-users/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+
+
+

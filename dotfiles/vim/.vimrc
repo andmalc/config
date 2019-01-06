@@ -1,5 +1,5 @@
-so ~/config/dotfiles/vim/.vim/myvimfunctions.vim
-set foldtext=CustomFoldText()
+"so ~/config/dotfiles/vim/.vim/myvimfunctions.vim
+"set foldtext=CustomFoldText()
 autocmd BufRead,BufNewFile /home/andmalc/notes/* setlocal foldmethod=marker
 autocmd BufRead,BufNewFile /home/andmalc/config/* setlocal foldmethod=marker
 autocmd BufRead,BufNewFile /home/andmalc/.* setlocal foldmethod=marker
@@ -9,7 +9,7 @@ autocmd BufRead,BufNewFile /home/andmalc/.* setlocal foldmethod=marker
 
 set nocompatible
 set hidden
-" set foldmethod=marker
+set foldmethod=marker
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -126,8 +126,6 @@ filetype plugin indent on
 
 " Colorschemes {{{1
 " Set colorscheme
-
-set termguicolors
 
 if filereadable(expand("~/.vimrc_background"))
     "      let base16colorspace=256

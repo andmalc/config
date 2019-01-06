@@ -15,6 +15,5 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
-if [[ $CLOUD_SHELL ]]; then
-    exec /usr/bin/zsh
-fi
+#exec /usr/bin/zsh
+[[ -f /usr/bin/zsh ]] && exec /usr/bin/zsh

@@ -52,6 +52,13 @@ Tmux status bar changes after installing base16 tpm plugin
 Vim also changes after installing plugin but only in tmux. Retains theme after exiting tmux
 
 
+12/4
+
+Could not adjust vim fold colours within tmux
+    :highlight Folded ctermbg=Blue ctermfg=Red
+Fixed by removing set termguicolors from .vimrc
+
+
 
 
 
