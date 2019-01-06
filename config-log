@@ -1,3 +1,13 @@
+1/6/19
+
+Base16
+    Updated submodule
+    Added initialization script to config.fish
+    Adapted helper script from https://github.com/arumoy-shome/dotfiles/edit/master/fish/functions/colors.fish
+        fish function colors to switch between light and dark backgrounds
+        create PR at GibHub.
+
+
 12/30
 
 Fedora on Dell 13
