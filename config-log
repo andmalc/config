@@ -2,8 +2,17 @@
 
 Base16
     Updated submodule
-    Patched profile helper script
+    
+    Unmerged patch for fish profile helper 
         https://github.com/chriskempson/base16-shell/pull/154/commits/b21e7aa6384562b20f2874449785762bcae1d3e6
+        1. Forked base16-shell and created new submodule
+        2. Created upstream remote 
+            git remote add https://github.com/chriskempson/base16-shell upstream
+        3. Fetched PR for patch 
+            git fetch upstream refs/pull/154/head
+        4. Merged it
+            git merge FETCH_HEAD 
+
     Added initialization script to config.fish
     Adapted helper script from https://github.com/arumoy-shome/dotfiles/edit/master/fish/functions/colors.fish
         fish function colors to switch between light and dark backgrounds
