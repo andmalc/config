@@ -10,9 +10,6 @@
 [submodule "term/Vundle.vim"]
 	path = term/Vundle.vim
 	url = https://github.com/VundleVim/Vundle.vim.git
-[submodule "term/base16-shell"]
-	path = term/base16-shell
-	url = https://github.com/chriskempson/base16-shell.git
 [submodule "term/fzf"]
 	path = term/fzf
 	url = https://github.com/junegunn/fzf.git
@@ -25,6 +22,3 @@
 [submodule "term/zsh-users/zsh-syntax-highlighting"]
 	path = term/zsh-users/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
-[submodule "base16-shell-fork"]
-	path = term/base16-shell-fork
-	url = git@github.com:andmalc/base16-shell.git

@@ -7,6 +7,7 @@ home/.local
 **/.vim/ftplugin
 **/.vim/pack/*
 **/.vim/.netrwhist
+dotfiles/vim/.vim/plugin/background.vim
 
 home/dotconfig
 !home/dotconfig/zsh/zshrc
@@ -43,4 +44,5 @@ home/.gnupg
 **/.ssh/*known_hosts
 **/.ssh/environment*
 **/.ssh/authorized_keys
+
 
