@@ -243,7 +243,7 @@ nnoremap <silent> <leader>t :$tabnew<CR>
 vnoremap <C-c> "+y
 vnoremap <C-x> "+x
 " paste before cursor
-imap <C-v> "+gP
+"imap <C-v> "+gP
 
 
 " copy/paste selection/line to X CLIPBOARD
