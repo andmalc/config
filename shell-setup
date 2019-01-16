@@ -1,4 +1,8 @@
 
+fd find
+https://github.com/sharkdp/fd
+
+
 Fish
     plugin-bang-bang
         https://github.com/oh-my-fish/plugin-bang-bang
