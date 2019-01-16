@@ -1,4 +1,4 @@
-set -gx --prepend PATH /home/andmalc/.local/bin
+set -x --prepend PATH /home/andmalc/.local/bin
 
 set -gx CDPATH $CDPATH .  ~
 

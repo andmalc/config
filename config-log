@@ -1,3 +1,14 @@
+1/16
+
+Thinkpad
+    Install
+        fd
+            Debian pkg fd-find
+
+        fd + xargs +  mv
+        fd | xargs -I file mv file newdir
+
+
 1/15
 
 vimrc
