@@ -4,3 +4,6 @@
 [submodule "term/Vundle.vim"]
 	path = term/Vundle.vim
 	url = https://github.com/VundleVim/Vundle.vim.git
+[submodule "term/tpm"]
+	path = term/tpm
+	url = https://github.com/tmux-plugins/tpm
