@@ -1,0 +1,35 @@
+
+Fish
+    plugin-bang-bang
+        https://github.com/oh-my-fish/plugin-bang-bang
+        !! - last command
+        !? - last arg
+
+    sh - fuzzy search history 
+
+
+fzf
+    Plugins
+        Efficient Keybindings
+            https://github.com/jethrokuan/fzf
+            set -U FZF_LEGACY_KEYBINDINGS 0 - enable new bindings
+            Find file       Ctrl f
+            Search hist     Ctrl r
+            Cd into sub dirs    Alt o
+            Edit            Ctrl o
+
+
+
+Neovim
+    VARS - EDITOR nvim
+    neovim-remote   https://github.com/mhinz/neovim-remote
+        control nvim from other terminal or within own :terminal
+
+
+Tmux
+    enabled tmux continuum
+
+
+wl-clipboard
+    https://github.com/bugaevc/wl-clipboard
+

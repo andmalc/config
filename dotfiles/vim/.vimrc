@@ -144,7 +144,10 @@ let g:moonflyTerminalColors = 1
 
 " Interface {{{1
 
-"set cursorline
+set splitbelow
+set splitright
+
+set cursorline
 
 
 " Statusline
@@ -196,10 +199,11 @@ set encoding=utf-8
 " 	<S-F2> Shift F2
 
 " Candidate leaders: - H L space ctrl cr
-let mapleader = ","
+let mapleader = " "
+
 map ,f	<PageDown>
 map <leader>s :w<CR>
-imap <leader>s <ESC>:w<CR>
+"imap <leader>s <ESC>:w<CR>
 noremap ; :
 
 map ,H	:e $HOME/
@@ -221,21 +225,6 @@ map! <C-s> <Esc>:w<CR>
 " map sudo-write-file to w!! in command line
 cmap w!! %!sudo tee > /dev/null %
 
-" Windows Panes {{{2
-"
-" aliases for window switching
-noremap <C-l> <C-w>l
-noremap <C-h> <C-w>h
-noremap <C-k> <C-w>k
-noremap <C-j> <C-w>j
-
-" splitting
-nnoremap <silent> <leader>sp :split<CR>
-nnoremap <silent> <leader>v :vsplit<CR>
-nnoremap <silent> <leader>q :close<CR>
-
-" create tab pane at top
-nnoremap <silent> <leader>t :$tabnew<CR>
 
 " Selection Copy Paste {{{2
 "

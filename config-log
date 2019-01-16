@@ -1,10 +1,36 @@
-1/10/19
+1/15
+
+vimrc
+    set splitbelow
+    set splitright
+    set cursorline
+
+1/14
+
+Installed
+    wl-clipboard
+    https://github.com/bugaevc/wl-clipboard
 
 Installed
     neovim
     exa
     fzf
+    
+Fish
+    plugin-bang-bang
+        https://github.com/oh-my-fish/plugin-bang-bang
+        !! - last command
+        !? - last arg
 
+
+Neovim
+    VARS - EDITOR nvim
+    neovim-remote   https://github.com/mhinz/neovim-remote
+        control nvim from other terminal or within own :terminal
+
+
+Functions
+    sh - fuzzy search history 
 
 1/9/19
 
