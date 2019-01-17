@@ -8,6 +8,7 @@ Thinkpad
         fd + xargs +  mv
         fd | xargs -I file mv file newdir
 
+Git: messed up moving files.  Corrected with "git add -all ."
 
 1/15
 
