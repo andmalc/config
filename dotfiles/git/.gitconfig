@@ -30,3 +30,7 @@
   break = true
   heading = true
   lineNumber = true
+[status]
+	submoduleSummary = true
+[diff]
+	submodule = log
