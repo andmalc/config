@@ -11,6 +11,10 @@ Fish
 
     sh - fuzzy search history 
 
+    Vim Fish plugin
+        https://github.com/dag/vim-fish
+
+
 
 fzf
     Plugins
@@ -21,6 +25,7 @@ fzf
             Search hist     Ctrl r
             Cd into sub dirs    Alt o
             Edit            Ctrl o
+            Insert name     Ctrl t
 
 
 

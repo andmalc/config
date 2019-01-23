@@ -1,3 +1,4 @@
+
 "so ~/config/dotfiles/vim/.vim/myvimfunctions.vim
 "set foldtext=CustomFoldText()
 autocmd BufRead,BufNewFile /home/andmalc/notes/* setlocal foldmethod=marker
@@ -62,17 +63,18 @@ Plugin 'nelstrom/vim-markdown-folding'
 " https://github.com/tpope/vim-fugitive
 Plugin 'tpope/vim-fugitive.git'
 
-
-" PyFlakes
-" Plugin 'vim-scripts/pyflakes.vim'
-
-" Jedi
-" Plugin 'davidhalter/jedi-vim'
-
 " Ansible
 " Bundle 'chase/vim-ansible-yaml'
 
+" Vim Fish
+" https://github.com/dag/vim-fish
+"
+Plugin 'dag/vim-fish.git'
 
+" Python plugins {{{2
+
+" PyFlakes
+" Plugin 'vim-scripts/pyflakes.vim'
 
 " YouCompleteMe options, replace jedi-vim
 " Plugin 'Valloric/YouCompleteMe'

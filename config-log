@@ -1,3 +1,21 @@
+1/21
+
+Thinkpad
+
+Vim Fish plugin
+https://github.com/dag/vim-fish
+    added Vundle entry in .vimrc
+    added ftplugin 
+
+
+1/19
+Thinkpad
+    Install
+        pyenv -apt-get
+         fisher add kennethreitz/fish-pipenv
+            auto enables Pipenv shell when cd into project dir
+
+
 1/17
 
 Thinkpad
