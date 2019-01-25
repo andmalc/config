@@ -1,3 +1,9 @@
+base16-shell
+    Clone repo to term
+    Symlink
+    Source .vimrc_background from .vimrc
+    base16-atelier-estuary-light
+
 
 fd find
 https://github.com/sharkdp/fd

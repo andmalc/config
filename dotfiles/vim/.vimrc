@@ -130,15 +130,15 @@ filetype plugin indent on
 " Set colorscheme
 
 if filereadable(expand("~/.vimrc_background"))
-    "      let base16colorspace=256
+      let base16colorspace=256
       source ~/.vimrc_background
 endif
 
 " set background=dark
 
-colorscheme moonfly
-let g:moonflyCursorColor = 1
-let g:moonflyTerminalColors = 1
+" colorscheme moonfly
+" let g:moonflyCursorColor = 1
+" let g:moonflyTerminalColors = 1
 
 
 "colorscheme zenburn
