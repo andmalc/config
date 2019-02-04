@@ -29,6 +29,14 @@ Neovim
 Tmux
     enabled tmux continuum
 
+Vim
+    Plugins
+        Python
+            SimpylFold - folds Python scripts
+            IndentPython
+            YouCompleteMe
+                Installation instructions: https://github.com/Valloric/YouCompleteMe#linux-64-bit
+
 
 wl-clipboard
     https://github.com/bugaevc/wl-clipboard
