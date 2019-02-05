@@ -1,3 +1,13 @@
+base16-shell
+    Clone repo to term
+    Symlink
+    Source .vimrc_background from .vimrc
+    base16-atelier-estuary-light
+
+
+fd find
+https://github.com/sharkdp/fd
+
 
 Fish
     plugin-bang-bang
@@ -6,6 +16,10 @@ Fish
         !? - last arg
 
     sh - fuzzy search history 
+
+    Vim Fish plugin
+        https://github.com/dag/vim-fish
+
 
 
 fzf
@@ -17,6 +31,7 @@ fzf
             Search hist     Ctrl r
             Cd into sub dirs    Alt o
             Edit            Ctrl o
+            Insert name     Ctrl t
 
 
 

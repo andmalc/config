@@ -39,7 +39,7 @@ set encoding=utf-8
 " set modeline #default is on
 " set modelines=5 # default
 
- Vundle {{{1
+" Vundle {{{1
  
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -54,20 +54,22 @@ Plugin 'gmarik/Vundle.vim'
 " Outliner
 Plugin 'VOom'
 
-
 " Folding for MD files
 Plugin 'nelstrom/vim-markdown-folding'
 " Default fold syle is 'stacked' (shows all headings). 'nested' is shows h1 only
 " let g:markdown_fold_style = 'nested'
 
-" Python plugins {{{2
-
-Plugin 'vim-scripts/indentpython.vim'
-
 " https://github.com/tmhedberg/SimpylFold
 Plugin 'tmhedberg/SimpylFold'
 let g:SimpylFold_docstring_preview = 1
 
+
+" Python plugins {{{2
+
+Plugin 'vim-scripts/indentpython.vim'
+
+" PyFlakes
+" Plugin 'vim-scripts/pyflakes.vim'
 
 " YouCompleteMe, replaces jedi-vim
 Plugin 'Valloric/YouCompleteMe'
@@ -93,14 +95,19 @@ EOF
 
 Plugin 'vim-syntastic/syntastic'
 
-" Tools plugins {{{2
+" Misc plugins {{{2
+
+" Ansible
+" Bundle 'chase/vim-ansible-yaml'
+
+" Vim Fish
+" https://github.com/dag/vim-fish
+"
+Plugin 'dag/vim-fish.git'
 
 " Fugitive - Git tools
 " https://github.com/tpope/vim-fugitive
 Plugin 'tpope/vim-fugitive.git'
-
-
-" Bundle 'chase/vim-ansible-yaml'
 
 
 " Interface plugins {{{2
@@ -141,15 +148,15 @@ filetype plugin indent on
 " Set colorscheme
 
 if filereadable(expand("~/.vimrc_background"))
-    "      let base16colorspace=256
+      let base16colorspace=256
       source ~/.vimrc_background
 endif
 
 " set background=dark
 
-colorscheme moonfly
-let g:moonflyCursorColor = 1
-let g:moonflyTerminalColors = 1
+" colorscheme moonfly
+" let g:moonflyCursorColor = 1
+" let g:moonflyTerminalColors = 1
 
 
 "colorscheme zenburn

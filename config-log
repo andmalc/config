@@ -1,3 +1,51 @@
+1/26
+
+Readded base16-shell
+    Cloned repo to term
+    Symlinked
+    Source .vimrc_background from .vimrc
+    base16-atelier-estuary-light
+
+
+1/21
+
+Thinkpad
+
+Vim Fish plugin
+https://github.com/dag/vim-fish
+    added Vundle entry in .vimrc
+    added ftplugin 
+
+
+1/19
+Thinkpad
+    Install
+        pyenv -apt-get
+         fisher add kennethreitz/fish-pipenv
+            auto enables Pipenv shell when cd into project dir
+
+
+1/17
+
+Thinkpad
+
+    Install
+        pytmux
+            https://github.com/prompt-toolkit/pymux
+
+
+1/16
+
+Thinkpad
+    Install
+        fd
+            Debian pkg fd-find
+
+        fd + xargs +  mv
+        fd | xargs -I file mv file newdir
+
+Git: messed up moving files.  Corrected with "git add -all ."
+
 1/15
 
 vimrc
