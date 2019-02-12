@@ -1,5 +1,4 @@
-
-"so ~/config/dotfiles/vim/.vim/myvimfunctions.vim
+" so ~/config/dotfiles/vim/.vim/myvimfunctions.vim
 "set foldtext=CustomFoldText()
 autocmd BufRead,BufNewFile /home/andmalc/notes/* setlocal foldmethod=marker
 autocmd BufRead,BufNewFile /home/andmalc/config/* setlocal foldmethod=marker
@@ -21,6 +20,16 @@ set clipboard+=unnamed
 " Wrap at character in 'breakat' rather than at last character on screen
 set linebreak
 
+" Tabs
+set ai
+set ts=4
+set sw=4
+set sts=4
+set expandtab
+
+" sane text files
+set fileformat=unix
+set encoding=utf-8
 
 " relative line numbering - see # of line from insertion point
 " set rnu 
@@ -45,23 +54,48 @@ Plugin 'gmarik/Vundle.vim'
 " Outliner
 Plugin 'VOom'
 
-" Rec for Py coding
-Plugin 'tmhedberg/SimpylFold'
-" https://github.com/tmhedberg/SimpylFold
-let g:SimpylFold_docstring_preview = 1
-autocmd BufWinEnter *.py setlocal foldexpr=SimpylFold(v:lnum) foldmethod=expr
-autocmd BufWinLeave *.py setlocal foldexpr< foldmethod<
-
 " Folding for MD files
 Plugin 'nelstrom/vim-markdown-folding'
 " Default fold syle is 'stacked' (shows all headings). 'nested' is shows h1 only
 " let g:markdown_fold_style = 'nested'
 
-" Tools plugins {{{2
+" https://github.com/tmhedberg/SimpylFold
+Plugin 'tmhedberg/SimpylFold'
+let g:SimpylFold_docstring_preview = 1
 
-" Fugitive - Git tools
-" https://github.com/tpope/vim-fugitive
-Plugin 'tpope/vim-fugitive.git'
+
+" Python plugins {{{2
+
+Plugin 'vim-scripts/indentpython.vim'
+
+" PyFlakes
+" Plugin 'vim-scripts/pyflakes.vim'
+
+" YouCompleteMe, replaces jedi-vim
+Plugin 'Valloric/YouCompleteMe'
+" Installation instructions:  https://github.com/Valloric/YouCompleteMe#linux-64-bit
+"
+" ensures that the autocomplete window goes away when done
+" let g:ycm_autoclose_preview_window_after_completion=1
+" shortcut for goto definition
+" map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+" switch off ycm for text markup formats
+" let g:ycm_filetype_blacklist = {'asciidoc': 0, 'text': 0, 'markdown': 0}
+
+"virtualenv support for YouCompleteMe
+py << EOF
+import os
+import sys
+if 'VIRTUAL_ENV' in os.environ:
+  project_base_dir = os.environ['VIRTUAL_ENV']
+  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+  execfile(activate_this, dict(__file__=activate_this))
+EOF
+
+Plugin 'vim-syntastic/syntastic'
+
+" Misc plugins {{{2
 
 " Ansible
 " Bundle 'chase/vim-ansible-yaml'
@@ -71,26 +105,10 @@ Plugin 'tpope/vim-fugitive.git'
 "
 Plugin 'dag/vim-fish.git'
 
-" Python plugins {{{2
+" Fugitive - Git tools
+" https://github.com/tpope/vim-fugitive
+Plugin 'tpope/vim-fugitive.git'
 
-" PyFlakes
-" Plugin 'vim-scripts/pyflakes.vim'
-
-" YouCompleteMe options, replace jedi-vim
-" Plugin 'Valloric/YouCompleteMe'
-" ensures that the autocomplete window goes away when done
-" let g:ycm_autoclose_preview_window_after_completion=1
-" shortcut for goto definition
-" map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
-
-" switch off ycm for text markup formats
-" let g:ycm_filetype_blacklist = {'asciidoc': 0, 'text': 0, 'markdown': 0}
-
-
-" PyFlakes  
-" Jedi (with PyFlakes)
-" PyFlakes let g:jedi#popup_on_dot = 0
-" highlight SpellBad term=underline gui=undercurl guisp=Yellow 
 
 " Interface plugins {{{2
 "
@@ -181,16 +199,15 @@ set laststatus=2
 
 " File format {{{1
 
-" Tabs
-set ai
-set ts=4
-set sw=4
-set sts=4
-set expandtab
 
-" sane text files
-set fileformat=unix
-set encoding=utf-8
+" Python & other language settings {{{1
+
+let python_highlight_all=1
+
+au BufNewFile,BufRead *.py  set tabstop=4 softtabstop=4  shiftwidth=4 textwidth=7  expandtab  autoindent
+
+au BufNewFile,BufRead *.js, *.html, *.css set tabstop=2 softtabstop=2 shiftwidth=2
+
 
 " Mapping {{{1
 " To run normal or command mode commands from Insert Mode, enter: ctrl+v[Escape key]:command
@@ -281,16 +298,3 @@ map <bs> :noh<CR>
 noremap n nzz
 noremap N Nzz
 
-" Nvim features {{{1
-"
-
-if has("nvim")
-        " live substitution previews
-        set inccommand=nosplit
-
-        " Control + Q to quit all
-        noremap <C-q> :confirm qall<CR>
-
-        " new tab
-        noremap <silent> <A-t> :$tabnew<CR>
-endif
