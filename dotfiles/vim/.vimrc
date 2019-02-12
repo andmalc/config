@@ -84,7 +84,7 @@ Plugin 'Valloric/YouCompleteMe'
 " let g:ycm_filetype_blacklist = {'asciidoc': 0, 'text': 0, 'markdown': 0}
 
 "virtualenv support for YouCompleteMe
-py << EOF
+py3 << EOF
 import os
 import sys
 if 'VIRTUAL_ENV' in os.environ:
