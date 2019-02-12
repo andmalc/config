@@ -1,3 +1,18 @@
+2/5
+
+Thinkpad
+    pip install jupyterlab
+
+
+1/29
+
+Thinkpad
+    Install
+        pip3
+            pymux from source in ~/dev
+            ipython
+            litecli
+
 1/26
 
 Readded base16-shell
