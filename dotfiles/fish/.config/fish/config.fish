@@ -3,13 +3,16 @@ set -U fish_user_paths /home/andmalc/.local/bin $fish_user_paths
 
 set -gx CDPATH $CDPATH .  ~
 
+# length of directory abbreviations in prompt
+set fish_prompt_pwd_dir_length 3
+
 # Neovim
 set -gx NVIM_LISTEN_ADDRESS /tmp/nvimsocket
 
-#if status --is-interactive
-#    set BASE16_SHELL "$HOME/.config/base16-shell/"
-#    source "$BASE16_SHELL/profile_helper.fish"
-#end
+if status --is-interactive
+    set BASE16_SHELL "$HOME/.config/base16-shell/"
+    source "$BASE16_SHELL/profile_helper.fish"
+end
 
 if not set -q abbrs_initialized
   set -U abbrs_initialized

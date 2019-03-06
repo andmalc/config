@@ -4,3 +4,9 @@
 [submodule "term/tpm"]
 	path = term/tpm
 	url = https://github.com/tmux-plugins/tpm
+[submodule "term/fzf"]
+	path = dotfiles/fzf/.fzf
+	url = https://github.com/junegunn/fzf.git
+[submodule "term/base16-shell"]
+	path = term/base16-shell
+	url = https://github.com/chriskempson/base16-shell.git

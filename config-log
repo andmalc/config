@@ -7,7 +7,11 @@ Fzf Fish shell integration
         /usr/share/doc/fzf/README.Fedora
     Installed from git instead: worked
 
-
+Fix base16 subrepo
+    Deleted existing
+    Cloned repo and cd into it
+    git fetch origin pull/154/head:fix-syntax-for-profile_helper.fish
+    git checkout fix-syntax-for-profile_helper.fish
 
 2/5
 
