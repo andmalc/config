@@ -1,25 +1,13 @@
 
 Git remotes added
+git submodule update --init --recursive
+
 
 stow to copy config files
 set full dir path to .ssh to 700
 
 
-Antigen - zsh plugin & theme manager
-Simple install:
-curl -L git.io/antigen > antigen.zsh or use Debian package
-Top of .zshrc:
-    source $HOME/antigen.zsh
-    antigen init <location of antigenrc file>
 
-Antigenrc file:
-    antigen use oh-my-zsh
-    antigen bundle ...
-    antigen theme ...
-    antigen apply
-
-
-git submodule update --init --recursive
 
 Tmux
     prefix + I to install tpm modules

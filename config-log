@@ -1,3 +1,14 @@
+3/6
+
+Atomic
+
+Fzf Fish shell integration
+    Keybindings not working with fzf installed from Fedora pkg
+        /usr/share/doc/fzf/README.Fedora
+    Installed from git instead: worked
+
+
+
 2/5
 
 Thinkpad
