@@ -7,13 +7,25 @@ stow to copy config files
 set full dir path to .ssh to 700
 
 
+Fish shell
+    pkg manager fisher
+    pkgs installed
+        jethrokuan/fzf
+        kennethreitz/fish-pipenv
+        oh-my-fish/plugin-bang-bang
 
+        #Spacefish prompt
+        https://github.com/matchai/spacefish
 
 Tmux
     prefix + I to install tpm modules
 
 Vim
-    VundleInstall
+    VundleInstall under Fishshell
+        env SHELL=(which sh) vim +BundleInstall! +BundleClean +qall
+        https://github.com/VundleVim/Vundle.vim/wiki
+    Nvim to avoid base16-vim startup errors
+
 
 Fzf
     https://codeyarns.com/2017/10/24/how-to-install-and-use-fzf/

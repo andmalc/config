@@ -72,7 +72,7 @@ Plugin 'vim-scripts/indentpython.vim'
 " Plugin 'vim-scripts/pyflakes.vim'
 
 " YouCompleteMe, replaces jedi-vim
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
 " Installation instructions:  https://github.com/Valloric/YouCompleteMe#linux-64-bit
 "
 " ensures that the autocomplete window goes away when done
@@ -93,7 +93,7 @@ if 'VIRTUAL_ENV' in os.environ:
   execfile(activate_this, dict(__file__=activate_this))
 EOF
 
-Plugin 'vim-syntastic/syntastic'
+ Plugin 'vim-syntastic/syntastic'
 
 " Misc plugins {{{2
 
@@ -118,23 +118,23 @@ Plugin 'tpope/vim-fugitive.git'
 "
 " Lightline
 " https://github.com/itchyny/lightline.vim
-Plugin 'itchyny/lightline.vim'
+" Plugin 'itchyny/lightline.vim'
 
 
 " Colorscheme Plugins  {{{2
-Plugin 'Lokaltog/vim-distinguished'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'jnurmine/Zenburn'
-Plugin 'chriskempson/base16-vim'
+" Plugin 'Lokaltog/vim-distinguished'
+" Plugin 'altercation/vim-colors-solarized'
+" Plugin 'jnurmine/Zenburn'
+ Plugin 'chriskempson/base16-vim'
 
 " Moonfly
 " dark color scheme for Vim and Neovim
 " https://github.com/bluz71/vim-moonfly-colors
-Plugin 'bluz71/vim-moonfly-colors'
+" Plugin 'bluz71/vim-moonfly-colors'
 
 " Lucius
-Plugin 'jonathanfilip/vim-lucius'
-let g:lucius_no_term_bg = 1
+" Plugin 'jonathanfilip/vim-lucius'
+" let g:lucius_no_term_bg = 1
 " LuciusBlackLowContrast
 " For darcolors
 
@@ -151,6 +151,8 @@ if filereadable(expand("~/.vimrc_background"))
       let base16colorspace=256
       source ~/.vimrc_background
 endif
+
+colorscheme default
 
 " set background=dark
 

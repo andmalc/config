@@ -1,3 +1,4 @@
+# Defined in - @ line 2
 function fish_prompt --description 'Write out the prompt'
 	set -l last_status $status
 
@@ -78,6 +79,7 @@ function fish_prompt --description 'Write out the prompt'
 
     # PWD
     set_color $color_cwd
+    echo -n $HOSTNAME
     echo -n (prompt_pwd)
     set_color normal
 

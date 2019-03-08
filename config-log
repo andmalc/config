@@ -1,3 +1,15 @@
+3/7
+Atomic
+
+Fish shell
+    Fisher pkg mangager
+        changed save location to 'fisher' subdir 
+
+    #Spacefish prompt
+    https://github.com/matchai/spacefish
+
+set EDITOR and TMPDIR Universal X vars
+
 3/6
 
 Atomic
@@ -12,6 +24,19 @@ Fix base16 subrepo
     Cloned repo and cd into it
     git fetch origin pull/154/head:fix-syntax-for-profile_helper.fish
     git checkout fix-syntax-for-profile_helper.fish
+
+Moved base16 and fzf repos out of config/term
+
+Vim:
+    Vundle: errors on BundleInstall with fish.  
+        env SHELL=(which sh) vim +BundleInstall! +BundleClean +qall
+        more options at wiki: https://github.com/VundleVim/Vundle.vim/wiki
+
+    base16 plugin errors on startup.  Is OK with Nvim
+        
+    .vimrc
+        colorsheme default #needed for setting with current base16 theme
+ 
 
 2/5
 
