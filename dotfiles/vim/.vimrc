@@ -52,7 +52,7 @@ Plugin 'gmarik/Vundle.vim'
 " Folding plugins {{{2
 "
 " Outliner
-Plugin 'VOom'
+Plugin 'vim-voom/voom'
 
 " Folding for MD files
 Plugin 'nelstrom/vim-markdown-folding'
@@ -72,7 +72,7 @@ Plugin 'vim-scripts/indentpython.vim'
 " Plugin 'vim-scripts/pyflakes.vim'
 
 " YouCompleteMe, replaces jedi-vim
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
 " Installation instructions:  https://github.com/Valloric/YouCompleteMe#linux-64-bit
 "
 " ensures that the autocomplete window goes away when done
