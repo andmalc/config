@@ -1,13 +1,12 @@
-[submodule "term/antigen"]
-	path = term/antigen
-	url = https://github.com/zsh-users/antigen
 [submodule "term/Vundle.vim"]
-	path = term/Vundle.vim
+	path = dotfiles/vim/.vim/bundle/Vundle.vim
 	url = https://github.com/VundleVim/Vundle.vim.git
 [submodule "term/tpm"]
 	path = term/tpm
 	url = https://github.com/tmux-plugins/tpm
+[submodule "term/fzf"]
+	path = dotfiles/fzf/.fzf
+	url = https://github.com/junegunn/fzf.git
 [submodule "term/base16-shell"]
-    ignore=dirty
-	path = term/base16-shell
+	path = dotfiles/base16-shell/.config/base16-shell
 	url = https://github.com/chriskempson/base16-shell.git

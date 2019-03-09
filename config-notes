@@ -1,31 +1,31 @@
 
 Git remotes added
+git submodule update --init --recursive
+
 
 stow to copy config files
 set full dir path to .ssh to 700
 
 
-Antigen - zsh plugin & theme manager
-Simple install:
-curl -L git.io/antigen > antigen.zsh or use Debian package
-Top of .zshrc:
-    source $HOME/antigen.zsh
-    antigen init <location of antigenrc file>
+Fish shell
+    pkg manager fisher
+    pkgs installed
+        jethrokuan/fzf
+        kennethreitz/fish-pipenv
+        oh-my-fish/plugin-bang-bang
 
-Antigenrc file:
-    antigen use oh-my-zsh
-    antigen bundle ...
-    antigen theme ...
-    antigen apply
-
-
-git submodule update --init --recursive
+        #Spacefish prompt
+        https://github.com/matchai/spacefish
 
 Tmux
     prefix + I to install tpm modules
 
 Vim
-    VundleInstall
+    VundleInstall under Fishshell
+        env SHELL=(which sh) vim +BundleInstall! +BundleClean +qall
+        https://github.com/VundleVim/Vundle.vim/wiki
+    Nvim to avoid base16-vim startup errors
+
 
 Fzf
     https://codeyarns.com/2017/10/24/how-to-install-and-use-fzf/

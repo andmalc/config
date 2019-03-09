@@ -1,5 +1,10 @@
 home/.local
 
+#Fish
+dotfiles/fish/.config/fish/fishd*
+dotfiles/fish/.config/fish/fisher
+dotfiles/fish/.config/fish/functions/__*
+
 # Vim
 *.zwc
 **/.vim/bundle/*
