@@ -1,1 +1,1 @@
-/var/home/andmalc/.fzf/shell/key-bindings.fish
+/home/andmalc/.fzf/shell/key-bindings.fish

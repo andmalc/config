@@ -1,5 +1,8 @@
 
-Git remotes added
+Initial clone
+git clone --recursive git@github.com:andmalc/config.git
+
+Git submodule added
 git submodule update --init --recursive
 
 
@@ -8,7 +11,13 @@ set full dir path to .ssh to 700
 
 
 Fish shell
+    Set variables
+        fish_user_paths /home/andmalc/.local/bin
+        fisher_path /home/andmalc/config/dotfiles/fish/.config/fish/fisher
+
     pkg manager fisher
+        curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/fisher/fisher.fish
+
     pkgs installed
         jethrokuan/fzf
         kennethreitz/fish-pipenv

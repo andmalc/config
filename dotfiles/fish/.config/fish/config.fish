@@ -1,5 +1,4 @@
 
-set -U fish_user_paths /home/andmalc/.local/bin $fish_user_paths
 
 set -gx CDPATH $CDPATH .  ~
 
