@@ -1,4 +1,13 @@
-3/16
+3/12
+
+Fish
+    Fisher
+        Install fzf keybindings package
+            https://github.com/jethrokuan/fzf
+        Set var
+            set -U FZF_LEGACY_KEYBINDINGS 0
+
+3/11
 
 Dell 13
     Deleted ~/config and recloned
@@ -10,6 +19,8 @@ Atomic
 Fish shell
     Fisher pkg mangager
         changed save location to 'fisher' subdir 
+        fisher function must be in functions dir to be on the PATH
+
 
     #Spacefish prompt
     https://github.com/matchai/spacefish

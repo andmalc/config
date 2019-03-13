@@ -2,6 +2,9 @@
 
 set -gx CDPATH $CDPATH .  ~
 
+
+# Fisher setup
+# Change default save dir
 set -g fisher_path ~/config/dotfiles/fish/.config/fish/fisher
 set fish_function_path $fish_function_path[1] $fisher_path/functions $fish_function_path[2..-1]
 set fish_complete_path $fish_complete_path[1] $fisher_path/completions $fish_complete_path[2..-1]
@@ -9,6 +12,7 @@ set fish_complete_path $fish_complete_path[1] $fisher_path/completions $fish_com
 for file in $fisher_path/conf.d/*.fish
 #    builtin source $file 2> /dev/null
 end
+# End Fisher config
 
 # length of directory abbreviations in prompt
 set fish_prompt_pwd_dir_length 3

@@ -13,9 +13,10 @@ set full dir path to .ssh to 700
 Fish shell
     Set variables
         fish_user_paths /home/andmalc/.local/bin
-        fisher_path /home/andmalc/config/dotfiles/fish/.config/fish/fisher
 
     pkg manager fisher
+        Create submodule for this instead?
+        fisher_path /home/andmalc/config/dotfiles/fish/fisher
         curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/fisher/fisher.fish
 
     pkgs installed
@@ -40,5 +41,9 @@ Fzf
     https://codeyarns.com/2017/10/24/how-to-install-and-use-fzf/
     Install into shell 
         ./.fzf/install 
+        decline keybindings
+    Install keybindings package with Fisher.  Said more features than fzf's built in Fish support
+        fisher add jethrokuan/fzf
+        set -U FZF_LEGACY_KEYBINDINGS 0
 
 
