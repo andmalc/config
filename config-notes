@@ -16,11 +16,15 @@ Fish shell
 
     pkg manager fisher
         Create submodule for this instead?
+        Install
+            curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/fisher/fisher.fish
+        fisher executable: /home/andmalc/config/dotfiles/fish/functions/fisher
         fisher_path /home/andmalc/config/dotfiles/fish/fisher
-        curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/fisher/fisher.fish
+        Run fisher to relink (?) packages
 
     pkgs installed
         jethrokuan/fzf
+
         kennethreitz/fish-pipenv
         oh-my-fish/plugin-bang-bang
 
