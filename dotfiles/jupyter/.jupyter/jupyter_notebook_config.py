@@ -45,7 +45,7 @@
 #  Use '*' to allow any origin to access your server.
 #  
 #  Takes precedence over allow_origin_pat.
-#c.NotebookApp.allow_origin = ''
+c.NotebookApp.allow_origin = '*'
 
 ## Use a regular expression for the Access-Control-Allow-Origin header
 #  
@@ -66,6 +66,20 @@
 #  
 #  This can be set to false to prevent changing password from the UI/API.
 #c.NotebookApp.allow_password_change = True
+
+## Allow requests where the Host header doesn't point to a local server
+#  
+#  By default, requests get a 403 forbidden response if the 'Host' header shows
+#  that the browser thinks it's on a non-local domain. Setting this option to
+#  True disables this check.
+#  
+#  This protects against 'DNS rebinding' attacks, where a remote web server
+#  serves you a page and then changes its DNS to send later requests to a local
+#  IP, bypassing same-origin checks.
+#  
+#  Local IP addresses (such as 127.0.0.1 and ::1) are allowed as local, along
+#  with hostnames configured in local_hostnames.
+c.NotebookApp.allow_remote_access = True
 
 ## Whether to allow the user to run the notebook as root.
 #c.NotebookApp.allow_root = False
@@ -111,6 +125,18 @@
 
 ## The file where the cookie secret is stored.
 #c.NotebookApp.cookie_secret_file = ''
+
+## Override URL shown to users.
+#  
+#  Replace actual URL, including protocol, address, port and base URL, with the
+#  given value when displaying URL to the users. Do not change the actual
+#  connection URL. If authentication token is enabled, the token is added to the
+#  custom URL automatically.
+#  
+#  This option is intended to be used when the URL to display to the user cannot
+#  be determined reliably by the Jupyter notebook server (proxified or
+#  containerized setups for example).
+#c.NotebookApp.custom_display_url = ''
 
 ## The default URL to redirect to from `/`
 #c.NotebookApp.default_url = '/tree'
@@ -158,6 +184,10 @@
 ## 
 #c.NotebookApp.file_to_run = ''
 
+## Extra keyword arguments to pass to `get_secure_cookie`. See tornado's
+#  get_secure_cookie docs for details.
+#c.NotebookApp.get_secure_cookie_kwargs = {}
+
 ## Deprecated: Use minified JS file or not, mainly use during dev to avoid JS
 #  recompilation
 #c.NotebookApp.ignore_minified_js = False
@@ -172,9 +202,6 @@
 
 ## The IP address the notebook server will listen on.
 #c.NotebookApp.ip = 'localhost'
-
-c.NotebookApp.ip = '*'
-c.NotebookApp.open_browser = False
 
 ## Supply extra arguments that will be passed to Jinja environment.
 #c.NotebookApp.jinja_environment_options = {}
@@ -195,6 +222,12 @@ c.NotebookApp.open_browser = False
 ## The full path to a private key file for usage with SSL/TLS.
 #c.NotebookApp.keyfile = ''
 
+## Hostnames to allow as local when allow_remote_access is False.
+#  
+#  Local IP addresses (such as 127.0.0.1 and ::1) are automatically accepted as
+#  local as well.
+#c.NotebookApp.local_hostnames = ['localhost']
+
 ## The login handler class to use.
 #c.NotebookApp.login_handler_class = 'notebook.auth.login.LoginHandler'
 
@@ -208,6 +241,17 @@ c.NotebookApp.open_browser = False
 #  MathJax, for example:  /static/components/MathJax/MathJax.js
 #c.NotebookApp.mathjax_url = ''
 
+## Sets the maximum allowed size of the client request body, specified in  the
+#  Content-Length request header field. If the size in a request  exceeds the
+#  configured value, a malformed HTTP message is returned to the client.
+#  
+#  Note: max_body_size is applied even in streaming mode.
+#c.NotebookApp.max_body_size = 536870912
+
+## Gets or sets the maximum amount of memory, in bytes, that is allocated  for
+#  use by the buffer manager.
+#c.NotebookApp.max_buffer_size = 536870912
+
 ## Dict of Python modules to load as notebook server extensions.Entry values can
 #  be used to enable and disable the loading ofthe extensions. The extensions
 #  will be loaded in alphabetical order.
@@ -220,7 +264,7 @@ c.NotebookApp.open_browser = False
 #  platform dependent and determined by the python standard library `webbrowser`
 #  module, unless it is overridden using the --browser (NotebookApp.browser)
 #  configuration option.
-#c.NotebookApp.open_browser = True
+c.NotebookApp.open_browser = False
 
 ## Hashed password to use for web authentication.
 #  
@@ -248,6 +292,10 @@ c.NotebookApp.open_browser = False
 ## DISABLED: use %pylab or %matplotlib in the notebook to enable matplotlib.
 #c.NotebookApp.pylab = 'disabled'
 
+## If True, display a button in the dashboard to quit (shutdown the notebook
+#  server).
+#c.NotebookApp.quit_button = True
+
 ## (sec) Time window used to  check the message and data rate limits.
 #c.NotebookApp.rate_limit_window = 3
 
@@ -272,7 +320,16 @@ c.NotebookApp.open_browser = False
 #c.NotebookApp.ssl_options = {}
 
 ## Supply overrides for terminado. Currently only supports "shell_command".
-c.NotebookApp.terminado_settings = {'shell_command': ['zsh']}
+#c.NotebookApp.terminado_settings = {}
+
+## Set to False to disable terminals.
+#  
+#  This does *not* make the notebook server more secure by itself. Anything the
+#  user can in a terminal, they can also do in a notebook.
+#  
+#  Terminals may also be automatically disabled if the terminado package is not
+#  available.
+#c.NotebookApp.terminals_enabled = True
 
 ## Token used for authenticating first-time connections to the server.
 #  
@@ -294,13 +351,14 @@ c.NotebookApp.terminado_settings = {'shell_command': ['zsh']}
 ## DEPRECATED, use tornado_settings
 #c.NotebookApp.webapp_settings = {}
 
-## Specify Where to open the notebook on startup. This is the
-#  `new` argument passed to the standard library method `webbrowser.open`.
-#  The behaviour is not guaranteed, but depends on browser support. Valid
-#  values are:
-#      2 opens a new tab,
-#      1 opens a new window,
-#      0 opens in an existing window.
+## Specify Where to open the notebook on startup. This is the `new` argument
+#  passed to the standard library method `webbrowser.open`. The behaviour is not
+#  guaranteed, but depends on browser support. Valid values are:
+#  
+#   - 2 opens a new tab,
+#   - 1 opens a new window,
+#   - 0 opens in an existing window.
+#  
 #  See the `webbrowser.open` documentation for details.
 #c.NotebookApp.webbrowser_open_new = 2
 
@@ -470,7 +528,7 @@ c.NotebookApp.terminado_settings = {'shell_command': ['zsh']}
 #c.Session.unpacker = 'json'
 
 ## Username for the Session. Default is your system username.
-#c.Session.username = 'andmalc'
+#c.Session.username = 'username'
 
 #------------------------------------------------------------------------------
 # MultiKernelManager(LoggingConfigurable) configuration
@@ -517,6 +575,15 @@ c.NotebookApp.terminado_settings = {'shell_command': ['zsh']}
 ## The interval (in seconds) on which to check for idle kernels exceeding the
 #  cull timeout value.
 #c.MappingKernelManager.cull_interval = 300
+
+## Timeout for giving up on a kernel (in seconds).
+#  
+#  On starting and restarting kernels, we check whether the kernel is running and
+#  responsive by sending kernel_info_requests. This sets the timeout in seconds
+#  for how long the kernel can take before being presumed dead.  This affects the
+#  MappingKernelManager (which handles kernel restarts)  and the
+#  ZMQChannelsHandler (which handles the startup).
+#c.MappingKernelManager.kernel_info_timeout = 60
 
 ## 
 #c.MappingKernelManager.root_dir = ''

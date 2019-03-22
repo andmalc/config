@@ -16,10 +16,11 @@ Fish shell
         fisher_path /home/andmalc/config/dotfiles/fish/.config/fish/fisher
 
     pkg manager fisher
-        curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/fisher/fisher.fish
+        curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
+        run fisher cmd to initialize or re-link packages
 
     pkgs installed
-        jethrokuan/fzf
+        fzf keybindings: jethrokuan/fzf
         kennethreitz/fish-pipenv
         oh-my-fish/plugin-bang-bang
 
@@ -40,5 +41,6 @@ Fzf
     https://codeyarns.com/2017/10/24/how-to-install-and-use-fzf/
     Install into shell 
         ./.fzf/install 
+        decline keybindings setup.  Allow fisher package to handle this.
 
 

@@ -225,7 +225,7 @@ let mapleader = " "
 map ,f	<PageDown>
 map <leader>s :w<CR>
 "imap <leader>s <ESC>:w<CR>
-noremap ; :
+"noremap ; :
 
 map ,H	:e $HOME/
 map ,N	:e $HOME/notes/
