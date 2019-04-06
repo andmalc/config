@@ -31,7 +31,7 @@ home/.gnupg
 !home/.gnupg/trustdb.gpg
 
 # Tmux
-#**/.tmux/plugins
+**/.tmux/plugins
 #!**/.tmux/plugins/tpm
 **/.tmux/resurrect
 
