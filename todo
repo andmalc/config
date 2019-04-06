@@ -1,3 +1,6 @@
+tpm submodule
+    delete from term
+    add to dotfiles/tmux/.tmux.conf/plugins/tpm
 
 fedora toolbox
     fzf keybindings 

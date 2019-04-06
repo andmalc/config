@@ -1,9 +1,6 @@
 [submodule "term/Vundle.vim"]
 	path = dotfiles/vim/.vim/bundle/Vundle.vim
 	url = https://github.com/VundleVim/Vundle.vim.git
-[submodule "term/tpm"]
-	path = term/tpm
-	url = https://github.com/tmux-plugins/tpm
 [submodule "term/fzf"]
 	path = dotfiles/fzf/.fzf
 	url = https://github.com/junegunn/fzf.git
