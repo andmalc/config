@@ -66,7 +66,7 @@ let g:SimpylFold_docstring_preview = 1
 
 " Python plugins {{{2
 
-Plugin 'vim-scripts/indentpython.vim'
+" Plugin 'vim-scripts/indentpython.vim'
 
 " PyFlakes
 " Plugin 'vim-scripts/pyflakes.vim'
@@ -125,7 +125,7 @@ Plugin 'tpope/vim-fugitive.git'
 " Plugin 'Lokaltog/vim-distinguished'
 " Plugin 'altercation/vim-colors-solarized'
 " Plugin 'jnurmine/Zenburn'
- Plugin 'chriskempson/base16-vim'
+" Plugin 'chriskempson/base16-vim'
 
 " Moonfly
 " dark color scheme for Vim and Neovim
@@ -137,7 +137,9 @@ Plugin 'tpope/vim-fugitive.git'
 " let g:lucius_no_term_bg = 1
 " LuciusBlackLowContrast
 " For darcolors
-
+"
+" https://github.com/flazz/vim-colorschemes
+Plugin 'flazz/vim-colorschemes'
 
 " End of Vundle Bundles
 call vundle#end()
@@ -169,7 +171,7 @@ colorscheme default
 set splitbelow
 set splitright
 
-set cursorline
+"set cursorline
 
 
 " Statusline
@@ -206,9 +208,9 @@ set laststatus=2
 
 let python_highlight_all=1
 
-au BufNewFile,BufRead *.py  set tabstop=4 softtabstop=4  shiftwidth=4 textwidth=7  expandtab  autoindent
+"au BufNewFile,BufRead *.py  set tabstop=4 softtabstop=4  shiftwidth=4 textwidth=7  expandtab  autoindent
 
-au BufNewFile,BufRead *.js, *.html, *.css set tabstop=2 softtabstop=2 shiftwidth=2
+"au BufNewFile,BufRead *.js, *.html, *.css set tabstop=2 softtabstop=2 shiftwidth=2
 
 
 " Mapping {{{1

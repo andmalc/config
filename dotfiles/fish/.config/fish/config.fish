@@ -22,18 +22,19 @@ end
 set -gx NVIM_LISTEN_ADDRESS /tmp/nvimsocket
 
 
+abbr --add --global s sudo
+abbr --add --global l less
+abbr --add --global la ls -la
 
-if status --is-interactive
-  abbr --add --global gco git checkout
-  abbr --add --global g 'git'
-  abbr --add --global ga 'git add'
-  abbr --add --global gb 'git branch'
-  abbr --add --global gbl 'git blame'
-  abbr --add --global gc 'git commit -m'
-  abbr --add --global gco 'git checkout'
-  abbr --add --global gd 'git diff'
-  abbr --add --global gp 'git push'
-  abbr --add --global gpl 'git pull'
-  abbr --add --global gs 'git status'
-end
+abbr --add --global gco git checkout
+abbr --add --global g 'git'
+abbr --add --global ga 'git add'
+abbr --add --global gb 'git branch'
+abbr --add --global gbl 'git blame'
+abbr --add --global gc 'git commit -m'
+abbr --add --global gco 'git checkout'
+abbr --add --global gd 'git diff'
+abbr --add --global gp 'git push'
+abbr --add --global gpl 'git pull'
+abbr --add --global gs 'git status'
 
