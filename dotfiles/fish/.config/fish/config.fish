@@ -1,5 +1,4 @@
 
-
 set -gx CDPATH $CDPATH .  ~
 
 #set -g fisher_path ~/config/dotfiles/fish/.config/fish/fisher
