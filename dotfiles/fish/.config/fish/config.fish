@@ -1,3 +1,5 @@
+#Bind Ctrl up to insert last arg
+bind \e\[1\;5A history-token-search-backward
 
 
 set -gx CDPATH $CDPATH .  ~
@@ -34,6 +36,7 @@ abbr --add --global gbl 'git blame'
 abbr --add --global gc 'git commit -m'
 abbr --add --global gco 'git checkout'
 abbr --add --global gd 'git diff'
+abbr --add --global glp 'git log --pretty=oneline'
 abbr --add --global gp 'git push'
 abbr --add --global gpl 'git pull'
 abbr --add --global gs 'git status'

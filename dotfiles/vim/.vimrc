@@ -149,6 +149,12 @@ filetype plugin indent on
 " Colorschemes {{{1
 " Set colorscheme
 
+" BG informs Vim of terminal bg, causing it to adjust colors
+" Can be overriden by a color scheme
+" https://vi.stackexchange.com/questions/12104/what-does-set-background-dark-do
+set background=dark
+
+
 if filereadable(expand("~/.vimrc_background"))
       let base16colorspace=256
       source ~/.vimrc_background
@@ -156,7 +162,6 @@ endif
 
 colorscheme default
 
-" set background=dark
 
 " colorscheme moonfly
 " let g:moonflyCursorColor = 1
