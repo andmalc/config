@@ -39,6 +39,27 @@ set encoding=utf-8
 " set modeline #default is on
 " set modelines=5 # default
 
+" Interface {{{1
+
+" Mouse mode
+" Allows scrolling and positioning cursor with mouse
+set mouse=a
+
+set splitbelow
+set splitright
+
+"set cursorline
+
+
+" Statusline
+" Bar at bottom of window
+" 1 Show when more than one window open
+" 2 Show always, not just when window split
+set laststatus=2
+
+
+set bg=dark
+
 " Vundle {{{1
  
 filetype off
@@ -170,41 +191,6 @@ colorscheme default
 
 "colorscheme zenburn
 " colorscheme solarized
-
-" Interface {{{1
-
-set splitbelow
-set splitright
-
-"set cursorline
-
-
-" Statusline
-" Bar at bottom of window
-" 1 Show when more than one window open
-" 2 Show always, not just when window split
-set laststatus=2
-
-" Lightlight overrides following statusline settings
-"set statusline=
-"set statusline+=%f\ 
-"set statusline+=buffer\ %n
-"set statusline+=%=
-"set statusline+=line\ %l
-
-" Display editing mode under status line.
-" Don't show editing mode e.g. Insert below Statusline if status line plugin
-" shows it
-"set showmode
-
-" Lightline colours
-" let g:lightline = {
-      \ 'colorscheme': 'jellybeans',
-      \ }
-" ???
-" let g:airline#extensions#tabline#enabled = 1
-" let g:airline_theme='luna'
-
 
 " File format {{{1
 

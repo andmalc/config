@@ -1,25 +1,25 @@
-#Bind Ctrl up to insert last arg
-bind \e\[1\;5A history-token-search-backward
-
 
 set -gx CDPATH $CDPATH .  ~
-
-#set -g fisher_path ~/config/dotfiles/fish/.config/fish/fisher
-#set fish_function_path $fish_function_path[1] $fisher_path/functions $fish_function_path[2..-1]
-#set fish_complete_path $fish_complete_path[1] $fisher_path/completions $fish_complete_path[2..-1]
-
-#for file in $fisher_path/conf.d/*.fish
-#    builtin source $file 2> /dev/null
-#end
 
 # length of directory abbreviations in prompt
 set fish_prompt_pwd_dir_length 3
 
-if status --is-interactive
-    #    set BASE16_SHELL "$HOME/.config/base16-shell/"
-    #source "$BASE16_SHELL/profile_helper.fish"
+
+if test -e ~/.secrets.fish
+    #    source ~/.secrets.fish
 end
 
+# Variables
+#
+
+set --prepend PATH "$HOME/.local/bin"
+set -x EDITOR nvim
+set -x LESS "--ignore-case --LONG-PROMPT --RAW-CONTROL-CHARS --tabs=4 --window=-4"
+set -x EDITOR vim
+
+#set -x RIPGREP_CONFIG_PATH ~/.config/rg
+
+# Abbreiations
 # Neovim
 set -gx NVIM_LISTEN_ADDRESS /tmp/nvimsocket
 
@@ -41,3 +41,13 @@ abbr --add --global gp 'git push'
 abbr --add --global gpl 'git pull'
 abbr --add --global gs 'git status'
 
+# Plugins
+#
+#
+#set -g fisher_path ~/config/dotfiles/fish/.config/fish/fisher
+#set fish_function_path $fish_function_path[1] $fisher_path/functions $fish_function_path[2..-1]
+#set fish_complete_path $fish_complete_path[1] $fisher_path/completions $fish_complete_path[2..-1]
+
+#for file in $fisher_path/conf.d/*.fish
+#    builtin source $file 2> /dev/null
+#end

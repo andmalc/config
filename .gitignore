@@ -4,6 +4,7 @@ home/.local
 dotfiles/fish/.config/fish/fishd*
 dotfiles/fish/.config/fish/fisher
 dotfiles/fish/.config/fish/functions/__*
+dotfiles/fish/.config/fish/fish_variables
 
 # Vim
 *.zwc
