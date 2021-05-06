@@ -51,3 +51,4 @@ abbr --add --global gs 'git status'
 #for file in $fisher_path/conf.d/*.fish
 #    builtin source $file 2> /dev/null
 #end
+

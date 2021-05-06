@@ -1,0 +1,10 @@
+
+profile {
+    output eDP-1  scale 2
+    output DP-2 
+}
+
+
+profile {
+    output eDP-1  scale 1.5
+}
