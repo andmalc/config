@@ -62,7 +62,13 @@ input "1739:0:Synaptics_TM3381-002" {
 #       middle_emulation enable 
 #       dwt enabled
        }
-#
+input "1118:1957:Microsoft_Microsoft___2.4GHz_Transceiver_v9.0_Mouse"  {
+       tap enabled
+       natural_scroll enabled
+       drag enabled
+#       middle_emulation enable 
+#       dwt enabled
+       }
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
 
@@ -227,6 +233,9 @@ titlebar_padding 20 0
 input type:keyboard {
     xkb_options caps:swapescape,compose:prsc
 }
+
+# screenshots
+bindsym $mod+Print exec grimshot copy area
 
 # key bindings
 bindsym $mod+Shift+e exec "pkill firefox; while pidof firefox; do sleep 0.3; done; swaymsg exit"

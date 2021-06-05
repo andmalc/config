@@ -21,9 +21,10 @@ set -x EDITOR vim
 
 # Abbreiations
 # Neovim
-set -gx NVIM_LISTEN_ADDRESS /tmp/nvimsocket
+#set -gx NVIM_LISTEN_ADDRESS /tmp/nvimsocket
 
 
+abbr --add --global v nvim
 abbr --add --global s sudo
 abbr --add --global l less
 abbr --add --global la ls -la

@@ -4,3 +4,6 @@
 [submodule "term/fzf"]
 	path = dotfiles/fzf/.fzf
 	url = https://github.com/junegunn/fzf.git
+[submodule "dotfiles/kitty/.config/kitty/kitty-themes"]
+	path = dotfiles/kitty/.config/kitty/kitty-themes
+	url = https://github.com/dexpota/kitty-themes.git
