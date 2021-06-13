@@ -1,0 +1,25 @@
+session_name: nix
+windows:
+- focus: 'true'
+  layout: b4e0,85x43,0,0,3
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: fish
+  start_directory: /home/andmalc
+  window_name: fish
+- layout: b4e1,85x43,0,0,4
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: fish
+  start_directory: /home/andmalc
+  window_name: fish
+- layout: b4e2,85x43,0,0,5
+  options:
+    automatic-rename: 'off'
+  panes:
+  - focus: 'true'
+    shell_command: fish
+  start_directory: /home/andmalc/notes
+  window_name: notes

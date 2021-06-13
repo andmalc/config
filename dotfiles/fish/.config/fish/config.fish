@@ -15,7 +15,6 @@ set -x XDG_DATA_DIRS $HOME/.local/share/flatpak/exports/share /var/lib/flatpak/e
 set --prepend PATH "$HOME/.local/bin"
 set -x EDITOR nvim
 set -x LESS "--ignore-case --LONG-PROMPT --RAW-CONTROL-CHARS --tabs=4 --window=-4"
-set -x EDITOR vim
 
 #set -x RIPGREP_CONFIG_PATH ~/.config/rg
 

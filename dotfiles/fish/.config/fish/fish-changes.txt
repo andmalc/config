@@ -1,0 +1,7 @@
+6/5 
+Installed nix plugin
+saved to fishdir/conf.d
+Nix apps now on path
+
+
+

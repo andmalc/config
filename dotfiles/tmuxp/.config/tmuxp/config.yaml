@@ -1,0 +1,25 @@
+session_name: config
+windows:
+- focus: 'true'
+  layout: b4dd,85x43,0,0,0
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: fish
+  start_directory: /home/andmalc/config/dotfiles/
+  window_name: fish
+- layout: b4de,85x43,0,0,1
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: fish
+  start_directory: /home/andmalc
+  window_name: fish
+- layout: b4df,85x43,0,0,2
+  options:
+    automatic-rename: 'off'
+  panes:
+  - focus: 'true'
+    shell_command: nvim
+  start_directory: /home/andmalc/notes
+  window_name: notes

@@ -6,6 +6,15 @@ dotfiles/fish/.config/fish/fisher
 dotfiles/fish/.config/fish/functions/__*
 dotfiles/fish/.config/fish/fish_variables
 dotfiles/fish/.config/fish/fish_plugins
+dotfiles/fish/.config/fish/conf.d/
+
+#Nvim
+dotfiles/nvim/.config/nvim/plugged
+
+# Tmux
+**/.tmux/plugins
+#!**/.tmux/plugins/tpm
+**/.tmux/resurrect
 
 # Vim
 *.zwc
@@ -31,11 +40,6 @@ home/.gnupg
 !home/.gnupg/pubring.gpg
 !home/.gnupg/secring.gpg
 !home/.gnupg/trustdb.gpg
-
-# Tmux
-**/.tmux/plugins
-#!**/.tmux/plugins/tpm
-**/.tmux/resurrect
 
 **/dotfiles/localbin
 !**/dotfiles/localbin/.local/bin/tmux-set-escape.sh
