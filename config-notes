@@ -10,9 +10,13 @@ stow to copy config files
 set full dir path to .ssh to 700
 
 
+Nix - install under Bash
+
+
 Fish shell
+    Run
+        fish_add_path ~/andmalc/.local/bin ~/.nix_profile/bin
     Set variables
-        fish_user_paths /home/andmalc/.local/bin
         fisher_path /home/andmalc/config/dotfiles/fish/.config/fish/fisher
 
     pkg manager fisher
@@ -28,7 +32,14 @@ Fish shell
         https://github.com/matchai/spacefish
 
 Tmux
+    git clone https://github.com/tmux-plugins/tpm ~/.local/share/tmux/plugins/tpm
     prefix + I to install tpm modules
+
+
+Vim-Plug 
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+Reload .vimrc and :PlugInstall
+
 
 Vim
     VundleInstall under Fishshell

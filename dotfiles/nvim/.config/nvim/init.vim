@@ -27,11 +27,18 @@ set expandtab
 
 " vim-plug {{{1
 "
+
+if has("autocmd")
+  filetype plugin indent on
+endif
+
+
 call plug#begin()
 
 
 " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
 Plug 'junegunn/vim-easy-align'
 
+Plug 'nelstrom/vim-markdown-folding'
 
 call plug#end()
