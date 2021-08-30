@@ -20,6 +20,9 @@ set sw=4
 set sts=4
 set expandtab
 
+" Don't load netrw
+let g:loaded_netrw       = 1
+let g:loaded_netrwPlugin = 1
 
 "set runtimepath^=~/.vim runtimepath+=~/.vim/after
 "let &packpath = &runtimepath
