@@ -46,6 +46,8 @@ abbr --add --global gs 'git status'
 #
 #set fish_function_path $fish_function_path[1] $fisher_path/functions $fish_function_path[2..-1]
 #set fish_complete_path $fish_complete_path[1] $fisher_path/completions $fish_complete_path[2..-1]
+
+# Fisher to install to .local/share/fisher
 set -g fisher_path ~/.local/share/fisher
 
 #for file in $fisher_path/conf.d/*.fish
