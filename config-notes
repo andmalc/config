@@ -12,6 +12,7 @@ set full dir path to .ssh to 700
 
 Nix - install under Bash
 curl -L https://nixos.org/nix/install | sh
+Under Fish: set NIX_LINK $HOME/.nix-profile
 Install fish, tmux, nvim
 
 
@@ -25,7 +26,7 @@ Fish shell
         curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
         fisher config in fish config dir
         plugins installed in .local/share/fisher
-        run fisher cmd to initialize or re-link packages
+        run fisher update to initialize or re-link packages
 
     pkgs installed
         fzf keybindings: jethrokuan/fzf
