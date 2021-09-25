@@ -28,7 +28,7 @@ Run using fish installed by os package manager:
         curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
         fisher config in fish config dir
         plugins installed in .local/share/fisher
-        run fisher cmd to initialize or re-link packages
+        run fisher update to initialize or re-link packages
 
 	fisher install https://github.com/lilyball/nix-env.fish
 
