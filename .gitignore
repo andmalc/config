@@ -3,7 +3,7 @@ home/.local
 #Fish
 dotfiles/fish/.config/fish/fishd*
 dotfiles/fish/.config/fish/fisher
-dotfiles/fish/.config/fish/functions/__*
+dotfiles/fish/.config/fish/functions/
 dotfiles/fish/.config/fish/fish_variables
 dotfiles/fish/.config/fish/fish_plugins
 dotfiles/fish/.config/fish/conf.d/

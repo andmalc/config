@@ -11,21 +11,33 @@ set full dir path to .ssh to 700
 
 
 Nix - install under Bash
-curl -L https://nixos.org/nix/install | sh
-Install fish, tmux, nvim
+	curl -L https://nixos.org/nix/install | sh
+	Source
+		source $HOME/.nix-profile/etc/profile.d/nix.sh
+	Add above to .bashrc
+	
+	Can try this under Fish
+		sh <(curl -L https://nixos.org/nix/install) 
+
+	Install fish, tmux, nvim
 
 
 Fish shell
-    Run
-        fish_add_path ~/andmalc/.local/bin ~/.nix_profile/bin
-    Set variables
-        fisher_path /home/andmalc/config/dotfiles/fish/.config/fish/fisher
-
-    pkg manager fisher
+Run using fish installed by os package manager:
+    fisher
         curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
         fisher config in fish config dir
         plugins installed in .local/share/fisher
         run fisher cmd to initialize or re-link packages
+
+	fisher install https://github.com/lilyball/nix-env.fish
+
+Change terminal app shell command to /home/andmalc/.nix-profile/bin/fish 
+
+    Set variables
+        fish_add_path ~/.local/bin
+        fisher_path /home/andmalc/config/dotfiles/fish/.config/fish/fisher
+
 
     pkgs installed
         fzf keybindings: jethrokuan/fzf
