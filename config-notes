@@ -33,7 +33,7 @@ Run using fish installed by os package manager:
 	fisher install https://github.com/lilyball/nix-env.fish
 
 Change terminal app shell command to /home/andmalc/.nix-profile/bin/fish 
-
+Kitty: not setting TERM var.  
     Set variables
         fish_add_path ~/.local/bin
         fisher_path /home/andmalc/config/dotfiles/fish/.config/fish/fisher
