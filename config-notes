@@ -15,6 +15,10 @@ Nix - install under Bash
 	Source
 		source $HOME/.nix-profile/etc/profile.d/nix.sh
 	Add above to .bashrc
+
+override.conf in config:
+	XDG_DATA_DIRS=%h/.nix-profile/share:%h/.local/share:/usr/local/share:/usr/share
+	PATH=%h/.nix-profile/bin
 	
 	Can try this under Fish
 		sh <(curl -L https://nixos.org/nix/install) 
