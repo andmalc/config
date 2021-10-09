@@ -16,12 +16,17 @@ Nix - install under Bash
 		source $HOME/.nix-profile/etc/profile.d/nix.sh
 	Add above to .bashrc
 
-override.conf in config:
-	XDG_DATA_DIRS=%h/.nix-profile/share:%h/.local/share:/usr/local/share:/usr/share
-	PATH=%h/.nix-profile/bin
+	Set following environment under under Crostini
+		XDG_DATA_DIRS=%h/.nix-profile/share:%h/.local/share:/usr/local/share:/usr/share
+		PATH=%h/.nix-profile/bin
+
+		mkdir -p ~/.config/systemd/user	
+		stow -t ~/.config/systemd/user nix-systemd-user
+	Or
+		systemctl --user edit cros-garcon.service
 	
-	Can try this under Fish
-		sh <(curl -L https://nixos.org/nix/install) 
+	Nix install under Fish??
+	Can try this sh <(curl -L https://nixos.org/nix/install) 
 
 	Install fish, tmux, nvim
 
