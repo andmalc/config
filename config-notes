@@ -10,34 +10,32 @@ stow to copy config files
 set full dir path to .ssh to 700
 
 
-Nix - install under Bash
-	curl -L https://nixos.org/nix/install | sh
-	Source
-		source $HOME/.nix-profile/etc/profile.d/nix.sh
-	Add above to .bashrc
-	
-	Can try this under Fish
-		sh <(curl -L https://nixos.org/nix/install) 
+Nix {{{1
 
-	Install fish, tmux, nvim
+install under Bash
+curl -L https://nixos.org/nix/install | sh
+Source
+	source $HOME/.nix-profile/etc/profile.d/nix.sh
+Add above to .bashrc
+
+Can try this under Fish
+	sh <(curl -L https://nixos.org/nix/install) 
+
+Install fish, tmux, nvim
 
 
-Fish shell
+Fish shell {{{1
 Run using fish installed by os package manager:
+    
+    Set variables
+        fish_add_path ~/.local/bin
+        fisher_path /home/andmalc/config/dotfiles/fish/.config/fish/fisher
+
     fisher
         curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
         fisher config in fish config dir
         plugins installed in .local/share/fisher
         run fisher update to initialize or re-link packages
-
-	fisher install https://github.com/lilyball/nix-env.fish
-
-Change terminal app shell command to /home/andmalc/.nix-profile/bin/fish 
-Kitty: not setting TERM var.  
-    Set variables
-        fish_add_path ~/.local/bin
-        fisher_path /home/andmalc/config/dotfiles/fish/.config/fish/fisher
-
 
     pkgs installed
         fzf keybindings: jethrokuan/fzf
@@ -47,12 +45,18 @@ Kitty: not setting TERM var.
         #Spacefish prompt
         https://github.com/matchai/spacefish
 
-Tmux
+Fish installed by Nix
+	fisher install https://github.com/lilyball/nix-env.fish
+    Change terminal app shell command to /home/andmalc/.nix-profile/bin/fish 
+    Issue: Kitty: not setting TERM var.  
+
+Tmux {{{1
     git clone https://github.com/tmux-plugins/tpm ~/.local/share/tmux/plugins/tpm
     prefix + I to install tpm modules
     prefix + U to update
 
 
+Nvim {{{1
 Vim-Plug 
     https://github.com/junegunn/vim-plug
     sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
@@ -61,6 +65,7 @@ Vim-Plug
     Reload init.vim and :PlugInstall
 
 
+Other {{{1
 
 Fzf
     https://codeyarns.com/2017/10/24/how-to-install-and-use-fzf/
