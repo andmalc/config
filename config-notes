@@ -10,18 +10,26 @@ stow to copy config files
 set full dir path to .ssh to 700
 
 
+<<<<<<< HEAD
 Nix {{{1
 
-install under Bash
-curl -L https://nixos.org/nix/install | sh
-Source
-	source $HOME/.nix-profile/etc/profile.d/nix.sh
-Add above to .bashrc
+Install under Bash
+	curl -L https://nixos.org/nix/install | sh
+	Source
+		source $HOME/.nix-profile/etc/profile.d/nix.sh
+	Add above to .bashrc
 
-Can try this under Fish
-	sh <(curl -L https://nixos.org/nix/install) 
+	Set following environment under under Crostini
+		XDG_DATA_DIRS=%h/.nix-profile/share:%h/.local/share:/usr/local/share:/usr/share
+		PATH=%h/.nix-profile/bin
 
-Install fish, tmux, nvim
+		mkdir -p ~/.config/systemd/user	
+		stow -t ~/.config/systemd/user nix-systemd-user
+	Or
+		systemctl --user edit cros-garcon.service
+	
+	Nix install under Fish??
+	Can try this sh <(curl -L https://nixos.org/nix/install) 
 
 
 Fish shell {{{1
