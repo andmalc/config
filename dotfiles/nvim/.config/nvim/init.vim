@@ -18,7 +18,8 @@ set ai
 set ts=4
 set sw=4
 set sts=4
-set expandtab
+set noexpandtab
+set foldmethod=marker
 
 " Don't load netrw
 let g:loaded_netrw       = 1

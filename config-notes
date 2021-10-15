@@ -9,8 +9,11 @@ git submodule update --init --recursive
 stow to copy config files
 set full dir path to .ssh to 700
 
+Environment {{{1
 
-<<<<<<< HEAD
+dotfiles/environment/.config/environment.d/10-xdg.conf
+
+
 Nix {{{1
 
 Install under Bash
@@ -72,6 +75,10 @@ Vim-Plug
 
     Reload init.vim and :PlugInstall
 
+
+Micro {{{1
+
+Clipboard settings in kitty conf
 
 Other {{{1
 
