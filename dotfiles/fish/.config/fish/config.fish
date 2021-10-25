@@ -19,15 +19,11 @@ set -x LESS "--ignore-case --LONG-PROMPT --RAW-CONTROL-CHARS --tabs=4 --window=-
 #set -x RIPGREP_CONFIG_PATH ~/.config/rg
 
 # Abbreiations
-# Neovim
-#set -gx NVIM_LISTEN_ADDRESS /tmp/nvimsocket
-
-
+# Consider adding with -U so saved in fish_variables instead
 abbr --add --global v nvim
 abbr --add --global s sudo
 abbr --add --global l less
 abbr --add --global la ls -la
-
 abbr --add --global gco git checkout
 abbr --add --global g 'git'
 abbr --add --global ga 'git add'
@@ -36,10 +32,13 @@ abbr --add --global gbl 'git blame'
 abbr --add --global gc 'git commit -m'
 abbr --add --global gco 'git checkout'
 abbr --add --global gd 'git diff'
-abbr --add --global glp 'git log --pretty=oneline'
+abbr --add --global glp 'git log  --decorate --graph --oneline --all'
 abbr --add --global gp 'git push'
 abbr --add --global gpl 'git pull'
 abbr --add --global gs 'git status'
+
+# Neovim
+#set -gx NVIM_LISTEN_ADDRESS /tmp/nvimsocket
 
 # Plugins
 #
