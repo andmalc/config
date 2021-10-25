@@ -1,0 +1,7 @@
+{
+    "Alt-/": "lua:comment.comment",
+    "Ctrl-Alt-Left": "SelectWordLeft",
+    "Ctrl-Alt-Right": "SelectWordRight",
+    "CtrlUnderscore": "lua:comment.comment",
+    "F1": "CursorDown"
+}
