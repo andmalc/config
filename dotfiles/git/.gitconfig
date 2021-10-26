@@ -35,4 +35,4 @@
 [diff]
 	submodule = log
 [pull]
-	ff = only
+#	ff = only

@@ -12,9 +12,12 @@ end
 # Variables
 #
 #set -x XDG_DATA_DIRS $HOME/.local/share/flatpak/exports/share /var/lib/flatpak/exports/share
-set --prepend PATH "$HOME/.local/bin"
 set -x EDITOR nvim
 set -x LESS "--ignore-case --LONG-PROMPT --RAW-CONTROL-CHARS --tabs=4 --window=-4"
+
+# Commenting out as this is set elsewhere 
+#set --prepend PATH "$HOME/.local/bin"
+
 
 #set -x RIPGREP_CONFIG_PATH ~/.config/rg
 
