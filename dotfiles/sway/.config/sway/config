@@ -24,9 +24,9 @@ set $term kitty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu dmenu_path | dmenu | xargs swaymsg exec --
-#set $menu dmenu_path | wofi --show dmenu -i | xargs swaymsg exec --
-#set $menu wofi --show drun -i | xargs swaymsg exec --
+#set $menu dmenu_path | dmenu | xargs swaymsg exec --
+set $menu dmenu_path | wofi --show dmenu -i | xargs swaymsg exec --
+set $menu wofi --show drun -i | xargs swaymsg exec --
 
 
 ### Output configuration {{{1
@@ -69,10 +69,10 @@ input "1118:1957:Microsoft_Microsoft___2.4GHz_Transceiver_v9.0_Mouse"  {
 ### Idle configuration {{{1
 #
 exec swayidle -w \
-	timeout 200 'systemctl suspend' \
-	timeout 200 'swaymsg "output * dpms off"' \
+	timeout 600 'systemctl suspend' \
+#	timeout 200 'swaymsg "output * dpms off"' \
 	resume 'swaymsg "output * dpms on"'
-	#resume 'swaymsg "output * dpms on"'
+#	#resume 'swaymsg "output * dpms on"'
 
 ### Key bindings {{{1
 #
@@ -266,4 +266,4 @@ for_window [title="WeeChat.*"] border none
 exec wl-paste -t text --watch clipman store
 exec wl-paste -p -t text --watch clipman store -P --histpath="~/.local/share/clipman-primary.json
 #Mod H to invoke 
-bindsym $mod+u exec clipman pick -t 
+bindsym $mod+u exec clipman pick -t wofi
