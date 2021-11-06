@@ -35,4 +35,7 @@
 [diff]
 	submodule = log
 [pull]
+	rebase = false
 #	ff = only
+[init]
+	defaultBranch = main
