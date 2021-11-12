@@ -5,9 +5,9 @@ set -gx CDPATH $CDPATH .  ~
 set fish_prompt_pwd_dir_length 3
 
 
-if test -e ~/.secrets.fish
+#if test -e ~/.secrets.fish
     #    source ~/.secrets.fish
-end
+#end
 
 # Variables
 #
