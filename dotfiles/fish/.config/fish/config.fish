@@ -40,6 +40,12 @@ abbr --add --global gp 'git push'
 abbr --add --global gpl 'git pull'
 abbr --add --global gs 'git status'
 
+
+# Bindings
+# Here or add to fish_key_bindings function?
+# bind \x7F 'backward-kill-bigword'
+ 
+
 # Neovim
 #set -gx NVIM_LISTEN_ADDRESS /tmp/nvimsocket
 

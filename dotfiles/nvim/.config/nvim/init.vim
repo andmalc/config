@@ -10,6 +10,9 @@ set backspace=indent,eol,start
 " enable automatic yanking to and pasting from the selection
 set clipboard+=unnamed
 
+" mouse support
+set mouse=n
+
 " Wrap at character in 'breakat' rather than at last character on screen
 set linebreak
 
@@ -44,5 +47,10 @@ call plug#begin()
 Plug 'junegunn/vim-easy-align'
 
 Plug 'nelstrom/vim-markdown-folding'
+
+" Buffer Tree Explorer 
+" https://github.com/el-iot/buffer-tree-explorer
+" Launch with 'Tree'
+Plug 'el-iot/buffer-tree-explorer'
 
 call plug#end()
