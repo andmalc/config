@@ -80,6 +80,14 @@ Micro {{{1
 
 Clipboard settings in kitty conf
 
+Sway {{{1
+
+Packages:
+
+	wofi		Wayland compat launcher
+	wl-clipboard
+	clipman		clipboard manager
+
 Other {{{1
 
 Fzf
