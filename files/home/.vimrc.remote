@@ -1,3 +1,0 @@
-
-autocmd InsertEnter,InsertLeave * set cul!
-set cursorline

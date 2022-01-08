@@ -2,7 +2,6 @@
 
 set nocompatible
 set hidden
-set foldmethod=marker
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -22,7 +21,6 @@ set ts=4
 set sw=4
 set sts=4
 set noexpandtab
-set foldmethod=marker
 
 " Don't load netrw
 let g:loaded_netrw       = 1
@@ -39,14 +37,16 @@ if has("autocmd")
   filetype plugin indent on
 endif
 
+filetype plugin on
+set foldmethod=expr
+let g:markdown_folding=1
 
 call plug#begin()
-
 
 " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
 Plug 'junegunn/vim-easy-align'
 
-Plug 'nelstrom/vim-markdown-folding'
+"Plug 'nelstrom/vim-markdown-folding'
 
 " Buffer Tree Explorer 
 " https://github.com/el-iot/buffer-tree-explorer
