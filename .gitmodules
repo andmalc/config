@@ -1,3 +1,0 @@
-[submodule "dotfiles/kitty/.config/kitty/kitty-themes"]
-	path = dotfiles/kitty/.config/kitty/kitty-themes
-	url = https://github.com/dexpota/kitty-themes.git

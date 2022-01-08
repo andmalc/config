@@ -5,9 +5,9 @@ set -gx CDPATH $CDPATH .  ~
 set fish_prompt_pwd_dir_length 3
 
 
-if test -e ~/.secrets.fish
+#if test -e ~/.secrets.fish
     #    source ~/.secrets.fish
-end
+#end
 
 # Variables
 #
@@ -39,6 +39,12 @@ abbr --add --global glp 'git log  --decorate --graph --oneline --all'
 abbr --add --global gp 'git push'
 abbr --add --global gpl 'git pull'
 abbr --add --global gs 'git status'
+
+
+# Bindings
+# Here or add to fish_key_bindings function?
+# bind \x7F 'backward-kill-bigword'
+ 
 
 # Neovim
 #set -gx NVIM_LISTEN_ADDRESS /tmp/nvimsocket
