@@ -32,7 +32,8 @@ set $menu wofi --show drun -i | xargs swaymsg exec --
 ### Output configuration {{{1
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /usr/share/backgrounds/default.png fill
+output * bg ~/Downloads/f34wallpaper.png fill
+
 #
 # Example configuration:
 #
