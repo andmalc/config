@@ -1,0 +1,6 @@
+.local/share/containers
+.cache
+.local/share/fish/fish_history
+snapshots
+
+

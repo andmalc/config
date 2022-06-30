@@ -16,10 +16,9 @@ set -x EDITOR nvim
 set -x LESS "--ignore-case --LONG-PROMPT --RAW-CONTROL-CHARS --tabs=4 --window=-4"
 
 # Commenting out as this is set elsewhere 
-#set --prepend PATH "$HOME/.local/bin"
+fish_add_path "$HOME/.local/bin"
 
 
-#set -x RIPGREP_CONFIG_PATH ~/.config/rg
 
 # Abbreiations
 # Consider adding with -U so saved in fish_variables instead
@@ -49,12 +48,11 @@ abbr --add --global gs 'git status'
 # Neovim
 #set -gx NVIM_LISTEN_ADDRESS /tmp/nvimsocket
 
+# Ripgrep
+set -x RIPGREP_CONFIG_PATH ~/.config/rg
+
 # Plugins
 #
-#
-#set fish_function_path $fish_function_path[1] $fisher_path/functions $fish_function_path[2..-1]
-#set fish_complete_path $fish_complete_path[1] $fisher_path/completions $fish_complete_path[2..-1]
-
 # Fisher to install to .local/share/fisher
 set -g fisher_path ~/.local/share/fisher
 
