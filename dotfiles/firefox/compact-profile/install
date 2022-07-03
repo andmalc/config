@@ -1,0 +1,8 @@
+desktop file to
+	.local/share/applications/
+	.var/app/org.mozilla.firefox/data/applications/<profile dir>	
+
+userChrome.css to <ff profile dir>/chrome/
+
+Ctrl T shows url bar and tabs
+
