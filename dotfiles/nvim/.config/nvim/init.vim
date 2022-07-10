@@ -39,7 +39,7 @@ endif
 
 filetype plugin on
 set foldmethod=marker
-#let g:markdown_folding=1
+"let g:markdown_folding=1
 
 call plug#begin()
 
