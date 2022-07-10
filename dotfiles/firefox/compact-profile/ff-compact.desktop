@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=FF Compact
+Exec=firefox -P Compact
+Type=Application
+Terminal=false
+Icon=firefox
+NoDisplay=false
