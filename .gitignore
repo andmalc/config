@@ -8,8 +8,28 @@ dotfiles/fish/.config/fish/fish_variables
 dotfiles/fish/.config/fish/fish_plugins
 dotfiles/fish/.config/fish/conf.d/
 
+home/.gnupg
+!home/.gnupg/pubring.gpg
+!home/.gnupg/secring.gpg
+!home/.gnupg/trustdb.gpg
+
+#Micro
+dotfiles/micro/.config/micro/backups
+dotfiles/micro/.config/micro/buffers
+
 #Nvim
 dotfiles/nvim/.config/nvim/plugged
+
+#Python
+home/.config/prog/
+!home/.config/prog/ipython/extentions
+!home/.config/prog/ipython/nbextentions
+!home/.config/prog/ipython/profile_andmalc
+
+# SSH
+**/.ssh/*known_hosts
+**/.ssh/environment*
+**/.ssh/authorized_keys
 
 # Tmux
 **/.tmux/plugins
@@ -25,35 +45,11 @@ dotfiles/nvim/.config/nvim/plugged
 **/.vim/.netrwhist
 dotfiles/vim/.vim/plugin/background.vim
 
-home/dotconfig
-!home/dotconfig/zsh/zshrc
-!home/dotconfig/zsh/zshenv
-
 dotfiles/multi/.config/gcloud/
-
-home/.config/prog/
-!home/.config/prog/ipython/extentions
-!home/.config/prog/ipython/nbextentions
-!home/.config/prog/ipython/profile_andmalc
-
-home/.gnupg
-!home/.gnupg/pubring.gpg
-!home/.gnupg/secring.gpg
-!home/.gnupg/trustdb.gpg
-
-**/dotfiles/localbin
-!**/dotfiles/localbin/.local/bin/tmux-set-escape.sh
 
 # File Types
 *#*/*.pyc
 *.swp
-.zcompdump
-.zcompcache
-.zsh_history
 
-# SSH
-**/.ssh/*known_hosts
-**/.ssh/environment*
-**/.ssh/authorized_keys
 
 

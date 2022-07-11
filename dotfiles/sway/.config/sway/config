@@ -46,11 +46,9 @@ set $menu wofi --show drun -i | xargs swaymsg exec --
 # Start your launcher
 bindsym $mod+d exec $menu
 
-# Background image {{{1
-
-output * bg ~/.local/share/backgrounds/nature_wallpaper.jpg fill
-
-# Input configuration {{{1
+# Hardware config {{{1
+#
+# Input configuration {{{2
 #
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
@@ -82,11 +80,12 @@ input "1118:1957:Microsoft_Microsoft___2.4GHz_Transceiver_v9.0_Mouse"  {
 #       dwt enabled
        }
 
-# Output configuration {{{1
+# Output configuration {{{2
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 # output * bg /usr/share/backgrounds/default.png fill
 #
+
 # Example configuration:
 #
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0
@@ -104,6 +103,10 @@ set $laptop eDP-1
 bindswitch --reload --locked lid:on output $laptop disable
 bindswitch --reload --locked lid:off output $laptop enable
 
+# Background image {{{1
+# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
+# output * bg ~/Downloads/f34wallpaper.png fill
+output * bg ~/.local/share/backgrounds/nature_wallpaper.jpg fill
 # Idle {{{1
 #
 exec swayidle -w \
@@ -118,8 +121,6 @@ exec swayidle -w \
 #    timeout 300 'pkill kanshi; swaylock -f' \
 #    before-sleep 'swaylock -f -c 000000'
 
-# Bindings {{{1
-## Misc {{{2
 
 
 # Key Bindings {{{1

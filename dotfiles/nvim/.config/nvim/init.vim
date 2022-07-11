@@ -38,8 +38,8 @@ if has("autocmd")
 endif
 
 filetype plugin on
-set foldmethod=expr
-let g:markdown_folding=1
+set foldmethod=marker
+"let g:markdown_folding=1
 
 call plug#begin()
 
