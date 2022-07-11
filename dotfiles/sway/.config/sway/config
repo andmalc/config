@@ -1,12 +1,30 @@
 # vim:fileencoding=utf-8:ft=conf:foldmethod=marker
 
-# Default config for sway
-#
-# Copy this to ~/.config/sway/config and edit it to your liking.
-#
-# Read `man 5 sway` for a complete reference.
+# WM management {{{1
+# Logo key. Use Mod1 for Alt.
+set $mod Mod4
 
-#xwayland disable
+# Reload the configuration file
+bindsym $mod+Shift+c reload
+
+
+bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+
+#
+# Variables {{{1
+#
+# Home row direction keys, like vim
+set $left h
+set $down j
+set $up k
+set $right l
+
+# Terminal {{{1
+# Your preferred terminal emulator
+set $term kitty
+
+# Start a terminal
+bindsym $mod+Return exec $term
 
 
 # Bar {{{1
@@ -17,21 +35,7 @@ bar {
     position top
 }
 
-# Variables {{{1
-#
-# Logo key. Use Mod1 for Alt.
-set $mod Mod4
-
-# Home row direction keys, like vim
-set $left h
-set $down j
-set $up k
-set $right l
-
-# Your preferred terminal emulator
-set $term kitty
-
-# App Launcher {{{1
+# Launcher / App menu {{{1
 
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -42,21 +46,26 @@ set $menu wofi --show drun -i | xargs swaymsg exec --
 # Start your launcher
 bindsym $mod+d exec $menu
 
-# Hardware config {{{1
-## Output configuration {{{2
-#
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /usr/share/backgrounds/default.png fill
-#
-# Example configuration:
-#
-#   output HDMI-A-1 resolution 1920x1080 position 1920,0
-#
-# You can get the names of your outputs by running: swaymsg -t get_outputs
+# Background image {{{1
 
+output * bg ~/.local/share/backgrounds/nature_wallpaper.jpg fill
 
 # Input configuration {{{1
 #
+# You can get the names of your inputs by running: swaymsg -t get_inputs
+# Read `man 5 sway-input` for more information about this section.
+
+
+#input type:keyboard {
+#    xkb_options caps:swapescape,compose:prsc
+
+}
+
+input type:touchpad {
+    tap enabled
+#    natural_scroll enabled
+}
+
 input "1739:0:Synaptics_TM3381-002" {
        tap enabled
        natural_scroll enabled
@@ -64,6 +73,7 @@ input "1739:0:Synaptics_TM3381-002" {
 #       middle_emulation enable 
 #       dwt enabled
        }
+
 input "1118:1957:Microsoft_Microsoft___2.4GHz_Transceiver_v9.0_Mouse"  {
        tap enabled
        natural_scroll enabled
@@ -71,16 +81,30 @@ input "1118:1957:Microsoft_Microsoft___2.4GHz_Transceiver_v9.0_Mouse"  {
 #       middle_emulation enable 
 #       dwt enabled
        }
-# You can get the names of your inputs by running: swaymsg -t get_inputs
-# Read `man 5 sway-input` for more information about this section.
 
+# Output configuration {{{1
+#
+# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
+# output * bg /usr/share/backgrounds/default.png fill
+#
+# Example configuration:
+#
+#   output HDMI-A-1 resolution 1920x1080 position 1920,0
+#
+# You can get the names of your outputs by running: swaymsg -t get_outputs
 
-## input {{{2
-#input type:keyboard {
-#    xkb_options caps:swapescape,compose:prsc
+# TP T490s laptop screen
+#output eDP-1 res  1920x1080 pos 0,0
 
-}
-## Idle {{{2
+# Lenovo monitor
+#output DP-2 res 2560x1440 pos 1920,0
+
+# Disable laptop screen when lid is closed
+set $laptop eDP-1
+bindswitch --reload --locked lid:on output $laptop disable
+bindswitch --reload --locked lid:off output $laptop enable
+
+# Idle {{{1
 #
 exec swayidle -w \
 	timeout 600 'systemctl suspend' \
@@ -97,34 +121,9 @@ exec swayidle -w \
 # Bindings {{{1
 ## Misc {{{2
 
-# Start a terminal
-bindsym $mod+Return exec $term
 
-# Kill focused window
-bindsym $mod+Shift+q kill
-
-# Drag floating windows by holding down $mod and left mouse button.
-# Resize them with right mouse button + $mod.
-# Despite the name, also works for non-floating windows.
-# Change normal to inverse to use left mouse button for resizing and right
-# mouse button for dragging.
-floating_modifier $mod normal
-
-# Reload the configuration file
-bindsym $mod+Shift+c reload
-
-#bindsym $mod+Shift+m exec "simple-term -bg white -fg black -update"
-#bindsym $mod+Shift+n exec "simple-term -bg black -fg lightgray -update"
-#bindsym $mod+Shift+r exec "$term -e ranger"
-
-# screenshots
-#bindsym $mod+Print exec grimshot copy area
-
-# Exit sway (logs you out of your Wayland session)
-bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
-
-#
-## Moving around {{{2
+# Key Bindings {{{1
+## Focus {{{2
 #
     # Move your focus around
     bindsym $mod+$left focus left
@@ -137,6 +136,7 @@ bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. 
     bindsym $mod+Up focus up
     bindsym $mod+Right focus right
 
+## Window Movement {{{2
     # Move the focused window with the same, but add Shift
     bindsym $mod+Shift+$left move left
     bindsym $mod+Shift+$down move down
@@ -147,6 +147,19 @@ bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. 
     bindsym $mod+Shift+Down move down
     bindsym $mod+Shift+Up move up
     bindsym $mod+Shift+Right move right
+
+# Make the current focus fullscreen
+bindsym $mod+f fullscreen
+
+# Kill focused window
+bindsym $mod+Shift+q kill
+
+# Drag floating windows by holding down $mod and left mouse button.
+# Resize them with right mouse button + $mod.
+# Despite the name, also works for non-floating windows.
+# Change normal to inverse to use left mouse button for resizing and right
+# mouse button for dragging.
+floating_modifier $mod normal
 #
 ## Workspaces {{{2
 #
@@ -181,7 +194,7 @@ bindsym $mod+Shift+0 move container to workspace number 10
 # Note: workspaces can have any name you want, not just numbers.
 # We just use 1-10 as the default.
 #
-## Layout stuff {{{2
+## Layout {{{2
 #
 # You can "split" the current object of your focus with
 # $mod+b or $mod+v, for horizontal and vertical splits
@@ -193,9 +206,6 @@ bindsym $mod+v splitv
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
-
-# Make the current focus fullscreen
-bindsym $mod+f fullscreen
 
 # Toggle the current focus between tiling and floating mode
 bindsym $mod+Shift+space floating toggle
@@ -210,19 +220,6 @@ bindsym $mod+a focus parent
 #for_window [class="qemu-system.*"] floating enable
 #for_window [app_id="firefox" title="Firefox - Sharing Indicator"] kill
 #for_window [title="WeeChat.*"] border none
-
-#
-## Scratchpad {{{2
-#
-# Sway has a "scratchpad", which is a bag of holding for windows.
-# You can send windows there and get them back later.
-
-# Move the currently focused window to the scratchpad
-bindsym $mod+Shift+minus move scratchpad
-
-# Show the next scratchpad window or hide the focused scratchpad window.
-# If there are multiple scratchpad windows, this command cycles through them.
-bindsym $mod+minus scratchpad show
 
 #
 ## Resizing containers {{{2
@@ -266,8 +263,20 @@ bindsym XF86MonBrightnessDown exec brightnessctl s 10%-
 #bindsym XF86AudioLowerVolume  exec pactl set-sink-volume 0 -10%
 #bindsym XF86AudioMute         exec pactl set-sink-mute 0 toggle
 
-# Startup programs {{{1
-## Clipman clipboard manager {{{2
+# Scratchpad {{{1
+#
+# Sway has a "scratchpad", which is a bag of holding for windows.
+# You can send windows there and get them back later.
+
+# Move the currently focused window to the scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles through them.
+bindsym $mod+minus scratchpad show
+
+#
+## Clipman clipboard manager {{{1
 #
 exec wl-paste -t text --watch clipman store
 exec wl-paste -p -t text --watch clipman store -P --histpath="~/.local/share/clipman-primary.json
@@ -275,14 +284,20 @@ exec wl-paste -p -t text --watch clipman store -P --histpath="~/.local/share/cli
 bindsym $mod+u exec clipman pick -t wofi
 
 
-## Background image {{{2
+# Other Apps {1
+#
+#bindsym $mod+Shift+r exec "$term -e ranger"
 
-output * bg ~/.local/share/backgrounds/nature_wallpaper.jpg fill
 
-# Includes {{{1
+# Screenshots {{{1
+#
+#bindsym $mod+Print exec grimshot copy area
+
+# Config Includes {{{1
 #
 #include /etc/sway/config.d/*
 
+# Startup apps {{{1
 # we can't start everything asynchronously at once; output reconfiguration and races will mess up the layout
 #exec ~/.config/sway/startup.sh $term
 
