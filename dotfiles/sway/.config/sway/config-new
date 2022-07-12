@@ -1,15 +1,10 @@
 # vim:fileencoding=utf-8:ft=conf:foldmethod=marker
 
+
 # General {{{1
 
 # Windows key as Mod
 set $mod Mod4
-
-# Reload the configuration file
-bindsym $mod+Shift+c reload
-
-# Logout
-bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
 
 # Home row direction keys, like vim
 set $left h
@@ -17,8 +12,26 @@ set $down j
 set $up k
 set $right l
 
+# Reload the configuration file
+bindsym $mod+Shift+c reload
 
-# Hardware config {{{1
+# Logout
+bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+
+# Terminal
+set $term kitty
+bindsym $mod+Return exec $term
+
+
+# Bar
+#
+# Read `man 5 sway-bar` for more information about this section.
+bar {
+    swaybar_command waybar
+    position top
+}
+
+
 #
 # Input configuration {{{2
 
@@ -56,19 +69,6 @@ set $laptop eDP-1
 bindswitch --reload --locked lid:on output $laptop disable
 bindswitch --reload --locked lid:off output $laptop enable
 
-# Background image {{{1
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-
-output * bg ~/.local/share/backgrounds/nature_wallpaper.jpg fill
-
-# Idle {{{1
-#
-exec swayidle -w \
-	timeout 600 'systemctl suspend' \
-#	timeout 200 'swaymsg "output * dpms off"' \
-	resume 'swaymsg "output * dpms on"'
-
-bindsym $mod+Shift+s exec systemctl suspend
 
 # Key Bindings {{{1
 ## Focus {{{2
@@ -141,10 +141,7 @@ bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
 #
 ## Layout {{{2
-#
-# You can "split" the current object of your focus with
-# $mod+b or $mod+v, for horizontal and vertical splits
-# respectively.
+
 bindsym $mod+b splith
 bindsym $mod+v splitv
 
@@ -195,40 +192,52 @@ bindsym XF86MonBrightnessDown exec brightnessctl s 10%-
 #bindsym XF86AudioLowerVolume  exec pactl set-sink-volume 0 -10%
 #bindsym XF86AudioMute         exec pactl set-sink-mute 0 toggle
 
+
+# Background image {{{1
+# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
+# output * bg ~/Downloads/f34wallpaper.png fill
+output * bg ~/.local/share/backgrounds/nature_wallpaper.jpg fill
+
+# Idle {{{1
+#
+exec swayidle -w \
+	timeout 600 'systemctl suspend' \
+#	timeout 200 'swaymsg "output * dpms off"' \
+	resume 'swaymsg "output * dpms on"'
+#	#resume 'swaymsg "output * dpms on"'
+
+#exec swayidle -w \
+#    timeout 180 'pkill kanshi; swaymsg "output * dpms off"' \
+#         resume 'swaymsg "output * dpms on; sleep 5; echo exec kanshi"' \
+#    timeout 300 'pkill kanshi; swaylock -f' \
+#    before-sleep 'swaylock -f -c 000000'
+
+
+
 # Scratchpad {{{1
- 
+#
+# Sway has a "scratchpad", which is a bag of holding for windows.
+# You can send windows there and get them back later.
+
+# Move the currently focused window to the scratchpad
 bindsym $mod+Shift+minus move scratchpad
+
+# Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles through them.
 bindsym $mod+minus scratchpad show
 
-
-# Apps {{{1
-
-# Start a terminal
-set $term kitty
-bindsym $mod+Return exec $term
-
-#Clipman clipboard manager 
+#
+## Clipman clipboard manager {{{1
+#
 exec wl-paste -t text --watch clipman store
 exec wl-paste -p -t text --watch clipman store -P --histpath="~/.local/share/clipman-primary.json
+#Mod u to invoke 
 bindsym $mod+u exec clipman pick -t wofi
 
-#File Manager
+
+# Other Apps {1
+#
 #bindsym $mod+Shift+r exec "$term -e ranger"
-
-#Bar
-# Read `man 5 sway-bar` for more information about this section.
-bar {
-    swaybar_command waybar
-    position top
-}
-
-#Launcher
-set $menu dmenu_path | wofi --show dmenu -i | xargs swaymsg exec --
-set $menu wofi --show drun -i | xargs swaymsg exec --
-bindsym $mod+d exec $menu
-
-# Screenshots
-#bindsym $mod+Print exec grimshot copy area
 
 
 # Config Includes {{{1
@@ -239,3 +248,9 @@ bindsym $mod+d exec $menu
 # we can't start everything asynchronously at once; output reconfiguration and races will mess up the layout
 #exec ~/.config/sway/startup.sh $term
 
+#Launcher {{{1
+# Note: pass the final command to swaymsg so that the resulting window can be opened
+# on the original workspace that the command was run on.
+set $menu dmenu_path | wofi --show dmenu -i | xargs swaymsg exec --
+set $menu wofi --show drun -i | xargs swaymsg exec --
+bindsym $mod+d exec $menu
