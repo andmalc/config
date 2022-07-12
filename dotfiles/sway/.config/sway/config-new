@@ -1,0 +1,241 @@
+# vim:fileencoding=utf-8:ft=conf:foldmethod=marker
+
+# General {{{1
+
+# Windows key as Mod
+set $mod Mod4
+
+# Reload the configuration file
+bindsym $mod+Shift+c reload
+
+# Logout
+bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+
+# Home row direction keys, like vim
+set $left h
+set $down j
+set $up k
+set $right l
+
+
+# Hardware config {{{1
+#
+# Input configuration {{{2
+
+# You can get the names of your inputs by running: swaymsg -t get_inputs
+# Read `man 5 sway-input` for more information about this section.
+
+input type:touchpad {
+    tap enabled
+}
+
+input "1739:0:Synaptics_TM3381-002" {
+       tap enabled
+       natural_scroll enabled
+       drag enabled
+#       middle_emulation enable 
+#       dwt enabled
+}
+
+input "1118:1957:Microsoft_Microsoft___2.4GHz_Transceiver_v9.0_Mouse"  {
+       tap enabled
+       natural_scroll enabled
+       drag enabled
+}
+
+# Output configuration {{{2
+
+#TP T490s laptop screen
+output eDP-1 res  1920x1080 pos 0,0
+
+# Lenovo monitor
+output DP-2 res 2560x1440 pos 1920,0
+
+# Disable laptop screen when lid is closed
+set $laptop eDP-1
+bindswitch --reload --locked lid:on output $laptop disable
+bindswitch --reload --locked lid:off output $laptop enable
+
+# Background image {{{1
+# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
+
+output * bg ~/.local/share/backgrounds/nature_wallpaper.jpg fill
+
+# Idle {{{1
+#
+exec swayidle -w \
+	timeout 600 'systemctl suspend' \
+#	timeout 200 'swaymsg "output * dpms off"' \
+	resume 'swaymsg "output * dpms on"'
+
+bindsym $mod+Shift+s exec systemctl suspend
+
+# Key Bindings {{{1
+## Focus {{{2
+#
+    # Move your focus around
+    bindsym $mod+$left focus left
+    bindsym $mod+$down focus down
+    bindsym $mod+$up focus up
+    bindsym $mod+$right focus right
+    # Or use $mod+[up|down|left|right]
+    bindsym $mod+Left focus left
+    bindsym $mod+Down focus down
+    bindsym $mod+Up focus up
+    bindsym $mod+Right focus right
+
+## Window Movement {{{2
+    # Move the focused window with the same, but add Shift
+    bindsym $mod+Shift+$left move left
+    bindsym $mod+Shift+$down move down
+    bindsym $mod+Shift+$up move up
+    bindsym $mod+Shift+$right move right
+    # Ditto, with arrow keys
+    bindsym $mod+Shift+Left move left
+    bindsym $mod+Shift+Down move down
+    bindsym $mod+Shift+Up move up
+    bindsym $mod+Shift+Right move right
+
+# Make the current focus fullscreen
+bindsym $mod+f fullscreen
+
+# Kill focused window
+bindsym $mod+Shift+q kill
+
+# Drag floating windows by holding down $mod and left mouse button.
+# Resize them with right mouse button + $mod.
+# Despite the name, also works for non-floating windows.
+# Change normal to inverse to use left mouse button for resizing and right
+# mouse button for dragging.
+floating_modifier $mod normal
+#
+## Workspaces {{{2
+#
+# Switch to workspace
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+bindsym $mod+0 workspace number 10
+
+# Move to next/previous workspace
+bindsym $mod+Next workspace next
+bindsym $mod+Prior workspace prev
+
+
+# Move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+bindsym $mod+Shift+0 move container to workspace number 10
+#
+## Layout {{{2
+#
+# You can "split" the current object of your focus with
+# $mod+b or $mod+v, for horizontal and vertical splits
+# respectively.
+bindsym $mod+b splith
+bindsym $mod+v splitv
+
+# Switch the current container between different layout styles
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# Toggle the current focus between tiling and floating mode
+bindsym $mod+Shift+space floating toggle
+
+# Swap focus between the tiling area and the floating area
+bindsym $mod+space focus mode_toggle
+
+# Move focus to the parent container
+bindsym $mod+a focus parent
+
+#
+## Resizing containers {{{2
+#
+mode "resize" {
+    # left will shrink the containers width
+    # right will grow the containers width
+    # up will shrink the containers height
+    # down will grow the containers height
+    bindsym $left resize shrink width 10px
+    bindsym $down resize grow height 10px
+    bindsym $up resize shrink height 10px
+    bindsym $right resize grow width 10px
+
+    # Ditto, with arrow keys
+    bindsym Left resize shrink width 10px
+    bindsym Down resize grow height 10px
+    bindsym Up resize shrink height 10px
+    bindsym Right resize grow width 10px
+
+    # Return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
+## Media Controls {{{2
+#
+bindsym XF86MonBrightnessUp   exec brightnessctl s 10%+
+bindsym XF86MonBrightnessDown exec brightnessctl s 10%-
+#bindsym XF86AudioRaiseVolume  exec pactl set-sink-volume 0 +10%
+#bindsym XF86AudioLowerVolume  exec pactl set-sink-volume 0 -10%
+#bindsym XF86AudioMute         exec pactl set-sink-mute 0 toggle
+
+# Scratchpad {{{1
+ 
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
+
+
+# Apps {{{1
+
+# Start a terminal
+set $term kitty
+bindsym $mod+Return exec $term
+
+#Clipman clipboard manager 
+exec wl-paste -t text --watch clipman store
+exec wl-paste -p -t text --watch clipman store -P --histpath="~/.local/share/clipman-primary.json
+bindsym $mod+u exec clipman pick -t wofi
+
+#File Manager
+#bindsym $mod+Shift+r exec "$term -e ranger"
+
+#Bar
+# Read `man 5 sway-bar` for more information about this section.
+bar {
+    swaybar_command waybar
+    position top
+}
+
+#Launcher
+set $menu dmenu_path | wofi --show dmenu -i | xargs swaymsg exec --
+set $menu wofi --show drun -i | xargs swaymsg exec --
+bindsym $mod+d exec $menu
+
+# Screenshots
+#bindsym $mod+Print exec grimshot copy area
+
+
+# Config Includes {{{1
+#
+#include /etc/sway/config.d/*
+
+# Startup apps {{{1
+# we can't start everything asynchronously at once; output reconfiguration and races will mess up the layout
+#exec ~/.config/sway/startup.sh $term
+

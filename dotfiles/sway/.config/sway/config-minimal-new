@@ -1,0 +1,62 @@
+# vim:fileencoding=utf-8:ft=conf:foldmethod=marker
+
+
+# General {{{1
+
+# Windows key as Mod
+set $mod Mod4
+
+# Reload the configuration file
+bindsym $mod+Shift+c reload
+
+# Logout
+bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+
+# Terminal
+set $term kitty
+bindsym $mod+Return exec $term
+
+#Launcher
+set $menu dmenu_path | wofi --show dmenu -i | xargs swaymsg exec --
+set $menu wofi --show drun -i | xargs swaymsg exec --
+bindsym $mod+d exec $menu
+
+
+#
+# Input configuration {{{2
+
+# You can get the names of your inputs by running: swaymsg -t get_inputs
+# Read `man 5 sway-input` for more information about this section.
+
+input type:touchpad {
+    tap enabled
+}
+
+input "1739:0:Synaptics_TM3381-002" {
+       tap enabled
+       natural_scroll enabled
+       drag enabled
+#       middle_emulation enable 
+#       dwt enabled
+}
+
+input "1118:1957:Microsoft_Microsoft___2.4GHz_Transceiver_v9.0_Mouse"  {
+       tap enabled
+       natural_scroll enabled
+       drag enabled
+}
+
+# Output configuration {{{2
+
+#TP T490s laptop screen
+output eDP-1 res  1920x1080 pos 0,0
+
+# Lenovo monitor
+output DP-2 res 2560x1440 pos 1920,0
+
+# Disable laptop screen when lid is closed
+set $laptop eDP-1
+bindswitch --reload --locked lid:on output $laptop disable
+bindswitch --reload --locked lid:off output $laptop enable
+
+
