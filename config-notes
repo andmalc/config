@@ -48,10 +48,17 @@ Vim-Plug
     sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
-    Reload init.vim and :PlugInstall
+	Reload init.vim and :PlugInstall
 
 Plugins
 	https://github.com/junegunn/vim-easy-align
+
+Plugins to check out:
+	https://github.com/airblade/vim-gitgutter
+	
+	color scheme
+		https://github.com/morhetz/gruvbox
+
 
 Micro {{{1
 

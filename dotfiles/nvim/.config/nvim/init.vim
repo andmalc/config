@@ -1,14 +1,11 @@
 " General {{{1
 
-set undodir=~/.config/nvim/undodir
-set undofile
+set list
 
 set foldmethod=marker
 
 " relative line numbering
 set rnu
-
-set hidden
 
 " Wrap at character in 'breakat' rather than at last character on screen
 set linebreak
@@ -23,6 +20,24 @@ set sw=4
 set sts=4
 set noexpandtab
 
+set splitright splitbelow
+
+" load changes to file from outside Vim
+set autoread
+
+set undodir=~/.config/nvim/undodir
+set undofile
+
+set hidden
+
+set scrolloff=5
+
+" ctrl-[hjkl] to select the active split!
+nmap <silent> <c-k> :wincmd k<CR>
+nmap <silent> <c-j> :wincmd j<CR>
+nmap <silent> <c-h> :wincmd h<CR>
+nmap <silent> <c-l> :wincmd l<CR>
+
 " Don't load netrw
 " let g:loaded_netrw       = 1
 " let g:loaded_netrwPlugin = 1
@@ -30,6 +45,7 @@ set noexpandtab
 "set runtimepath^=~/.vim runtimepath+=~/.vim/after
 "let &packpath = &runtimepath
 "source ~/.vimrc
+
 
 " vim-plug {{{1
 "
