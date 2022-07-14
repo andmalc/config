@@ -19,6 +19,7 @@ dotfiles/micro/.config/micro/buffers
 
 #Nvim
 dotfiles/nvim/.config/nvim/plugged
+dotfiles/nvim/.config/nvim/undodir
 
 #Python
 home/.config/prog/

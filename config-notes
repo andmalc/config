@@ -1,39 +1,13 @@
 
 Initial clone
-git clone --recursive git@github.com:andmalc/config.git
+	git clone --recursive git@github.com:andmalc/config.git
+	Git submodule added
+	git submodule update --init --recursive
 
-Git submodule added
-git submodule update --init --recursive
-
-
-stow to copy config files
-set full dir path to .ssh to 700
 
 Environment {{{1
 
 dotfiles/environment/.config/environment.d/10-xdg.conf
-
-
-Nix {{{1
-
-Install under Bash
-	curl -L https://nixos.org/nix/install | sh
-	Source
-		source $HOME/.nix-profile/etc/profile.d/nix.sh
-	Add above to .bashrc
-
-	Set following environment under under Crostini
-		XDG_DATA_DIRS=%h/.nix-profile/share:%h/.local/share:/usr/local/share:/usr/share
-		PATH=%h/.nix-profile/bin
-
-		mkdir -p ~/.config/systemd/user	
-		stow -t ~/.config/systemd/user nix-systemd-user
-	Or
-		systemctl --user edit cros-garcon.service
-	
-	Nix install under Fish??
-	Can try this sh <(curl -L https://nixos.org/nix/install) 
-
 
 Fish shell {{{1
 Run using fish installed by os package manager:
@@ -68,6 +42,7 @@ Tmux {{{1
 
 
 Nvim {{{1
+
 Vim-Plug 
     https://github.com/junegunn/vim-plug
     sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
@@ -75,6 +50,8 @@ Vim-Plug
 
     Reload init.vim and :PlugInstall
 
+Plugins
+	https://github.com/junegunn/vim-easy-align
 
 Micro {{{1
 
@@ -88,6 +65,9 @@ Packages:
 	wl-clipboard
 	clipman		clipboard manager
 
+Copy desktop image
+	https://drive.google.com/file/d/1phsl8MqnzvvfQ1gZfwuuClNnwnBPLNdg/view
+
 Other {{{1
 
 Fzf
@@ -95,5 +75,26 @@ Fzf
     Install into shell 
         ./.fzf/install 
         decline keybindings setup.  Allow fisher package to handle this.
+
+
+Nix {{{1
+
+Install under Bash
+	curl -L https://nixos.org/nix/install | sh
+	Source
+		source $HOME/.nix-profile/etc/profile.d/nix.sh
+	Add above to .bashrc
+
+	Set following environment under under Crostini
+		XDG_DATA_DIRS=%h/.nix-profile/share:%h/.local/share:/usr/local/share:/usr/share
+		PATH=%h/.nix-profile/bin
+
+		mkdir -p ~/.config/systemd/user	
+		stow -t ~/.config/systemd/user nix-systemd-user
+	Or
+		systemctl --user edit cros-garcon.service
+	
+	Nix install under Fish??
+	Can try this sh <(curl -L https://nixos.org/nix/install) 
 
 

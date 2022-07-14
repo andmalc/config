@@ -1,19 +1,20 @@
 " General {{{1
 
-set nocompatible
+set undodir=~/.config/nvim/undodir
+set undofile
+
+set foldmethod=marker
+
+" relative line numbering
+set rnu
+
 set hidden
-
-" allow backspacing over everything in insert mode
-set backspace=indent,eol,start
-
-" enable automatic yanking to and pasting from the selection
-set clipboard+=unnamed
-
-" mouse support
-set mouse=n
 
 " Wrap at character in 'breakat' rather than at last character on screen
 set linebreak
+
+" Disable bell noises
+set visualbell
 
 " Tabs
 set ai
@@ -23,8 +24,8 @@ set sts=4
 set noexpandtab
 
 " Don't load netrw
-let g:loaded_netrw       = 1
-let g:loaded_netrwPlugin = 1
+" let g:loaded_netrw       = 1
+" let g:loaded_netrwPlugin = 1
 
 "set runtimepath^=~/.vim runtimepath+=~/.vim/after
 "let &packpath = &runtimepath
@@ -32,14 +33,11 @@ let g:loaded_netrwPlugin = 1
 
 " vim-plug {{{1
 "
-
 if has("autocmd")
   filetype plugin indent on
 endif
 
 filetype plugin on
-set foldmethod=marker
-"let g:markdown_folding=1
 
 call plug#begin()
 
@@ -51,6 +49,14 @@ Plug 'junegunn/vim-easy-align'
 " Buffer Tree Explorer 
 " https://github.com/el-iot/buffer-tree-explorer
 " Launch with 'Tree'
-Plug 'el-iot/buffer-tree-explorer'
+" Plug 'el-iot/buffer-tree-explorer'
+
+" Easy align plug-in
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+
 
 call plug#end()
