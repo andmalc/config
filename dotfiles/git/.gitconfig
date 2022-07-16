@@ -3,6 +3,7 @@
 	name = Andrew Malcolmson
 [push]
 	default = simple
+	autoSetupRemote = true
 [core]
 	editor = vi
 	whitespace = off

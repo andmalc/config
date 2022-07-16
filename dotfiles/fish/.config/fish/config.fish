@@ -2,24 +2,23 @@
 # length of directory abbreviations in prompt
 set fish_prompt_pwd_dir_length 3
 
-# Variables
-#
-set -x EDITOR nvim
-set -x LESS "--ignore-case --LONG-PROMPT --RAW-CONTROL-CHARS --tabs=4 --window=-4"
+# Shell Variables
 
 # prevent CDPATH from being read by shell scripts
 if status --is-interactive
 	set CDPATH ~/config ~/notes $CDPATH
 end
 
+# Environment Variables
+#
+set -x EDITOR nvim
+set -x LESS "--ignore-case --LONG-PROMPT --RAW-CONTROL-CHARS --tabs=4 --window=-4"
+
 set -gx XDG_CONFIG_HOME "$HOME/.config"
 set -gx XDG_DATA_HOME "$HOME/.local/share"
 #set -x XDG_DATA_DIRS $HOME/.local/share/flatpak/exports/share /var/lib/flatpak/exports/share
 
 # PATH
-set -g XDG_DATA_BIN "$HOME/.local/bin"
-set PATH $XDG_DATA_BIN $PATH
-
 # Changes $fish_user_paths
 # Default is -U 
 # fish_add_path "$HOME/.local/bin"
